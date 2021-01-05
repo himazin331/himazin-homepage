@@ -7,13 +7,22 @@
         <meta charset="UTF-8" />
         <meta name="description" content="ゆるゆる情報系専門学生の普通のホームページ"/>
 
-        <meta name="robots" content="nofollow">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHN22M8BXM"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JHN22M8BXM');
+        </script>
 
         <!-- <link rel="shortcut icon" href="ファイル名.ico"> -->
         <!-- <link rel="apple-touch-icon-precomposed" href="画像のパス/apple-touch-icon-precomposed.png"> -->
-        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
         
         <!-- facebookのOGPタグ -->
         <!--
@@ -67,9 +76,9 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <!-- ヘッダーロゴ -->
                 <a class="navbar-brand text-dark" href="./index.html">
-                    <img src="./img/logo.png" width="370" height="32" alt="himazin331">
+                    <img class="col" src="./img/logo.png" alt="himazin331">
                 </a>
-
+                
                 <!-- ナビゲーショントグル -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -80,7 +89,7 @@
                     <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="#top">Home<span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link disabled" href="#blog">Blog</a>
-                        <a class="nav-item nav-link disabled" href="#skills">Skills</a>
+                        <a class="nav-item nav-link" href="./skills.html">Skills</a>
                         <a class="nav-item nav-link disabled" href="#experiences">Experiences</a>
                         <a class="nav-item nav-link disabled" href="#portfolio">Portfolio</a>
                     </div>
@@ -88,278 +97,280 @@
             </nav>
         </header>
 
-        <!-- メイン -->
-        <div class="container">
-            <!-- メインimage -->
-            <img class="img-fluid" src="./img/tab_img.png" alt="tab image">
-
-            <!-- プロフィール -->
-            <div class="profile-stage">
-                <h2 class="profile-heading" id="shtx1">Profile</h2>
-
-                <!-- ニックネーム -->
-                <div class="profile-item">
-                    <div class="profile-icon-stage">
-                        <img class="profile-icon-fade" src="./img/icon/contacts-24px.svg" width="33" height="33">
-                        <span class="profile-caption" id="shtx2">Nickname</span>
-                    </div>
-                    <p class="profile-p" id="p-nickname"></p>
-                </div>
-
-                <!-- 誕生日 -->
-                <div class="profile-item">
-                    <div class="profile-icon-stage">
-                        <img class="profile-icon-fade" src="./img/icon/cake-24px.svg" width="33" height="33">
-                        <span class="profile-caption" id="shtx3">Birthday</span>
-                    </div>
-                    <p class="profile-p" id="p-birthday"></p>
-                </div>
-
-                <!-- 趣味 -->
-                <div class="profile-item">
-                    <div class="profile-icon-stage">
-                        <img class="profile-icon-fade" src="./img/icon/computer-24px.svg" width="33" height="33">
-                        <span class="profile-caption" id="shtx4">Favorite</span>
-                    </div>
-                    <p class="profile-p" id="p-favorite"></p>
-                </div>
-
-                <!-- 説明 -->
-                <div class="profile-item">
-                    <div class="profile-icon-stage">
-                        <img class="profile-icon-fade" src="./img/icon/article-24px.svg" width="33" height="33">
-                        <span class="profile-caption" id="shtx5">About</span>
-                    </div>
-                    <p class="profile-p" id="p-about"></p>
-                </div>
-
-                <!-- 詳細ボタン -->
-                <div class="profile-more-btn">
-                    <button class="btn more-btn" id="btn" type="button" data-toggle="collapse" data-target="#profile-more" aria-expanded="false" aria-controls="profile-more">
-                        More
-                    </button>
-                </div>
-
-                <!-- 詳細プロフィール -->
-                <div class="collapse" id="profile-more">
-                    <!-- 名前 -->              
+        <div class="wrapper">
+            <div class="container">
+                <!-- メインimage -->
+                <img class="img-fluid" src="./img/tab_img.png" alt="tab image">
+    
+                <!-- プロフィール -->
+                <div class="profile-stage">
+                    <h2 class="profile-heading" id="shtx1">Profile</h2>
+    
+                    <!-- ニックネーム -->
                     <div class="profile-item">
                         <div class="profile-icon-stage">
-                            <img class="profile-icon" src="./img/icon/account_box-black-18dp.svg" width="33" height="33">
-                            <span class="profile-caption">Name</span>
+                            <img class="profile-icon-fade" src="./img/icon/contacts-24px.svg" width="33" height="33">
+                            <span class="profile-caption" id="shtx2">Nickname</span>
                         </div>
-                        <p class="profile-p">吉田　紫穏 ｜ Yoshida Shion</p>
-                    </div> 
-
-                    <!-- 居住地 -->
+                        <p class="profile-p" id="p-nickname"></p>
+                    </div>
+    
+                    <!-- 誕生日 -->
                     <div class="profile-item">
                         <div class="profile-icon-stage">
-                            <img class="profile-icon" src="./img/icon/location_on-24px.svg" width="33" height="33">
-                            <span class="profile-caption">Location</span>
+                            <img class="profile-icon-fade" src="./img/icon/cake-24px.svg" width="33" height="33">
+                            <span class="profile-caption" id="shtx3">Birthday</span>
                         </div>
-                        <p class="profile-p">Tokyo, Japan</p>
+                        <p class="profile-p" id="p-birthday"></p>
                     </div>
-
-                    <!-- 所属学校 -->
+    
+                    <!-- 趣味 -->
                     <div class="profile-item">
                         <div class="profile-icon-stage">
-                            <img class="profile-icon" src="./img/icon/backpack-24px.svg" width="33" height="33">
-                            <span class="profile-caption">School</span>
+                            <img class="profile-icon-fade" src="./img/icon/computer-24px.svg" width="33" height="33">
+                            <span class="profile-caption" id="shtx4">Favorite</span>
                         </div>
-                        <p class="profile-p">日本工学院八王子専門学校　ITカレッジ　AIシステム科</p>
+                        <p class="profile-p" id="p-favorite"></p>
                     </div>
-
-                    <!-- Email -->
+    
+                    <!-- 説明 -->
                     <div class="profile-item">
                         <div class="profile-icon-stage">
-                            <img class="profile-icon" src="./img/icon/mail_outline-24px.svg" width="33" height="33">
-                            <span class="profile-caption">Email</span>
+                            <img class="profile-icon-fade" src="./img/icon/article-24px.svg" width="33" height="33">
+                            <span class="profile-caption" id="shtx5">About</span>
                         </div>
-                        <p class="profile-p">sion20022013@gmail.com</p>
+                        <p class="profile-p" id="p-about"></p>
                     </div>
-
-                    <!-- 欲しい物リスト -->
-                    <div class="profile-item">
-                        <div class="profile-icon-stage">
-                            <img class="profile-icon" src="./img/icon/favorite-24px.svg" width="33" height="33">
-                            <span class="profile-caption">Feelings</span>
+    
+                    <!-- 詳細ボタン -->
+                    <div class="profile-more-btn">
+                        <button class="btn more-btn" id="btn" type="button" data-toggle="collapse" data-target="#profile-more" aria-expanded="false" aria-controls="profile-more">
+                            More
+                        </button>
+                    </div>
+    
+                    <!-- 詳細プロフィール -->
+                    <div class="collapse" id="profile-more">
+                        <!-- 名前 -->              
+                        <div class="profile-item">
+                            <div class="profile-icon-stage">
+                                <img class="profile-icon" src="./img/icon/account_box-black-18dp.svg" width="33" height="33">
+                                <span class="profile-caption">Name</span>
+                            </div>
+                            <p class="profile-p">吉田　紫穏 ｜ Yoshida Shion</p>
+                        </div> 
+    
+                        <!-- 居住地 -->
+                        <div class="profile-item">
+                            <div class="profile-icon-stage">
+                                <img class="profile-icon" src="./img/icon/location_on-24px.svg" width="33" height="33">
+                                <span class="profile-caption">Location</span>
+                            </div>
+                            <p class="profile-p">Tokyo, Japan</p>
                         </div>
-                        <p class="profile-p">
-                            <a href="https://www.amazon.jp/hz/wishlist/ls/3MXGBNSHM3Y4X?ref_=wl_share">Amazon欲しい物リスト(いろいろ)</a><br>
-                            <a href="https://www.amazon.jp/hz/wishlist/ls/1U6AF7U9BZ3ZV?ref_=wl_share">Amazon欲しい物リスト(書籍)</a>
-                        </p>
+    
+                        <!-- 所属学校 -->
+                        <div class="profile-item">
+                            <div class="profile-icon-stage">
+                                <img class="profile-icon" src="./img/icon/backpack-24px.svg" width="33" height="33">
+                                <span class="profile-caption">School</span>
+                            </div>
+                            <p class="profile-p">日本工学院八王子専門学校　ITカレッジ　AIシステム科</p>
+                        </div>
+    
+                        <!-- Email -->
+                        <div class="profile-item">
+                            <div class="profile-icon-stage">
+                                <img class="profile-icon" src="./img/icon/mail_outline-24px.svg" width="33" height="33">
+                                <span class="profile-caption">Email</span>
+                            </div>
+                            <p class="profile-p">sion2002201386@gmail.com</p>
+                        </div>
+    
+                        <!-- 欲しい物リスト -->
+                        <div class="profile-item">
+                            <div class="profile-icon-stage">
+                                <img class="profile-icon" src="./img/icon/favorite-24px.svg" width="33" height="33">
+                                <span class="profile-caption">Feelings</span>
+                            </div>
+                            <p class="profile-p">
+                                <a href="https://www.amazon.jp/hz/wishlist/ls/3MXGBNSHM3Y4X?ref_=wl_share">Amazon欲しい物リスト(いろいろ)</a><br>
+                                <a href="https://www.amazon.jp/hz/wishlist/ls/1U6AF7U9BZ3ZV?ref_=wl_share">Amazon欲しい物リスト(書籍)</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- 文字表示 -->
-                <script type="text/javascript">
-                    var i = 0;
-                    var cnt = 0;
-                    var str = ["himazin331", "2002 / 03 / 31", "プログラミング,　電子工作,　技術的ななにか,　筋トレ",
-                                "機械学習エンジニアを夢みる、その辺の情報系専門学生 himazin331 です。<br>AI・機械学習を中心としたPythonプログラミングをはじめ、セキュリティやネットワーク、Web技術に手を出しては技術に喘いでいます。<br>"];
-                    var idl = ["p-nickname", "p-birthday", "p-favorite", "p-about"]
-                    
-                    // 文字表示
-                    function char_view() {
-                        obj = document.getElementById(idl[i]);
-                        obj.innerHTML = str[i].substring(0, cnt);
-                        setTimeout("char_view();", 10);
-                        if (cnt <= str[i].length){
-                            cnt++;
-                        } else {
-                            if (i < idl.length-1) {
-                                cnt = 0;
-                                i++;
+    
+                    <!-- 文字表示 -->
+                    <script type="text/javascript">
+                        var i = 0;
+                        var cnt = 0;
+                        var str = ["himazin331", "2002 / 03 / 31", "プログラミング,　電子工作,　技術的ななにか,　筋トレ",
+                                    "機械学習エンジニアを夢みる、その辺の情報系専門学生 himazin331 です。<br>AI・機械学習を中心としたPythonプログラミングをはじめ、セキュリティやネットワーク、Web技術に手を出しては技術に喘いでいます。<br>"];
+                        var idl = ["p-nickname", "p-birthday", "p-favorite", "p-about"]
+                        
+                        // 文字表示
+                        function char_view() {
+                            obj = document.getElementById(idl[i]);
+                            obj.innerHTML = str[i].substring(0, cnt);
+                            setTimeout("char_view();", 10);
+                            if (cnt <= str[i].length){
+                                cnt++;
                             } else {
-                                setTimeout("btn_view();", 20);
+                                if (i < idl.length-1) {
+                                    cnt = 0;
+                                    i++;
+                                } else {
+                                    setTimeout("btn_view();", 20);
+                                }
                             }
                         }
-                    }
-                    // 詳細ボタン表示
-                    function btn_view() {
-                        btn = document.getElementById("btn");
-                        btn.classList.add("btn_view");
-                    }
-                    window.onload = char_view;
-                </script>
-            </div>
-
-            <!-- コミュニティ -->
-            <div class="community-stage">
-                <h2 class="community-heading" id="shtx6">Community</h2>
-
-                <!-- タブ -->
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link nav-com active" data-toggle="tab" href="#twitter" style="background-color:#479AF0;">Twitter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-com" data-toggle="tab" href="#facebook" style="background-color:#476cf0;">Facebook</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-com" data-toggle="tab" href="#github" style="background-color:#171515;">GitHub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-com" data-toggle="tab" href="#qiita" style="background-color:#55c500;">Qiita</a>
-                    </li>
-                </ul>
-
-                <!-- タブコンテンツ -->
-                <div class="tab-content">
-                    <!-- Twitter -->
-                    <div id="twitter" class="tab-pane active">
-                        <div class="card card-body">
-                            <!-- キャプション -->
-                            <div class="media">
-                                <a href="https://twitter.com/himazin_shotaML">
-                                    <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/twitter_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
-                                </a>
-                                <div class="media-body">
-                                    <a href="https://twitter.com/himazin_shotaML"><h5 class="mt-0">@himazin_shotaML</h5></a>
-                                    NEEC AI 1-2 | MLエンジニア(志望) 18歳男子専門学生 | FE/AP/SC(RISS未登録) | ML/DL | Python/VB.NET/C<br>※技術的ツイート&独り言多め 
+                        // 詳細ボタン表示
+                        function btn_view() {
+                            btn = document.getElementById("btn");
+                            btn.classList.add("btn_view");
+                        }
+                        window.onload = char_view;
+                    </script>
+                </div>
+    
+                <!-- コミュニティ -->
+                <div class="community-stage">
+                    <h2 class="community-heading" id="shtx6">Community</h2>
+    
+                    <!-- タブ -->
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link nav-com active" data-toggle="tab" href="#twitter" style="background-color:#479AF0;">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-com" data-toggle="tab" href="#facebook" style="background-color:#476cf0;">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-com" data-toggle="tab" href="#github" style="background-color:#171515;">GitHub</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-com" data-toggle="tab" href="#qiita" style="background-color:#55c500;">Qiita</a>
+                        </li>
+                    </ul>
+    
+                    <!-- タブコンテンツ -->
+                    <div class="tab-content">
+                        <!-- Twitter -->
+                        <div id="twitter" class="tab-pane active">
+                            <div class="card card-body">
+                                <!-- キャプション -->
+                                <div class="media">
+                                    <a href="https://twitter.com/himazin_shotaML">
+                                        <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/twitter_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="https://twitter.com/himazin_shotaML"><h5 class="mt-0">@himazin_shotaML</h5></a>
+                                        NEEC AI 1-2 | MLエンジニア(志望) 18歳男子専門学生 | FE/AP/SC(RISS未登録) | ML/DL | Python/VB.NET/C<br>※技術的ツイート&独り言多め 
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- タイムラインローディング -->
-                            <script type="text/javascript">
-                                $(document).ready(function() { 
-                                    $("#twitter-timeline").load(test()); 
-                                }); 
-                                function test() {
-                                    const spinner = document.getElementById('loading');
-                                    spinner.classList.add('loaded');
-                                }
-                            </script>
-                            <!-- タイムライン -->
-                            <div class="tweet-timeline-stage" style="text-align: center;">
-                                <h3>@himazin_shotaMLのタイムライン</h3>
-
-                                <div class="spinner-border" id="loading" role="status" style="color: #00008b;">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-
-                                <a class="twitter-timeline" id="twitter-timeline" data-chrome="noheader nofooter noscrollbar" data-lang="ja" data-width="550" data-height="500" href="https://twitter.com/himazin_shotaML?ref_src=twsrc%5Etfw">Tweets by himazin_shotaML</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Facebook -->
-                    <div id="facebook" class="tab-pane">
-                        <!-- キャプション -->
-                        <div class="card card-body">
-                            <div class="media">
-                                <a href="https://www.facebook.com/himazin331">
-                                    <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/facebook_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
-                                </a>
-                                <div class="media-body">
-                                    <a href="https://www.facebook.com/himazin331"><h5 class="mt-0">@himazin331</h5></a>
-                                    AI・機械学習の勉強をしている専門学生<br>技術的なものを中心に投稿します。
+                                <!-- タイムラインローディング -->
+                                <script type="text/javascript">
+                                    $(document).ready(function() { 
+                                        $("#twitter-timeline").load(test()); 
+                                    }); 
+                                    function test() {
+                                        const spinner = document.getElementById('loading');
+                                        spinner.classList.add('loaded');
+                                    }
+                                </script>
+                                <!-- タイムライン -->
+                                <div class="tweet-timeline-stage" style="text-align: center;">
+                                    <h4>@himazin_shotaMLのタイムライン</h4>
+    
+                                    <div class="spinner-border" id="loading" role="status" style="color: #00008b;">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+    
+                                    <a class="twitter-timeline" id="twitter-timeline" data-chrome="noheader nofooter noscrollbar" data-lang="ja" data-width="550" data-height="500" href="https://twitter.com/himazin_shotaML?ref_src=twsrc%5Etfw">Tweets by himazin_shotaML</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- GitHub -->
-                    <div id="github" class="tab-pane">
-                        <div class="card card-body">
+    
+                        <!-- Facebook -->
+                        <div id="facebook" class="tab-pane">
                             <!-- キャプション -->
-                            <div class="media">
-                                <a href="https://github.com/himazin331">
-                                    <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/github_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
-                                </a>
-                                <div class="media-body">
-                                    <a href="https://github.com/himazin331"><h5 class="mt-0">@himazin331</h5></a>
-                                    機械学習の勉強をしている専門学生。 内容はしょぼい...<br>A student studying machine learning. The content is poor...
-                                </div>
-                            </div>
-                            <!-- Contributors -->
-                            <div class="github-contributors">
-                                <img class="col-lg col-md" src="https://grass-graph.moshimo.works/images/himazin331.png">
-                            </div>
-                            <!-- Widgets -->
-                            <div class="github-widgets col-lg col-sm" style="padding:10px;">
-                                <div class="stats" style="display:inline-block;text-align:center;">
-                                    <img class="col-lg col-sm" src="https://github-status.nakayumc0278.vercel.app/api?username=himazin331&show_icons=true&count_private=true"/>
-                                </div>
-                                <div class="langs" style="display:inline-block;">
-                                    <img class="col-lg col-sm" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331&hide=ShaderLab,Objective-C&show_icons=true&count_private=true"/>
+                            <div class="card card-body">
+                                <div class="media">
+                                    <a href="https://www.facebook.com/himazin331">
+                                        <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/facebook_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="https://www.facebook.com/himazin331"><h5 class="mt-0">@himazin331</h5></a>
+                                        AI・機械学習の勉強をしている専門学生<br>技術的なものを中心に投稿します。
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Qiita -->
-                    <div id="qiita" class="tab-pane">
-                        <div class="card card-body">
-                            <!-- キャプション -->
-                            <div class="media">
-                                <a href="https://qiita.com/hima_zin331">
-                                    <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/qiita_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
-                                </a>
-                                <div class="media-body">
-                                    <a href="https://qiita.com/hima_zin331"><h5 class="mt-0">@himazin_331</h5></a>
-                                    ついこの間まで工業高校生だった頭の悪い18歳専門学生です。 投稿内容は私が勉強したことのまとめの意味を込めてのものなので、 誤った情報があったりするかもです。。。
+    
+                        <!-- GitHub -->
+                        <div id="github" class="tab-pane">
+                            <div class="card card-body">
+                                <!-- キャプション -->
+                                <div class="media">
+                                    <a href="https://github.com/himazin331">
+                                        <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/github_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="https://github.com/himazin331"><h5 class="mt-0">@himazin331</h5></a>
+                                        機械学習の勉強をしている専門学生。 内容はしょぼい...<br>A student studying machine learning. The content is poor...
+                                    </div>
+                                </div>
+                                <!-- Contributors -->
+                                <div class="github-contributors">
+                                    <img class="col-lg col-md" src="https://grass-graph.moshimo.works/images/himazin331.png">
+                                </div>
+                                <!-- Widgets -->
+                                <div class="github-widgets col-lg col-sm" style="padding:10px;">
+                                    <div class="stats" style="display:inline-block;text-align:center;">
+                                        <img class="col-lg col-sm" src="https://github-status.nakayumc0278.vercel.app/api?username=himazin331&show_icons=true&count_private=true"/>
+                                    </div>
+                                    <div class="langs" style="display:inline-block;">
+                                        <img class="col-lg col-sm" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331&hide=ShaderLab,Objective-C&show_icons=true&count_private=true"/>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="margin-top:20px;">
-                                <!-- Badge -->
-                                <img src="https://qiita-badge.apiapi.app/s/hima_zin331/posts.svg">
-                                <img src="https://qiita-badge.apiapi.app/s/hima_zin331/contributions.svg">
-                                <img src="https://qiita-badge.apiapi.app/s/hima_zin331/followers.svg">
-                                <!-- 投稿記事 -->
-                                <div style="margin-top:5px">
-                                    <a href="https://qiita.com/hima_zin331" data-qiita-widget data-hide-header data-hide-footer data-username="hima_zin331">himazin_331のQiita</a>
-                                    <script src="https://suin.github.io/qiita-widget/widget.js" defer></script>
+                        </div>
+    
+                        <!-- Qiita -->
+                        <div id="qiita" class="tab-pane">
+                            <div class="card card-body">
+                                <!-- キャプション -->
+                                <div class="media">
+                                    <a href="https://qiita.com/hima_zin331">
+                                        <img class="bd-placeholder-img mr-3" width="64" height="64" src="./img/icon/qiita_logo.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"></img>
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="https://qiita.com/hima_zin331"><h5 class="mt-0">@himazin_331</h5></a>
+                                        ついこの間まで工業高校生だった頭の悪い18歳専門学生です。 投稿内容は私が勉強したことのまとめの意味を込めてのものなので、 誤った情報があったりするかもです。。。
+                                    </div>
+                                </div>
+                                <div style="margin-top:20px;">
+                                    <!-- Badge -->
+                                    <img src="https://qiita-badge.apiapi.app/s/hima_zin331/posts.svg">
+                                    <img src="https://qiita-badge.apiapi.app/s/hima_zin331/contributions.svg">
+                                    <img src="https://qiita-badge.apiapi.app/s/hima_zin331/followers.svg">
+                                    <!-- 投稿記事 -->
+                                    <div style="margin-top:5px">
+                                        <a href="https://qiita.com/hima_zin331" data-qiita-widget data-hide-header data-hide-footer data-username="hima_zin331">himazin_331のQiita</a>
+                                        <script src="https://qiita-widget.suin.io/widget.js" defer></script>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+    
+            <!-- フッター -->
+            <footer>
+                <p style="text-align:right;margin-right:5vh;"><a href="https://nakayumc.com">nakayumc0278</a>さんのページ</p>
+                <span>Copyright © 2020 Shion Yoshida. All Rights Reserved.</span>
+            </footer>
         </div>
-
-        <!-- フッター -->
-        <footer>
-            <span>Copyright © 2020 Shion Yoshida. All Rights Reserved.</span>
-        </footer>
     </body>
 </html>
