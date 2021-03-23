@@ -1,0 +1,99 @@
+/** header */
+header {
+    background: linear-gradient(135deg, #00008b,#00003b);
+}
+
+.navbar {
+    box-shadow: 1px 3px 3px gray;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/** conteiner */
+.wrapper{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 35px;
+    box-sizing: border-box;
+}
+
+.img-fluid {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    animation-name: fadedown1;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+@keyframes fadedown1 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+.pgl-stage {
+    margin-top: 10px;
+}
+
+.pgl-heading {
+    margin-bottom: 10px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    border-left: 4px solid #00008b;
+    border-bottom: 1px solid #00008b;
+}
+
+.card {
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+    display: inline-block;
+    margin: 1% 3%;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.pgl-item {
+    padding: 0px 5px;
+}
+
+/** Footer */
+
+footer {
+    width: 100%;
+    height: 30px;
+    margin-top: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* レスポンシブ */
+@media (max-width: 991px)
+{
+    .navbar-nav{
+        padding-top: 5px;
+    }
+}
