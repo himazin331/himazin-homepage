@@ -150,6 +150,22 @@ header {
     text-align: left;
 }
 
+.carousel-dark .carousel-control-prev .carousel-control-prev-icon{
+    filter: brightness(0.4);
+}
+.carousel-dark .carousel-control-next .carousel-control-next-icon{
+    filter: brightness(0.4);
+}
+
+.carousel-dark .carousel-indicators li {
+    background-color: #767676;
+}
+
+.carousel-dark .carousel-caption {
+    color: #000;
+}
+
+
 /** Footer */
 
 footer {
