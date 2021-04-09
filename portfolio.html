@@ -11,9 +11,9 @@
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <script>
+        <!-- <script>
             alert("現在、制作中のページです。\n不完全であることを了承した上でアクセスしてください。");
-        </script>
+        </script> -->
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHN22M8BXM"></script>
@@ -105,16 +105,16 @@
                 <!-- プロダクト一覧 -->
                 <div class="pgl-stage">
                     <div class="row">
-                        <!-- スマートロック -->
+                        <!-- 歩容認証 -->
                         <div class="col-md">
                             <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio1_md"><img src="./img/portfolio/1-1.jpg" class="card-img-top" alt="Smartlock"></a>
+                                <a data-toggle="modal" href="#portfolio6_md"><img src="./img/portfolio/6-1.jpg" class="card-img-top" alt="歩容認証技術"></a>
                                 <div class="card-body">
-                                    <h5 class="card-title">セキュアなスマートロック</h5>
-                                    <h6 class="keyword">Hardware, IoT, AI, WebApp</h6>
-                                    <p class="card-text">２要素認証による解錠とWebアプリを通じて遠隔から施錠/解錠ができるスマートロック。</p>
+                                    <h5 class="card-title" style="display:inline">姿勢推定AIによる歩容認証技術への応用</h5><span class="badge bg-info text-light">開発中</span>
+                                    <h6 class="keyword">Machine/DeepLearning</h6>
+                                    <p class="card-text">姿勢推定モデルHRNetを用いて歩容認証技術に対して応用を利かせられないか検証してみる。</p>
 
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#portfolio1_md">More</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#portfolio6_md">More</button>
                                 </div>
                             </div>
                         </div>
@@ -122,13 +122,27 @@
                         <!-- ホームページ -->
                         <div class="col-md">
                             <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio2_md"><img src="./img/portfolio/2.jpg" class="card-img-top" alt="Homepage"></a>
+                                <a data-toggle="modal" href="#portfolio5_md"><img src="./img/portfolio/5-1.jpg" class="card-img-top" alt="ホームページ"></a>
                                 <div class="card-body">
                                     <h5 class="card-title" style="display:inline">ホームページ</h5><span class="badge bg-info text-light">制作中</span>
                                     <h6 class="keyword">WebSite</h6>
                                     <p class="card-text">いまあなたがアクセスして閲覧しているこのページ。<br>自作ブログも開設予定。</p>
 
-                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio2_md">More</button>
+                                    <button class="btn btn-primary portfolio-btn" data-toggle="modal" data-target="#portfolio5_md">More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- スマートロック -->
+                        <div class="col-md">
+                            <div class="card h-100">
+                                <a data-toggle="modal" href="#portfolio4_md"><img src="./img/portfolio/4-1.jpg" class="card-img-top" alt="スマートロック"></a>
+                                <div class="card-body">
+                                    <h5 class="card-title">セキュアなスマートロック</h5>
+                                    <h6 class="keyword">Hardware, IoT, AI, WebApp</h6>
+                                    <p class="card-text">２要素認証による解錠とWebアプリを通じて遠隔から施錠/解錠ができるスマートロック。</p>
+
+                                    <button class="btn btn-primary portfolio-btn" data-toggle="modal" data-target="#portfolio4_md">More</button>
                                 </div>
                             </div>
                         </div>
@@ -136,13 +150,13 @@
                         <!-- 匿名掲示板サイト -->
                         <div class="col-md">
                             <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio3_md"><img src="./img/portfolio/3.jpg" class="card-img-top" alt="Bulletin board site"></a>
+                                <a data-toggle="modal" href="#portfolio3_md"><img src="./img/portfolio/3-1.jpg" class="card-img-top" alt="掲示板サイト"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">エンジニア向け<br>匿名掲示板サイト</h5>
                                     <h6 class="keyword">WebApp, Database</h6>
                                     <p class="card-text">マークダウン記法による投稿が可能な匿名掲示板サイト。スレッド作成機能やタグ機能も装備。</p>
 
-                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio3_md">More</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#portfolio3_md">More</button>
                                 </div>
                             </div>
                         </div>
@@ -150,13 +164,13 @@
                         <!-- フローチャート作成アプリ -->
                         <div class="col-md">
                             <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio4_md"><img src="./img/portfolio/4.jpg" class="card-img-top" alt="Flowchart Application"></a>
+                                <a data-toggle="modal" href="#portfolio2_md"><img src="./img/portfolio/2.jpg" class="card-img-top" alt="フローチャート作成アプリ"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">簡易的フローチャート<br>作成アプリ</h5>
                                     <h6 class="keyword">GUIApp</h6>
                                     <p class="card-text">簡易的なフローチャートを作成することができるアプリ。ファイル保存機能やオブジェクトの自動整列機能など装備。</p>
 
-                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio4_md">More</button>
+                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio2_md">More</button>
                                 </div>
                             </div>
                         </div>
@@ -164,30 +178,18 @@
                         <!-- 採譜支援アプリ -->
                         <div class="col-md">
                             <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio5_md"><img src="./img/portfolio/noimage.jpg" class="card-img-top" alt="FFT Application"></a>
+                                <a data-toggle="modal" href="#portfolio1_md"><img src="./img/portfolio/noimage.jpg" class="card-img-top" alt="採譜支援アプリ"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">採譜支援アプリ</h5>
                                     <h6 class="keyword">CLIApp</h6>
                                     <p class="card-text">.wavに対してFFTを用いて周波数を導き出し、対応した音階を出力し採譜(いわゆる耳コピ)を支援。</p>
 
-                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio5_md">More</button>
+                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio1_md">More</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 歩容認証 -->
-                        <div class="col-md">
-                            <div class="card h-100">
-                                <a data-toggle="modal" href="#portfolio6_md"><img src="./img/portfolio/5-1.jpg" class="card-img-top" alt="Gait Recognition"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="display:inline">姿勢推定AIによる歩容認証技術への応用</h5><span class="badge bg-info text-light">開発中</span>
-                                    <h6 class="keyword">Machine/DeepLearning</h6>
-                                    <p class="card-text">姿勢推定モデルHRNetを用いて歩容認証技術に対して応用を利かせられないか検証してみる。</p>
-
-                                    <button disabled class="btn btn-primary" data-toggle="modal" data-target="#portfolio6_md">More</button>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -196,13 +198,13 @@
                 プロダクト詳細
             -->
 
-            <!-- スマートロック詳細 -->
-            <div class="modal fade" id="portfolio1_md" tabindex="-1" role="dialog" aria-labelledby="portfolio1_md_TT" aria-hidden="true">
+            <!-- 歩容認証詳細 -->
+            <div class="modal fade" id="portfolio6_md" tabindex="-1" role="dialog" aria-labelledby="portfolio6_md_TT" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
                     <div class="modal-content">
                         <!-- タイトル -->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="portfolio1_md_TT">セキュアなスマートロック<br><span style="font-size:15.43px;">Hardware, IoT, AI, WebApp</span></h5>
+                            <h5 class="modal-title" id="portfolio6_md_TT">姿勢推定AIによる歩容認証技術への応用<span class="badge bg-info text-light">制作中</span><br><span style="font-size:15.43px;">Machine/DeepLearning</span></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -210,30 +212,221 @@
 
                         <div class="modal-body">
                             <!-- 画像 -->
-                            <div id="carouselIndicators" class="carousel slide mx-auto" data-interval="false">
+                            <div id="carouselIndicators6" class="carousel slide mx-auto" data-interval="false">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                                    <li data-target="#carouselIndicators6" data-slide-to="0" class="active"></li>
                                 </ol>
 
                                 <div id="carousel_inner" class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="./img/portfolio/1-1.jpg" class="d-block w-100" alt="スマートロック本体">
+                                        <img src="./img/portfolio/6-1.jpg" class="d-block w-100" alt="イメージ画像">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>fdafda</h5>
+                                            <p>。dfa</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a id="prev" class="carousel-control-prev" href="#carouselIndicators6" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a id="next" class="carousel-control-next" href="#carouselIndicators6" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <!-- 内容 -->
+                            <div class="portfolio-field">
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>概　　要:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">姿勢推定AIを活用して歩容認証技術として有効的な結果がでるかを検証</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発期間:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">現行 (個人開発)</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発環境:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">Python3<br>Tensorflow, OpenCV</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>U　R　L :</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        <a href="https://github.com/himazin331/HRNet-GaitRecognition" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+                                    </p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>詳　　細:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        姿勢推定AIとしても活用されているHRNetと一般的なCNNを用いて歩容(歩き方)から個人を推定できないか検証、研究してみています。<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 閉じるボタン -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ホームページ詳細 -->
+            <div class="modal fade" id="portfolio5_md" tabindex="-1" role="dialog" aria-labelledby="portfolio5_md_TT" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                    <div class="modal-content">
+                        <!-- タイトル -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="portfolio5_md_TT">ホームページ<span class="badge bg-info text-light">制作中</span><br><span style="font-size:15.43px;">WebSite</span></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- 画像 -->
+                            <div id="carouselIndicators5" class="carousel carousel-dark slide mx-auto" data-interval="false">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselIndicators5" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselIndicators5" data-slide-to="1"></li>
+                                    <li data-target="#carouselIndicators5" data-slide-to="2"></li>
+                                </ol>
+
+                                <div id="carousel_inner" class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="./img/portfolio/5-1.jpg" class="d-block w-100" alt="メインページ">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>fdafda</h5>
+                                            <p>。dfa</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/portfolio/5-2.jpg" class="d-block w-100" alt="スキルページ">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>fdas</h5>
+                                            <p>fdas</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/portfolio/5-3.jpg" class="d-block w-100" alt="ポートフォリオページ">
+                                        <div class="carousel-caption d-none d-md-block futidori">
+                                            <h5>dfa</h5>
+                                            <p>fdsafas</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a id="prev" class="carousel-control-prev" href="#carouselIndicators5" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a id="next" class="carousel-control-next" href="#carouselIndicators5" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <!-- 内容 -->
+                            <div class="portfolio-field">
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>概　　要:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">私のホームページ兼ポートフォリオ</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発期間:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">現行 (個人開発)</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発環境:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">HTML5/CSS, Javascript<br>Apache, Azure VM</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>U　R　L :</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        <a href="https://github.com/himazin331/himazin-homepage" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+                                    </p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>詳　　細:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        Azure VMをWebサーバとして運用しています。<br>
+                                        レスポンシブデザインはBootstrapを用いて実現しています。<br><br>
+                                        脆弱性テストや負荷テストも実施して、セキュリティと可用性を確保しています。<br><br>
+                                        自作の技術ブログも当サイトで開設しようと奮闘していますので、もしご興味があれば覗いてみてください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 閉じるボタン -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- スマートロック詳細 -->
+            <div class="modal fade" id="portfolio4_md" tabindex="-1" role="dialog" aria-labelledby="portfolio4_md_TT" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                    <div class="modal-content">
+                        <!-- タイトル -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="portfolio4_md_TT">セキュアなスマートロック<br><span style="font-size:15.43px;">Hardware, IoT, AI, WebApp</span></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- 画像 -->
+                            <div id="carouselIndicators4" class="carousel slide mx-auto" data-interval="false">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselIndicators4" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselIndicators4" data-slide-to="1"></li>
+                                    <li data-target="#carouselIndicators4" data-slide-to="2"></li>
+                                </ol>
+
+                                <div id="carousel_inner" class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="./img/portfolio/4-1.jpg" class="d-block w-100" alt="スマートロック本体">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>スマートロック本体</h5>
                                             <p>マウンタ部分をサムターンに被せる形で設置。機構は3Dプリンタで印刷。</p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./img/portfolio/1-2.png" class="d-block w-100" alt="電子回路">
+                                        <img src="./img/portfolio/4-2.png" class="d-block w-100" alt="電子回路">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>電子回路</h5>
                                             <p>電子回路も設計から行った。ケースも3Dプリンタで印刷。</p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./img/portfolio/1-3.jpg" class="d-block w-100" alt="システム構成図">
+                                        <img src="./img/portfolio/4-3.jpg" class="d-block w-100" alt="システム構成図">
                                         <div class="carousel-caption d-none d-md-block futidori">
                                             <h5>システム構成図</h5>
                                             <p>ネットワーク的課題からこのような構成図に...</p>
@@ -241,11 +434,11 @@
                                     </div>
                                 </div>
 
-                                <a id="prev" class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                                <a id="prev" class="carousel-control-prev" href="#carouselIndicators4" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a id="next" class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                                <a id="next" class="carousel-control-next" href="#carouselIndicators4" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -289,7 +482,6 @@
                                     <p class="portfolio-sentence">
                                         インフラ構築から回路製作、Webアプリ開発まで一貫して作業しました。<br>
                                         顔認識ではTensorflow Lite + MobileNetV2を用いて低性能なラズパイゼロでも高速に処理が可能となっています。<br><br>
-                                        
                                         システム構成について疑問に思うところがあるかと思いますが、詳細はGitHubをみてください。
                                     </p>
                                 </div>
@@ -304,32 +496,154 @@
                 </div>
             </div>
 
-            <!-- コンテキスト表示/非表示 -->
-            <script>
-                // スライド番号
-                let i = 0
-                var prev_action = document.getElementById("prev");
-                var next_action = document.getElementById("next");
-                prev_action.addEventListener('click', function (event) {
-                    i--;
-                    if (i < 0){ i = 2; }
-                }, false);
-                next_action.addEventListener('click', function (event) {
-                    i++;
-                    if (i > 2){ i = 0; }
-                }, false);
+            <!-- 掲示板サイト詳細 -->
+            <div class="modal fade" id="portfolio3_md" tabindex="-1" role="dialog" aria-labelledby="portfolio3_md_TT" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                    <div class="modal-content">
+                        <!-- タイトル -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="portfolio3_md_TT">エンジニア向け匿名掲示板サイト<br><span style="font-size:15.43px;">WebApp, Database</span></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
-                const hover_target = document.getElementById("carousel_inner");
+                        <div class="modal-body">
+                            <!-- 画像 -->
+                            <div id="carouselIndicators3" class="carousel carousel-dark slide mx-auto" data-interval="false">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselIndicators3" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselIndicators3" data-slide-to="1"></li>
+                                    <li data-target="#carouselIndicators3" data-slide-to="2"></li>
+                                </ol>
+
+                                <div id="carousel_inner" class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="./img/portfolio/3-1.jpg" class="d-block w-100" alt="メインページ">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>fdafda</h5>
+                                            <p>。dfa</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/portfolio/3-2.jpg" class="d-block w-100" alt="スレッド作成モーダル">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>fdas</h5>
+                                            <p>fdas</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/portfolio/3-3.jpg" class="d-block w-100" alt="スレッドページ">
+                                        <div class="carousel-caption d-none d-md-block futidori">
+                                            <h5>dfa</h5>
+                                            <p>fdsafas</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a id="prev" class="carousel-control-prev" href="#carouselIndicators3" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a id="next" class="carousel-control-next" href="#carouselIndicators3" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <!-- 内容 -->
+                            <div class="portfolio-field">
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>概　　要:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">マークダウン記法による掲示板投稿が可能なエンジニア向け匿名掲示板サイト</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発期間:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">約２週間 (チーム開発)</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>開発環境:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">HTML5/CSS3, PHP, Javascript, SQL<br>
+                                        Apache, AWS EC2, MySQL, jQuery, Marked.js, SimpleMDE</p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>U　R　L :</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        <a href="https://github.com/himazin331/techanony" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+                                        <a href="http://34.234.120.153/main/" target="_blank" rel="noopener noreferrer">サイト (予告なく非公開になる可能性があります)</a><br>
+                                    </p>
+                                </div>
+                                <div class="portfolio-block">
+                                    <div class="portfolio-subject">
+                                        <span>詳　　細:</span>
+                                    </div>
+                                    <p class="portfolio-sentence">
+                                        Marked.jsとSimpleMDEを使うことにより、マークダウン記法による書き込みができるようになっています。<br>
+                                        タグ機能やスレッド検索機能も備えています。<br><br>
+                                        注: レスポンシブ非対応ですので、レイアウト崩れご容赦ください。<br>
+                                        また、ある程度はセキュリティ面に配慮してますが、不完全な部分があるかと思いますので、<br>
+                                        攻撃や過負荷をかけるなどの行為はやめてください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 閉じるボタン -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- コンテキスト表示/非表示 -->
+            <!-- <script>
+                const portfolio_btn = document.getElementsByClassName("portfolio-btn");
+                const prev = document.getElementsByClassName("carousel-control-prev");
+                const next = document.getElementsByClassName("carousel-control-next");
+                const hover_target = document.getElementsByClassName("carousel-inner");
                 const hide_target = document.getElementsByClassName("carousel-caption");
-                // コンテキスト表示
-                hover_target.addEventListener('mouseenter', function (event) {
-                    hide_target[i].style.opacity = 1;
-                }, false);
-                // コンテキスト非表示
-                hover_target.addEventListener('mouseleave', function (event)  {
-                    hide_target[i].style.opacity = 0;
-                }, false);
-            </script>
+
+                function btnClick(){
+                    // スライド番号
+                    let slide_num = []
+
+                    for (let j = 0; j < prev.length; j++)
+                    {
+                        prev[j].addEventListener('click', function (event) {
+                            slide_num--;
+                            if (slide_num < 0){ slide_num = 2; }
+                        }, false);
+                        next[j].addEventListener('click', function (event) {
+                            slide_num++;
+                            if (slide_num > 2){ slide_num = 0; }
+                        }, false);
+
+                        // コンテキスト表示
+                        hover_target[j].addEventListener('mouseenter', function (event) {
+                            hide_target[slide_num].style.opacity = 1;
+                        }, false);
+                        // コンテキスト非表示
+                        hover_target[j].addEventListener('mouseleave', function (event)  {
+                            hide_target[slide_num].style.opacity = 0;
+                        }, false);
+                    }
+                }
+
+                for (let i = 0; i < portfolio_btn.length; i++)
+                {
+                    portfolio_btn[i].addEventListener('click', btnClick);
+                }
+            </script> -->
 
             <!-- フッター -->
             <footer>
