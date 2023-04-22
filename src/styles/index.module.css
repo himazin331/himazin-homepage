@@ -1,0 +1,129 @@
+/** トップページCSS */
+
+.container_fluid {
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+}
+
+.content_field {
+    margin: 20px 0;
+}
+
+.content_item {
+    display: flex;
+    margin: 0px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+/* プロフィール */
+.material_icons_md_36_light {
+    color: rgb(209, 205, 199);
+    font-size: 36px;
+}
+
+.profile_caption_field,
+.community_caption_field {
+    flex: 1;
+    display: inline;
+}
+
+.profile_caption_text,
+.community_caption_text {
+    margin-left: 0.5em;
+    font-weight: bold;
+}
+
+.profile_text,
+.community_text {
+    width: 80%;
+    margin: 0;
+    padding-top: 7px;
+    text-align: left;
+}
+
+.profile_btn_more {
+    height: 38px;
+    text-align: right;
+}
+
+/* アクティビティ */
+
+.card {
+    width: 75%;
+    margin: 0 12.5%;
+    padding: 10px 0;
+}
+
+.github_contributors {
+    text-align: center;
+}
+
+.grass_graph {
+    width: 95%;
+}
+
+.github_widgets {
+    padding: 10px;
+    text-align: center;
+}
+
+.stats {
+    display: inline-block;
+    text-align: center;
+}
+
+.langs {
+    display: inline-block;
+}
+
+/* サイドペイン */
+.side_pain {
+    margin: 0 2%;
+}
+
+.tweet_timeline_field {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* レスポンシブ */
+@media (max-width: 1550px) {
+    .side_pain {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (max-width: 991px) {
+    .github_widgets {
+        text-align: left;
+    }
+
+    .stats img {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile_text {
+        width: 70%;
+    }
+}
+
+@media (max-width: 425px) {
+    .content_item {
+        padding-left: 5px;
+        display: block;
+    }
+
+    .profile_text,
+    .community_text {
+        padding-top: 0;
+        padding-left: 3px;
+        width: 100%;
+    }
+}
