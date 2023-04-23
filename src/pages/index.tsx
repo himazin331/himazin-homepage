@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
@@ -151,10 +152,14 @@ const Index: NextPage = () => {
                 </div>
                 <div className={`${style.github_widgets} col-lg col-sm`}>
                   <div className={`${style.stats} stats`}>
+                    {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" />
+                    {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" alt="github stats" width={717} height={112} /> */}
                   </div>
                   <div className={`${style.langs} langs`}>
+                    {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" />
+                    {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" alt="github langs" width={717} height={112} /> */}
                   </div>
                 </div>
               </div>
@@ -180,7 +185,7 @@ const Index: NextPage = () => {
       </div>
 
       {/* <!-- Bootstrap JavaScript --> */}
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous"></Script>
     </>
   );
 };
