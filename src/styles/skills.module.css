@@ -1,0 +1,57 @@
+/** スキルページCSS */
+
+/* レスポンシブ */
+@media (max-width: 800px)
+{
+    .card {
+        width: 40%;
+    }
+}
+
+/* 保有資格/合格試験 */
+.cert_list {
+    list-style-type: square;
+}
+
+/* 経歴/経験 */
+.timeline {
+    list-style-type: none;
+    position: relative;
+}
+.timeline:before {
+    content: ' ';
+    background: rgb(53, 57, 59);
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    top: 5px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+
+.timeline li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+.timeline li:before {
+    content: ' ';
+    background: rgb(88, 96, 100);
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid rgb(62, 68, 70);
+    margin-top: 5px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+.timeline_title {
+    font-weight: bold;
+    font-size: 20px;
+}
+.timeline_time {
+    margin-left: 5px;
+}
