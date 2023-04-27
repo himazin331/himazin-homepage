@@ -24,106 +24,31 @@ const Portfolio: NextPage = () => {
                 badge="開発中" title="ワークアウト管理アプリ" keywords={["WebApp", "Database"]} 
                 sentence="自由性が高く簡単にワークアウトメニューや摂取カロリーを記録できるワークアウト管理アプリ。"
                 href="#portfolio8_md" />
-
-
-    
-              {/* <!-- Hexapod --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio7_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/7-1.jpg" alt="Hexapod" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">Hexapod</h5><span className="badge bg-info text-light">開発中</span>
-                    <h6 className="keyword">Hardware, IoT, WebApp</h6>
-                    <p className="card-text">６本の脚があり計18個のサーボモータを搭載するロボット。</p>
-
-                    <button className="btn" data-bs-toggle="modal" data-bs-target="#portfolio7_md">More</button>
-                  </div>
-                </div>
-              </div>
-    
-              {/* <!-- 歩容認証 --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio6_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/6-1.png" alt="歩容認証技術" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">ポーズ推定モデルを活用した歩容認証技術の実装</h5>
-                    <h6 className="keyword">Machine/DeepLearning</h6>
-                    <p className="card-text">ポーズ推定モデルを用いて歩容認証を実装してみる。</p>
-
-                    <button className="btn" data-bs-toggle="modal" data-bs-target="#portfolio6_md">More</button>
-                  </div>
-                </div>
-              </div>
-    
-              {/* <!-- ホームページ --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio5_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/5-1.jpg" alt="ホームページ" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">ホームページ</h5><span className="badge bg-info text-light">制作中</span>
-                    <h6 className="keyword">WebSite</h6>
-                    <p className="card-text">いまあなたがアクセスして閲覧しているこのページ。<br />自作ブログも開設予定。</p>
-
-                    <button className="btn portfolio-btn" data-bs-toggle="modal" data-bs-target="#portfolio5_md">More</button>
-                  </div>
-                </div>
-              </div>
-  
-              {/* <!-- スマートロック --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio4_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/4-1.jpg" alt="スマートロック" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">セキュアなスマートロック</h5>
-                    <h6 className="keyword">Hardware, IoT, AI, WebApp</h6>
-                    <p className="card-text">２要素認証による解錠とWebアプリを通じて遠隔から施錠/解錠ができるスマートロック。</p>
-
-                    <button className="btn portfolio-btn" data-bs-toggle="modal" data-bs-target="#portfolio4_md">More</button>
-                  </div>
-                </div>
-              </div>
-  
-              {/* <!-- 匿名掲示板サイト --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio3_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/3-1.jpg" alt="掲示板サイト" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">エンジニア向け<br />匿名掲示板サイト</h5>
-                    <h6 className="keyword">WebApp, Database</h6>
-                    <p className="card-text">マークダウン記法による投稿が可能な匿名掲示板サイト。スレッド作成機能やタグ機能も装備。</p>
-
-                    <button className="btn" data-bs-toggle="modal" data-bs-target="#portfolio3_md">More</button>
-                  </div>
-                </div>
-              </div>
-  
-              {/* <!-- フローチャート作成アプリ --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio2_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/2.jpg" alt="フローチャート作成アプリ" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">簡易的フローチャート<br />作成アプリ</h5>
-                    <h6 className="keyword">GUIApp</h6>
-                    <p className="card-text">簡易的なフローチャートを作成することができるアプリ。ファイル保存機能やオブジェクトの自動整列機能など装備。</p>
-
-                    <button disabled className="btn" data-bs-toggle="modal" data-bs-target="#portfolio2_md">No details</button>
-                  </div>
-                </div>
-              </div>
-  
-              {/* <!-- 採譜支援アプリ --> */}
-              <div className="col-md">
-                <div className="card h-100">
-                  <a href="#portfolio1_md" data-bs-toggle="modal"><Image className="card-img-top" src="/images/portfolio/noimage.jpg" alt="採譜支援アプリ" width={286} height={160} /></a>
-                  <div className="card-body">
-                    <h5 className="card-title">採譜支援アプリ</h5>
-                    <h6 className="keyword">CLIApp</h6>
-                    <p className="card-text">.wavに対してFFTを用いて周波数を導き出し、対応した音階を出力し採譜(いわゆる耳コピ)を支援。</p>
-
-                    <button disabled className="btn" data-bs-toggle="modal" data-bs-target="#portfolio1_md">No details</button>
-                  </div>
-                </div>
-              </div>
+              <PortfolioCard image_path="/images/portfolio/7-1.jpg" image_alt="Hexapod" 
+                badge="開発中" title="Hexapod" keywords={["Hardware", "IoT", "WebApp"]} 
+                sentence="６本の脚があり計18個のサーボモータを搭載するロボット。"
+                href="#portfolio7_md" />
+              <PortfolioCard image_path="/images/portfolio/6-1.png" image_alt="歩容認証技術" 
+                title="ポーズ推定モデルを活用した歩容認証技術の実装" keywords={["Machine/DeepLearning"]} 
+                sentence="ポーズ推定モデルを用いて歩容認証を実装してみる。"
+                href="#portfolio6_md" />
+              <PortfolioCard image_path="/images/portfolio/5-1.jpg" image_alt="ホームページ" 
+                title="ホームページ" keywords={["WebSite"]} 
+                sentence="いまあなたがアクセスして閲覧しているこのページ。自作ブログも開設予定。"
+                href="#portfolio5_md" />
+              <PortfolioCard image_path="/images/portfolio/4-1.jpg" image_alt="スマートロック" 
+                title="セキュアなスマートロック" keywords={["Hardware", "IoT", "AI", "WebApp"]} 
+                sentence="２要素認証による解錠とWebアプリを通じて遠隔から施錠/解錠ができるスマートロック。"
+                href="#portfolio4_md" />
+              <PortfolioCard image_path="/images/portfolio/3-1.jpg" image_alt="掲示板サイト" 
+                title="エンジニア向け匿名掲示板" keywords={["WebApp", "Database"]} 
+                sentence="マークダウン記法による投稿が可能な匿名掲示板サイト。スレッド作成機能やタグ機能も装備。"
+                href="#portfolio3_md" />
+              <PortfolioCard image_path="/images/portfolio/2.jpg" image_alt="フローチャート作成アプリ" 
+                title="簡易的フローチャート作成アプリ" keywords={["GUIApp"]} 
+                sentence="簡易的なフローチャートを作成することができるアプリ。ファイル保存機能やオブジェクトの自動整列機能など装備。"/>
+              <PortfolioCard title="採譜支援アプリ" keywords={["CLIApp"]} 
+                sentence=".wavに対してFFTを用いて周波数を導き出し、対応した音階を出力し採譜(いわゆる耳コピ)を支援。"/>
             </div>
           </div>
         </div>

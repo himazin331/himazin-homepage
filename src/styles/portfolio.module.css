@@ -1,0 +1,95 @@
+/** ボートフォリオページCSS */
+
+.col-md{
+    margin-bottom: 15px;
+    min-width: 20rem;
+}
+
+.card {
+    animation-name: fadein2;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+.card-body {
+    min-height: 201px;
+}
+.card-title {
+    display: inline;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.badge {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.bg-info {
+    font-weight: bold;
+    color:var(--content-bg-color)!important;
+    background-color: var(--accent-color) !important;
+}
+
+.btn {
+    background-color: rgba(24, 26, 27, 0.75);
+}
+@media (hover: hover) {  /* PC */
+    .btn:hover{
+        color: var(--primary-text-color);
+        background-color: rgba(24, 26, 27, 0.5);
+    }
+}
+@media (hover: none) {  /* モバイル */
+    .btn:active{
+        color: var(--primary-text-color);
+        background-color: rgba(24, 26, 27, 0.5);
+    }
+}
+
+.carousel {
+    width: 80%;
+}
+
+.modal-content {
+    background-color: var(--content-bg-color);
+}
+
+.portfolio-field {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.portfolio-item {
+    display: flex;
+}
+.portfolio-subject {
+    flex: 1;
+    font-weight: bold;
+}
+.portfolio-sentence {
+    width: 80%;
+    text-align: left;
+}
+
+/* レスポンシブ */
+@media (max-width: 750px)
+{
+    .col-md{
+        max-width: none;
+    }
+}
+
+@media (max-width: 425px)
+{
+    .portfolio-item {
+        padding-left: 5px;
+        margin: 0px 0px;
+        display: block;
+    }
+    .portfolio-subject {
+        flex: none;
+    }
+    .portfolio-sentence{
+        width: 100%;
+    }
+}
