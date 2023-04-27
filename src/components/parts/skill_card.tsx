@@ -14,7 +14,7 @@ const SkillCard: NextPage<SkillCardProps> = ({image_path, image_alt, skill_name}
   return (
     <div className={`${style.card} card`}>
       {image_path ? 
-        (<Image className="bd-placeholder-img card-img-top" src={image_path} alt={image_alt} width={288} height={110} />)
+        (<Image className="bd-placeholder-img card-img-top" src={image_path} alt={image_alt || ""} width={288} height={110} />)
         :
         (<></>)
       }
