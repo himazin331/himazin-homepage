@@ -3,7 +3,9 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Script from "next/script";
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
@@ -13,9 +15,9 @@ const Index: NextPage = () => {
     <>
       <Head origin_url={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
-        <div className={`${style.container_fluid} container-fluid justify-content-center row`}>
+        <Container className={style.content_field + ` justify-content-center row`} fluid>
           {/* <!-- メイン --> */}
-          <div className="main-pain col-auto">
+          <Col className="main-pain" xs="auto">
             {/* <!-- メインimage --> */}
             <Image className="img-fluid mx-auto d-block top-img" src="/images/profile_picture.png" alt="プロフィール画像" width={256} height={256} />
             
@@ -139,7 +141,7 @@ const Index: NextPage = () => {
                 <div className={`${style.community_caption_field} d-sm-flex align-items-center`}>
                   <span className={style.community_caption_text}>Qiita</span>
                 </div>
-                <span className={`${style.community_text} community-text d-sm-inline`}><a href="https://qiita.com/hima_zin331" target="_blank" rel="noopener noreferrer">@hima_zin331</a></span>
+                <span className={style.community_text}><a href="https://qiita.com/hima_zin331" target="_blank" rel="noopener noreferrer">@hima_zin331</a></span>
               </div>
             </div>
 
@@ -148,28 +150,28 @@ const Index: NextPage = () => {
               <h2 className="content-head-text">Activity</h2>
 
               {/* <!-- Contributors --> */}
-              <div className={`${style.card} card`}>
+              <Card className={style.card}>
                 <div className={style.github_contributors} id="github_contributors">
                   <Image className={style.grass_graph} src="/images/grass_graph.png" alt="github contributes" width={717} height={112} style={{width: "98%", height: "auto"}} />
                 </div>
-                <div className={`${style.github_widgets} col-lg col-sm`}>
-                  <div className={`${style.stats} stats`}>
+                <Col className={style.github_widgets}>
+                  <div className={style.stats}>
                     {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" />
                     {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" alt="github stats" width={717} height={112} /> */}
                   </div>
-                  <div className={`${style.langs} langs`}>
+                  <div className={style.langs}>
                     {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" />
                     {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" alt="github langs" width={717} height={112} /> */}
                   </div>
-                </div>
-              </div>
+                </Col>
+              </Card>
             </div>
-          </div>
+          </Col>
 
           {/* <!-- サイド --> */}
-          <div className={`${style.side_pain} col-2`}>
+          <Col className={style.side_pain} md="2">
             {/* <!-- タイムライン --> */}
             <div className={style.tweet_timeline_field}>
               <div className="d-none d-sm-block">
@@ -180,14 +182,11 @@ const Index: NextPage = () => {
               </div>
               <script src="https://platform.twitter.com/widgets.js" defer></script>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Container>
 
         <Footer />
       </div>
-
-      {/* <!-- Bootstrap JavaScript --> */}
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous"></Script>
     </>
   );
 };

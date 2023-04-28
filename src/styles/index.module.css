@@ -74,6 +74,10 @@
     text-align: center;
 }
 
+.stats img {
+    margin-bottom: 90px;
+}
+
 .langs {
     display: inline-block;
 }
@@ -93,6 +97,16 @@
 @media (max-width: 1550px) {
     .side_pain {
         width: 100%;
+    }
+}
+
+@media (max-width: 1140px) {
+    .github_widgets {
+        text-align: left;
+    }
+    
+    .stats img {
+        margin-bottom: 5px;
     }
 }
 

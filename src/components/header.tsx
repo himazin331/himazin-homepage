@@ -3,6 +3,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 interface HeaderProps {
   pathname: string;
@@ -11,26 +13,22 @@ interface HeaderProps {
 const Header: NextPage<HeaderProps> = ({ pathname }) => {
   return (
     <header className="sticky-top">
-      <nav className="navbar navbar-expand-lg navbar-dark">
-        <Link className="navbar-brand" href="/" passHref>
-          <Image className="navbar-brand-img" src="/images/header_picture.png" alt="himazin331" 
+      <Navbar className="header_navbar navbar-dark" expand="lg">
+        <Navbar.Brand href="/" as={Link}>
+          <Image src="/images/header_picture.png" alt="himazin331" 
             width={500} height={43} style={{objectFit: "contain"}} />
-        </Link>
+        </Navbar.Brand>
     
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-    
-        <div className="collapse navbar-collapse justify-content-end" id="navbar">
-          <div className="navbar-nav text-center">
-            <Link className={"nav-item nav-link " + (pathname === "/" ? "active" : "")} href="/">Home</Link>
-            <Link className={"nav-item nav-link " + (pathname === "/blog" ? "active" : "")} href="/blog">Blog</Link>
-            <Link className={"nav-item nav-link " + (pathname === "/skills" ? "active" : "")} href="/skills">Skills</Link>
-            <Link className={"nav-item nav-link " + (pathname === "/portfolio" ? "active" : "")} href="/portfolio">Portfolio</Link>
-          </div>
-        </div>
-      </nav>
+        <Navbar.Toggle aria-controls="navbar" label="Toggle navigation" />
+        <Navbar.Collapse className="justify-content-end" id="navbar">
+          <Nav className="text-center">
+            <Nav.Link active={pathname === "/"} href="/" as={Link}>Home</Nav.Link>
+            <Nav.Link active={pathname === "/blog"} href="/blog" as={Link}>Blog</Nav.Link>
+            <Nav.Link active={pathname === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
+            <Nav.Link active={pathname === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 };

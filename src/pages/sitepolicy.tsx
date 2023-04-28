@@ -2,7 +2,7 @@
 
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import Script from "next/script";
+import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 
@@ -11,7 +11,7 @@ const Sitepolicy: NextPage = () => {
     <>
       <Head title="Sitepolicy" origin_url={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
-        <div className="container">
+        <Container>
           <div className="content-field" style={{paddingTop: "30px"}}>
             <h1>サイトポリシー</h1>
             <hr />
@@ -50,13 +50,10 @@ const Sitepolicy: NextPage = () => {
               初出掲載：2021年10月19日
             </p>
           </div>
-        </div>
+        </Container>
 
         <Footer />
       </div>
-
-      {/* <!-- Bootstrap JavaScript --> */}
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous"></Script>
     </>
   );
 };
