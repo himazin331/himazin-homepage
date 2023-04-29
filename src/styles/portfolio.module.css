@@ -1,31 +1,24 @@
 /** ボートフォリオページCSS */
 
-.col-md{
+.portfolio_card{
     margin-bottom: 15px;
     min-width: 20rem;
 }
 
-.card {
-    animation-name: fadein2;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-}
-.card-body {
+.portfolio_card_body {
     min-height: 201px;
 }
-.card-title {
+.portfolio_card_title {
     display: inline;
     font-weight: bold;
     margin-bottom: 0px;
 }
-.badge {
+.portfolio_card_badge {
     margin-left: 5px;
     font-size: 14px;
     font-weight: normal;
 }
-.bg-info {
+.portfolio_card_badge_info {
     font-weight: bold;
     color:var(--content-bg-color)!important;
     background-color: var(--accent-color) !important;
@@ -74,7 +67,7 @@
 /* レスポンシブ */
 @media (max-width: 750px)
 {
-    .col-md{
+    .portfolio_card{
         max-width: none;
     }
 }
