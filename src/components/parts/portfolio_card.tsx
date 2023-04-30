@@ -14,20 +14,26 @@ interface PortfolioCardProps {
   title: string;
   keywords: string[];
   sentence: string;
-  href?: string;
+  href_idx?: string;
 }
 
-const PortfolioCard: NextPage<PortfolioCardProps> = ({image_path, image_alt, badge, title, keywords, sentence, href}) => {
+const PortfolioCard: NextPage<PortfolioCardProps> = ({image_path, image_alt, badge, title, keywords, sentence, href_idx}) => {
   if (image_path === undefined) {
     image_path = "/images/portfolio/noimage.jpg";
   }
+  if (!Array.isArray(keywords)) {
+    keywords = [keywords];
+  }
   let button_text: string = "More";
-  if (href === undefined) {
+  let href: string = "";
+  if (href_idx === undefined) {
     button_text = "No details";
+  } else {
+    href = "#portfolio"+ href_idx + "_md";
   }
 
   return (
-    <Col className={style.portfolio_card} md="4">
+    <Col className={style.portfolio_card} md="2" sm="2">
       <Card className="h-100">
         <a href={href} data-bs-toggle="modal"><Image className="card-img-top" src={image_path} alt={image_alt || "no-image"} width={286} height={160} /></a>
         <Card.Body className={style.portfolio_card_body}>

@@ -1,13 +1,11 @@
 /* ポートフォリオページ */
 
 import type { NextPage } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import PortfolioCard from "@/components/parts/portfolio_card";
-import style from "@/styles/portfolio.module.css";
+import PortfolioModal from "@/components/parts/portfolio_modal";
 
 const Portfolio: NextPage = () => {
   return (
@@ -19,31 +17,31 @@ const Portfolio: NextPage = () => {
 
           {/* <!-- プロダクト一覧 --> */}
           <div className="content-field">
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-center">
               <PortfolioCard image_path="/images/portfolio/8-1.png" image_alt="ワークアウト管理アプリ" 
                 badge="開発中" title="ワークアウト管理アプリ" keywords={["WebApp", "Database"]} 
                 sentence="自由性が高く簡単にワークアウトメニューや摂取カロリーを記録できるワークアウト管理アプリ。"
-                href="#portfolio8_md" />
+                href_idx="8" />
               <PortfolioCard image_path="/images/portfolio/7-1.jpg" image_alt="Hexapod" 
                 badge="開発中" title="Hexapod" keywords={["Hardware", "IoT", "WebApp"]} 
                 sentence="６本の脚があり計18個のサーボモータを搭載するロボット。"
-                href="#portfolio7_md" />
+                href_idx="7" />
               <PortfolioCard image_path="/images/portfolio/6-1.png" image_alt="歩容認証技術" 
                 title="ポーズ推定モデルを活用した歩容認証技術の実装" keywords={["Machine/DeepLearning"]} 
                 sentence="ポーズ推定モデルを用いて歩容認証を実装してみる。"
-                href="#portfolio6_md" />
+                href_idx="6" />
               <PortfolioCard image_path="/images/portfolio/5-1.jpg" image_alt="ホームページ" 
                 title="ホームページ" keywords={["WebSite"]} 
                 sentence="いまあなたがアクセスして閲覧しているこのページ。自作ブログも開設予定。"
-                href="#portfolio5_md" />
+                href_idx="5" />
               <PortfolioCard image_path="/images/portfolio/4-1.jpg" image_alt="スマートロック" 
                 title="セキュアなスマートロック" keywords={["Hardware", "IoT", "AI", "WebApp"]} 
                 sentence="２要素認証による解錠とWebアプリを通じて遠隔から施錠/解錠ができるスマートロック。"
-                href="#portfolio4_md" />
+                href_idx="4" />
               <PortfolioCard image_path="/images/portfolio/3-1.jpg" image_alt="掲示板サイト" 
                 title="エンジニア向け匿名掲示板" keywords={["WebApp", "Database"]} 
                 sentence="マークダウン記法による投稿が可能な匿名掲示板サイト。スレッド作成機能やタグ機能も装備。"
-                href="#portfolio3_md" />
+                href_idx="3" />
               <PortfolioCard image_path="/images/portfolio/2.jpg" image_alt="フローチャート作成アプリ" 
                 title="簡易的フローチャート作成アプリ" keywords={["GUIApp"]} 
                 sentence="簡易的なフローチャートを作成することができるアプリ。ファイル保存機能やオブジェクトの自動整列機能など装備。"/>
@@ -56,106 +54,11 @@ const Portfolio: NextPage = () => {
         {/* <!--
           プロダクト詳細
         --> */}
-      
-        {/* <!-- ワークアウト管理アプリ詳細 --> */}
-        <div className="modal fade" id="portfolio8_md" tabIndex={-1} role="dialog" aria-labelledby="portfolio8_md_TT" aria-hidden="true">
-          <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
-            <div className="modal-content">
-              {/* <!-- タイトル --> */}
-              <div className="modal-header">
-                <h5 className="modal-title" id="portfolio8_md_TT">ワークアウト管理アプリ<span className="badge bg-info text-light">開発中</span><br /><span style={{fontSize: "15.43px"}}>WebApp, Database</span></h5>
-                <button className="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-        
-              <div className="modal-body">
-                {/* <!-- 画像 --> */}
-                <div className="carousel carousel-fade carousel-dark slide mx-auto" id="carouselIndicators8" data-bs-ride="carousel" data-bs-interval="false">
-                  <ol className="carousel-indicators">
-                    <li className="active" data-bs-target="#carouselIndicators8" data-bs-slide-to="0"></li>
-                    <li data-bs-target="#carouselIndicators8" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselIndicators8" data-bs-slide-to="2"></li>
-                  </ol>
-        
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img className="d-block w-100" src="images/portfolio/8-1.png" alt="ダッシュボード" />
-                    </div>
-                    <div className="carousel-item">
-                      <img className="d-block w-100" src="images/portfolio/8-2.png" alt="記録ページ" />
-                    </div>
-                    <div className="carousel-item">
-                      <img className="d-block w-100" src="images/portfolio/8-3.png" alt="記録閲覧ページ" />
-                    </div>
-                  </div>
-        
-                  <a className="carousel-control-prev" href="#carouselIndicators8" role="button" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                  <a className="carousel-control-next" href="#carouselIndicators8" role="button" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                  </a>
-                </div>
-        
-                {/* <!-- 内容 --> */}
-                <div className="portfolio-field">
-                  <div className="portfolio-item">
-                    <div className="portfolio-subject">
-                      <span>概　　要:</span>
-                    </div>
-                    <p className="portfolio-sentence">高い自由性で簡単にワークアウト管理を行えるWebアプリ</p>
-                  </div>
-                  <div className="portfolio-item">
-                    <div className="portfolio-subject">
-                      <span>開発期間:</span>
-                    </div>
-                    <p className="portfolio-sentence">現行 (個人開発)</p>
-                  </div>
-                  <div className="portfolio-item">
-                    <div className="portfolio-subject">
-                      <span>開発環境:</span>
-                    </div>
-                    <p className="portfolio-sentence">HTML5/CSS, Javascript, PHP, SQL<br />Nginx, Laravel, Bootstrap, MySQL, Amazon S3</p>
-                  </div>
-                  <div className="portfolio-item">
-                    <div className="portfolio-subject">
-                      <span>U　R　L :</span>
-                    </div>
-                    <p className="portfolio-sentence">
-                      <a href="https://github.com/himazin331/WorkoutManagement" target="_blank" rel="noopener noreferrer">GitHub</a><br />
-                      <a href="https://esxi.himazin331.com" target="_blank" rel="noopener noreferrer">Webアプリ(予告なく非公開になる可能性があります)</a><br />
-                    </p>
-                  </div>
-                  <div className="portfolio-item">
-                    <div className="portfolio-subject">
-                      <span>詳　　細:</span>
-                    </div>
-                    <p className="portfolio-sentence">
-                      このWebアプリは、１日のトレーニングメニューや摂取カロリー、画像の記録が行えるアプリとなっています。<br />
-                      アップロードした画像はAmazon S3にアップロードされ、Webアプリ上で閲覧が可能です。<br />
-                      簡単な操作性と高い自由性を求めて開発しました。
-                      また、このWebアプリの開発にあたり、インフラからフロント、バックまで全て私１人で開発しました。
-                      <br /><br />
-                      <span style={{fontWeight: "bold"}}>動作デモが可能です</span><br />
-                      テストユーザID：testuser1<br />
-                      テストユーザPW：password<br />
-        
-                      ※未完成により動作が不安定なところがあります。<br />
-                      ※このWebアプリのインフラ環境が、自宅サーバと加入データセンターから貸与されたグローバルIPアドレスを用いており、サーバ、ネットワーク共にすべてオンプレミスとなっています。<br />
-                      そのため、サーバやネットワークに高い負荷をかけるような行為はしないようお願いいたします。<br />
-                    </p>
-                  </div>
-                </div>
-              </div>
-        
-              {/* <!-- 閉じるボタン --> */}
-              <div className="modal-footer">
-                <button className="btn" type="button" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <PortfolioModal image_paths={["path"]} image_alts={["alt"]} badge="開発中" title="テスト"
+          keywords={["keyword"]} overview="overview" dev_period="a" dev_env="d" url={["u"]} url_name={["h"]}
+          sentence="hoge" href_idx="8"/>
+
         
         {/* <!-- Hexapod詳細 --> */}
         <div className="modal fade" id="portfolio7_md" tabIndex={-1} role="dialog" aria-labelledby="portfolio7_md_TT" aria-hidden="true">
