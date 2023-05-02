@@ -2,14 +2,16 @@
 
 import type { NextPage } from "next";
 import Head from "next/head";
+import type {Thumbnail} from "@/types/blog";
 
 interface CustomHeadProps {
   title?: string;
   description?: string;
+  og_image?: Thumbnail;
   origin_url: string;
 }
 
-const CustomHead: NextPage<CustomHeadProps> = ({ title, description, origin_url }) => {
+const CustomHead: NextPage<CustomHeadProps> = ({ title, description, og_image, origin_url }) => {
   const siteName: string = "himazin331's page";
   if (title === undefined) {
     title = siteName;
@@ -18,6 +20,12 @@ const CustomHead: NextPage<CustomHeadProps> = ({ title, description, origin_url 
   }
   if (description === undefined) {
     description = "ゆるゆるITエンジニアhimazin331の普通のホームページ";
+  }
+  let ogImageUrl: string;
+  if (og_image === undefined) {
+    ogImageUrl = "https://himazin331.com/images/favicon.ico";
+  } else {
+    ogImageUrl = og_image.url;
   }
 
   return (
@@ -31,7 +39,7 @@ const CustomHead: NextPage<CustomHeadProps> = ({ title, description, origin_url 
       <meta property="og:url" content={origin_url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://himazin331.com/images/favicon.ico" />
+      <meta property="og:image" content={ogImageUrl} />
       {/* <!-- facebook OGP --> */}
       <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_FB_ID || "fb_id_undefined"} />
       {/* <!-- twitter OGP --> */}
