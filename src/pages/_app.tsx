@@ -13,9 +13,6 @@ const Homepage: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-          {/* Icons */}
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
           {/* Bootstrap CSS */}
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossOrigin="anonymous" />
       </Head>

@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { MdPerson, MdCake, MdOutlineLaptopWindows, MdArticle, 
+        MdAssignmentInd, MdLocationPin, MdEmail, MdWork, MdFavorite } from "react-icons/md";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
@@ -28,7 +30,7 @@ const Index: NextPage = () => {
               {/* <!-- ニックネーム --> */}
               <div className={style.content_item}>
                 <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                  <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="ニックネーム">person</span>
+                  <MdPerson className={style.material_icons_md_36_light} />
                   <span className={style.profile_caption_text}>Nickname</span>
                 </div>
                 <p className={style.profile_text}>himazin331</p>
@@ -36,7 +38,7 @@ const Index: NextPage = () => {
               {/* <!-- 誕生日 --> */}
               <div className={style.content_item}>
                 <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                  <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="誕生日">cake</span>
+                  <MdCake className={style.material_icons_md_36_light} />
                   <span className={style.profile_caption_text}>Birthday</span>
                 </div>
                 <p className={style.profile_text}>2002 / 03 / 31</p>
@@ -44,7 +46,7 @@ const Index: NextPage = () => {
               {/* <!-- 趣味 --> */}
               <div className={style.content_item}>
                 <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                  <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="趣味">laptop</span>
+                  <MdOutlineLaptopWindows className={style.material_icons_md_36_light} />
                   <span className={style.profile_caption_text}>Favorite</span>
                 </div>
                 <p className={style.profile_text}>プログラミング,　電子工作,　技術的ななにか,　筋トレ</p>
@@ -52,7 +54,7 @@ const Index: NextPage = () => {
               {/* <!-- 説明 --> */}
               <div className={style.content_item}>
                 <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                  <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="説明">article</span>
+                  <MdArticle className={style.material_icons_md_36_light} />
                   <span className={style.profile_caption_text}>About</span>
                 </div>
                 <p className={style.profile_text}>
@@ -72,7 +74,7 @@ const Index: NextPage = () => {
                 {/* <!-- 名前 --> */}
                 <div className={style.content_item}>
                   <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                    <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="名前">assignment_ind</span>
+                    <MdAssignmentInd className={style.material_icons_md_36_light} />
                     <span className={style.profile_caption_text}>Name</span>
                   </div>
                   <p className={style.profile_text}>Yoshida Shion</p>
@@ -80,7 +82,7 @@ const Index: NextPage = () => {
                 {/* <!-- 居住地 --> */}
                 <div className={style.content_item}>
                   <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                    <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="居住地">location_on</span>
+                    <MdLocationPin className={style.material_icons_md_36_light} />
                     <span className={style.profile_caption_text}>Location</span>
                   </div>
                   <p className={style.profile_text}>Kanagawa, Japan</p>
@@ -88,7 +90,7 @@ const Index: NextPage = () => {
                 {/* <!-- メールアドレス --> */}
                 <div className={style.content_item}>
                   <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                    <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="メールアドレス">email</span>
+                    <MdEmail className={style.material_icons_md_36_light} />
                     <span className={style.profile_caption_text}>E-mail</span>
                   </div>
                   <p className={style.profile_text}>contact@himazin331.com</p>
@@ -96,7 +98,7 @@ const Index: NextPage = () => {
                 {/* <!-- 職業 --> */}
                 <div className={style.content_item}>
                   <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                    <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="職業">work</span>
+                    <MdWork className={style.material_icons_md_36_light} />
                     <span className={style.profile_caption_text}>Job</span>
                   </div>
                   <p className={style.profile_text}>独立系SIer ML/DL系</p>
@@ -104,7 +106,7 @@ const Index: NextPage = () => {
                 {/* <!-- 欲しい物リスト --> */}
                 <div className={style.content_item}>
                   <div className={`${style.profile_caption_field} d-flex align-items-center`}>
-                    <span className={`${style.material_icons_md_36_light} material-icons md-36-light`} alt="お気持ち">favorite</span>
+                    <MdFavorite className={style.material_icons_md_36_light} />
                     <span className={style.profile_caption_text}>Feelings</span>
                   </div>
                   <p className={style.profile_text}>
