@@ -23,7 +23,7 @@ const Header: NextPage<HeaderProps> = ({ pathname }) => {
         <Navbar.Collapse className="justify-content-end" id="navbar">
           <Nav className="text-center">
             <Nav.Link active={pathname === "/"} href="/" as={Link}>Home</Nav.Link>
-            <Nav.Link active={pathname === "/blog"} href="/blog" as={Link}>Blog</Nav.Link>
+            <Nav.Link active={pathname.indexOf("blog") !== -1} href="/blog" as={Link}>Blog</Nav.Link>
             <Nav.Link active={pathname === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
             <Nav.Link active={pathname === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
           </Nav>

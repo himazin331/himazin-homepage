@@ -1,0 +1,102 @@
+/** ブログCSS */
+
+.main_pain {
+    margin-top: 50px;
+}
+
+.top_field {
+    margin-bottom: 50px;
+}
+
+.blog_top_title {
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+/* 記事アイテム */
+.article_listitem {
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.thumbnail_img {
+    max-height: 200px;
+    width: 100%;
+}
+.thumbnail_img:hover {
+    filter: brightness(75%);
+}
+
+.article_title {
+    font-size: 20px;
+    margin: 0px;
+}
+.article_title_link, .sidebar_article_title_link {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+.article_title_link:hover, .sidebar_article_title_link:hover {
+    color: rgba(254, 231, 175, 0.75);;
+}
+
+.article_info_data, .article_info_link {
+    color: var(--primary-text-color);
+    vertical-align: middle;
+    margin: 5px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.article_info_link {
+    color: var(--accent-color);
+}
+.article_info_link:hover {
+    color: rgba(254, 231, 175, 0.75);
+}
+
+/* サイドバー */
+.sidebar {
+    min-width: 280px;
+    width: 20%;
+    margin-left: 5%;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.sidebar_header {
+    font-size: 20px;
+    border-bottom: 3px solid #00008b;
+}
+
+.sideba_-article_listitem {
+    margin-bottom: 20px;
+}
+
+.sidebar_article_title {
+    font-size: 15px;
+    margin: 0px;
+}
+
+/* @media (max-width: 992px)
+{
+    .main_pain { 
+        width: 60%;
+        min-width: 0px;
+    }
+    .sidebar {
+        width: 30%;
+        min-width: 0px;
+    }
+}
+@media (max-width: 768px)
+{
+    .main_pain { 
+        width: 100%;
+        min-width: 0px;
+    }
+    .sidebar {
+        width: 100%;
+        min-width: 0px;
+        margin-left: 0;
+    }
+} */
