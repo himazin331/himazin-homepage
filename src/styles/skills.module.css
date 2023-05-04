@@ -1,13 +1,5 @@
 /** スキルページCSS */
 
-/* レスポンシブ */
-@media (max-width: 800px)
-{
-    .card {
-        width: 40%;
-    }
-}
-
 /* 保有資格/合格試験 */
 .cert_list {
     list-style-type: square;
@@ -54,4 +46,12 @@
 }
 .timeline_time {
     margin-left: 5px;
+}
+
+/* レスポンシブ */
+@media (max-width: 800px)
+{
+    .card {
+        width: 40%;
+    }
 }

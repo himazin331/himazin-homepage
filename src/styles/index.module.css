@@ -1,11 +1,5 @@
 /** トップページCSS */
 
-.container_fluid {
-    padding: 0;
-    display: flex;
-    margin: 0 auto;
-}
-
 .content_field {
     margin: 20px 0;
 }

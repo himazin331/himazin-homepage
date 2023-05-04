@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 
-const Sitepolicy: NextPage = () => {
+const SitepolicyPage: NextPage = () => {
   return (
     <>
       <Head title="Sitepolicy" origin_url={"https://himazin331.com" + useRouter().pathname} />
@@ -57,4 +57,4 @@ const Sitepolicy: NextPage = () => {
     </>
   );
 };
-export default Sitepolicy;
+export default SitepolicyPage;

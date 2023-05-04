@@ -12,7 +12,7 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
 
-const Index: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Head origin_url={"https://himazin331.com" + useRouter().pathname} />
@@ -158,14 +158,10 @@ const Index: NextPage = () => {
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
-                    {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" />
-                    {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" alt="github stats" width={717} height={112} /> */}
                   </div>
                   <div className={style.langs}>
-                    {/* TODO 非推奨だが、next/imageで表示されないので一旦これで。 */}
                     <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" />
-                    {/* <Image className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" alt="github langs" width={717} height={112} /> */}
                   </div>
                 </Col>
               </Card>
@@ -192,4 +188,4 @@ const Index: NextPage = () => {
     </>
   );
 };
-export default Index;
+export default IndexPage;

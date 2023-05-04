@@ -8,7 +8,7 @@ import Head from "@/components/head";
 import SkillCard from "@/components/parts/skill_card";
 import style from "@/styles/skills.module.css";
 
-const Skills: NextPage = () => {
+const SkillsPage: NextPage = () => {
   return (
     <>
       <Head title="Skills" origin_url={"https://himazin331.com" + useRouter().pathname} />
@@ -121,4 +121,4 @@ const Skills: NextPage = () => {
     </>
   );
 };
-export default Skills;
+export default SkillsPage;
