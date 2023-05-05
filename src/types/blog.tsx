@@ -8,7 +8,7 @@ export type Blog = {
   genre: Genre;
   tags: Tags[];
   thumbnail: string;
-  body: string;
+  body: string[];
   thumbnail_img: Thumbnail;
   };
   
@@ -36,3 +36,22 @@ export type Thumbnail = {
   width: number;
 }
 
+export type BlogContentProps = {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+  blog: Blog;
+}
+
+export type BlogGenreContentProps = {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+}
+
+export type BlogTagContentProps = {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+  tag: Tags;
+}
