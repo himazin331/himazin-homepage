@@ -7,10 +7,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 interface HeaderProps {
-  pathname: string;
+  pathName: string;
 }
 
-const Header: NextPage<HeaderProps> = ({ pathname }) => {
+const Header: NextPage<HeaderProps> = ({ pathName }) => {
   return (
     <header className="sticky-top">
       <Navbar className="header_navbar navbar-dark" expand="lg">
@@ -22,10 +22,10 @@ const Header: NextPage<HeaderProps> = ({ pathname }) => {
         <Navbar.Toggle aria-controls="navbar" label="Toggle navigation" />
         <Navbar.Collapse className="justify-content-end" id="navbar">
           <Nav className="text-center">
-            <Nav.Link active={pathname === "/"} href="/" as={Link}>Home</Nav.Link>
-            <Nav.Link active={pathname.indexOf("blog") !== -1} href="/blog" as={Link}>Blog</Nav.Link>
-            <Nav.Link active={pathname === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
-            <Nav.Link active={pathname === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
+            <Nav.Link active={pathName === "/"} href="/" as={Link}>Home</Nav.Link>
+            <Nav.Link active={pathName.indexOf("blog") !== -1} href="/blog" as={Link}>Blog</Nav.Link>
+            <Nav.Link active={pathName === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
+            <Nav.Link active={pathName === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

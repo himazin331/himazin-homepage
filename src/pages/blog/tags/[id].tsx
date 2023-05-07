@@ -21,22 +21,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<any> = async (context) => {
-  const tag_id = context.params?.id as string;
+  const tagId = context.params?.id as string;
   const blog = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
-  let tag_filterd_blog: Blog[] = [];
+  let tagFilteredBlog: Blog[] = [];
   blog.contents.map((blogc: Blog) => {
-    if (blogc.tags.some(tag => tag.id === tag_id)) {
-      tag_filterd_blog.push(blogc);
+    if (blogc.tags.some(tag => tag.id === tagId)) {
+      tagFilteredBlog.push(blogc);
     }
   });
-  const tag = tags.contents.find(tag => tag.id === tag_id);
+  const tag = tags.contents.find(tag => tag.id === tagId);
 
   return {
     props: {
-      blogs: tag_filterd_blog,
+      blogs: tagFilteredBlog,
       genres: genres.contents,
       tags: tags.contents,
       tag: tag
@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps<any> = async (context) => {
 const BlogTagPage: NextPage<BlogTagContentProps> = ({ blogs, genres, tags, tag }) => {
   return (
     <>
-      <Head title={`タグ:${tag.tag}のブログ記事`} origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title={`タグ:${tag.tag}のブログ記事`} originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>
@@ -64,7 +64,7 @@ const BlogTagPage: NextPage<BlogTagContentProps> = ({ blogs, genres, tags, tag }
                 <hr />
                 <ArticleCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                   updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
-                  thumbnail_img={blog.thumbnail_img} />
+                  thumbnailImg={blog.thumbnail_img} />
               </>
             ))}
           </div>

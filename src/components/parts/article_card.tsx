@@ -17,11 +17,11 @@ interface ArticleCardProps {
   genre: Genre;
   tags: Tags[];
   thumbnail: string;
-  thumbnail_img: Thumbnail;
+  thumbnailImg: Thumbnail;
 }
 
 export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
-                                                  genre, tags, thumbnail, thumbnail_img}) => {
+                                                  genre, tags, thumbnail, thumbnailImg}) => {
   let date: Date;
   date = new Date(createdAt);
   createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
@@ -32,10 +32,10 @@ export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, u
     <Row className={style.article_listitem}>
       <Col md="4">
         <Link href={`/blog/${id}`} passHref>
-          {thumbnail_img === undefined?
+          {thumbnailImg === undefined?
             <Image className={style.thumbnail_img + ` img-fluid`} src="/images/noimage.jpg" alt="サムネイル画像" height="200" width="200" />
             :
-            <Image className={style.thumbnail_img + ` img-fluid`} src={thumbnail_img.url} alt="サムネイル画像" height={thumbnail_img.height} width={thumbnail_img.width} />
+            <Image className={style.thumbnail_img + ` img-fluid`} src={thumbnailImg.url} alt="サムネイル画像" height={thumbnailImg.height} width={thumbnailImg.width} />
           }
         </Link>
       </Col>
@@ -65,7 +65,7 @@ export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, u
 };
 
 export const ArticleMiniCard: NextPage<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
-                                                      genre, tags, thumbnail, thumbnail_img}) => {
+                                                      genre, tags, thumbnail, thumbnailImg}) => {
   let date: Date;
   date = new Date(createdAt);
   createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
@@ -76,10 +76,10 @@ export const ArticleMiniCard: NextPage<ArticleCardProps> = ({id, title, createdA
     <Row className={style.article_listitem}>
       <Col>
         <Link href={`/blog/${id}`} passHref>
-          {thumbnail_img === undefined?
+          {thumbnailImg === undefined?
             <Image className={style.thumbnail_img_mini + ` img-fluid`} src="/images/noimage.jpg" alt="サムネイル画像" height="200" width="200" />
           :
-            <Image className={style.thumbnail_img_mini + ` img-fluid`} src={thumbnail_img.url} alt="サムネイル画像" height={thumbnail_img.height} width={thumbnail_img.width} />
+            <Image className={style.thumbnail_img_mini + ` img-fluid`} src={thumbnailImg.url} alt="サムネイル画像" height={thumbnailImg.height} width={thumbnailImg.width} />
           }
         </Link>
 

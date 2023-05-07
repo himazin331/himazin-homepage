@@ -9,13 +9,13 @@ import Head from "@/components/head";
 const SitepolicyPage: NextPage = () => {
   return (
     <>
-      <Head title="Sitepolicy" origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Sitepolicy" originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container>
           <div className="content-field" style={{paddingTop: "30px"}}>
             <h1>サイトポリシー</h1>
             <hr />
-            <h3>アクセス解析ツールについて</h3>
+            <h2>アクセス解析ツールについて</h2>
             <p>
               当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。
               このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
@@ -24,14 +24,14 @@ const SitepolicyPage: NextPage = () => {
               この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>のページや<a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Googleポリシーと規約</a>ページをご覧ください。
             </p>
     
-            <h3>外部サイトのリンクについて</h3>
+            <h2>外部サイトのリンクについて</h2>
             <p>
               当サイトは、いくつかの外部サイトへのリンクを含みますが、個人情報を共有するものではありません。<br />
               リンク先サイトにて行われる個人情報の収集に関しては、当サイトでは一切責任を負えませんので、
               リンク先サイトの個人情報の取扱内容を必ずご参照ください。
             </p>
     
-            <h3>免責事項</h3>
+            <h2>免責事項</h2>
             <p>
               当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属いたします。権利を侵害する目的ではございません。<br />
               内容や掲載画像等に問題がございましたら、各権利所有者本人様が直接メールにてご連絡ください。

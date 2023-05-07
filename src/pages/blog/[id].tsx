@@ -34,12 +34,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
-  const blog_id = context.params?.id as string;
+  const blogId = context.params?.id as string;
   const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
-  const blog = blogs.contents.find(blog => blog.id === blog_id);
+  const blog = blogs.contents.find(blog => blog.id === blogId);
 
   return {
     props: {
@@ -52,16 +52,16 @@ export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
 };
 
 // シンタックスハイライト処理
-const highlight_contents = (language: string, sourceCode: string, file_name?: string) => {
+const highlight_contents = (language: string, sourceCode: string, fileName?: string) => {
   let content = "";
   if (!LANGUAGES.includes(language)) {
     return;
   }
 
-  if (file_name === undefined) {
+  if (fileName === undefined) {
     content += `<pre class="lang-${language} line-numbers">`;
   } else {
-    content += `<pre class="lang-${language} line-numbers" data-label=${file_name}>`;
+    content += `<pre class="lang-${language} line-numbers" data-label=${fileName}>`;
   }
   content += `<code class="lang-${language}">`;
   sourceCode.split("<br><br>").forEach((lineOfsourceCode) => {
@@ -81,7 +81,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
 
   return (
     <>
-      <Head title={blog.title} og_image={blog.thumbnail_img} origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_article_field}>
@@ -140,7 +140,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
                 <>
                   <ArticleMiniCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
-                    thumbnail_img={blog.thumbnail_img} />
+                    thumbnailImg={blog.thumbnail_img} />
                   <hr />
                 </>
               ))}

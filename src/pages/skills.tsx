@@ -11,7 +11,7 @@ import style from "@/styles/skills.module.css";
 const SkillsPage: NextPage = () => {
   return (
     <>
-      <Head title="Skills" origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Skills" originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container>
           <h1 className="page-top-sentence">Skills</h1>
@@ -21,13 +21,13 @@ const SkillsPage: NextPage = () => {
             <h2 className="content-head-text">Programming Languages</h2>
     
             <div className="text-center">
-              <SkillCard image_path="/images/skills/1python.png" image_alt="Python3ロゴ" skill_name="Python3" />
-              <SkillCard image_path="/images/skills/2vbnet.png" image_alt="VB.NETロゴ" skill_name="VB.NET" />
-              <SkillCard image_path="/images/skills/3c.png" image_alt="Cロゴ" skill_name="C" />
-              <SkillCard image_path="/images/skills/4htmlcss.png" image_alt="HTML5/CSS3ロゴ" skill_name="HTML5/CSS3" />
-              <SkillCard image_path="/images/skills/5js.png" image_alt="JSロゴ" skill_name="JavaScript" />
-              <SkillCard image_path="/images/skills/6php.png" image_alt="PHPロゴ" skill_name="PHP" />
-              <SkillCard skill_name="TypeScript" />
+              <SkillCard imagePath="/images/skills/1python.png" imageAlt="Python3ロゴ" skillName="Python3" />
+              <SkillCard imagePath="/images/skills/2vbnet.png" imageAlt="VB.NETロゴ" skillName="VB.NET" />
+              <SkillCard imagePath="/images/skills/3c.png" imageAlt="Cロゴ" skillName="C" />
+              <SkillCard imagePath="/images/skills/4htmlcss.png" imageAlt="HTML5/CSS3ロゴ" skillName="HTML5/CSS3" />
+              <SkillCard imagePath="/images/skills/5js.png" imageAlt="JSロゴ" skillName="JavaScript" />
+              <SkillCard imagePath="/images/skills/6php.png" imageAlt="PHPロゴ" skillName="PHP" />
+              <SkillCard skillName="TypeScript" />
             </div>
           </div>
 
@@ -36,15 +36,15 @@ const SkillsPage: NextPage = () => {
             <h2 className="content-head-text">Framework</h2>
     
             <div className="text-center">
-              <SkillCard image_path="/images/skills/7tensorflow.png" image_alt="TensorFlowロゴ" skill_name="TensorFlow" />
-              <SkillCard image_path="/images/skills/8opencv.png" image_alt="OpenCVロゴ" skill_name="OpenCV" />
-              <SkillCard image_path="/images/skills/9selenium.png" image_alt="Seleniumロゴ" skill_name="Selenium" />
-              <SkillCard image_path="/images/skills/10jquery.png" image_alt="jQueryロゴ" skill_name="jQuery" />
-              <SkillCard image_path="/images/skills/11bootstrap.png" image_alt="Bootstrapロゴ" skill_name="Bootstrap" />
-              <SkillCard image_path="/images/skills/12laravel.png" image_alt="Laravelロゴ" skill_name="Laravel" />
-              <SkillCard skill_name="Flask" />
-              <SkillCard skill_name="PyQt(PySide2)" />
-              <SkillCard skill_name="React" />
+              <SkillCard imagePath="/images/skills/7tensorflow.png" imageAlt="TensorFlowロゴ" skillName="TensorFlow" />
+              <SkillCard imagePath="/images/skills/8opencv.png" imageAlt="OpenCVロゴ" skillName="OpenCV" />
+              <SkillCard imagePath="/images/skills/9selenium.png" imageAlt="Seleniumロゴ" skillName="Selenium" />
+              <SkillCard imagePath="/images/skills/10jquery.png" imageAlt="jQueryロゴ" skillName="jQuery" />
+              <SkillCard imagePath="/images/skills/11bootstrap.png" imageAlt="Bootstrapロゴ" skillName="Bootstrap" />
+              <SkillCard imagePath="/images/skills/12laravel.png" imageAlt="Laravelロゴ" skillName="Laravel" />
+              <SkillCard skillName="Flask" />
+              <SkillCard skillName="PyQt(PySide2)" />
+              <SkillCard skillName="React" />
             </div>
           </div>
       
@@ -53,17 +53,17 @@ const SkillsPage: NextPage = () => {
             <h2 className="content-head-text">Other</h2>
     
             <div className="text-center">
-              <SkillCard skill_name="MySQL" />
-              <SkillCard skill_name="Apache" />
-              <SkillCard skill_name="Nginx" />
-              <SkillCard skill_name="Azure" />
-              <SkillCard skill_name="AWS" />
-              <SkillCard skill_name="Git" />
-              <SkillCard skill_name="Arduino" />
-              <SkillCard skill_name="Fusion360" />
-              <SkillCard skill_name="Cisco" />
-              <SkillCard skill_name="VMware" />
-              <SkillCard skill_name="Next.js" />
+              <SkillCard skillName="MySQL" />
+              <SkillCard skillName="Apache" />
+              <SkillCard skillName="Nginx" />
+              <SkillCard skillName="Azure" />
+              <SkillCard skillName="AWS" />
+              <SkillCard skillName="Git" />
+              <SkillCard skillName="Arduino" />
+              <SkillCard skillName="Fusion360" />
+              <SkillCard skillName="Cisco" />
+              <SkillCard skillName="VMware" />
+              <SkillCard skillName="Next.js" />
             </div>
           </div>
 

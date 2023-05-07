@@ -15,7 +15,7 @@ import style from "@/styles/index.module.css";
 const IndexPage: NextPage = () => {
   return (
     <>
-      <Head origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container className={style.content_field + ` justify-content-center row`} fluid>
           {/* <!-- メイン --> */}
@@ -158,10 +158,10 @@ const IndexPage: NextPage = () => {
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
-                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" />
+                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" alt="GitHub Stats" />
                   </div>
                   <div className={style.langs}>
-                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" />
+                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" alt="GitHub langs" />
                   </div>
                 </Col>
               </Card>

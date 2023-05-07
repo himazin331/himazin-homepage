@@ -21,21 +21,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<any> = async (context) => {
-  const genre_id = context.params?.id as string;
+  const genreId = context.params?.id as string;
   const blog = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
-  let genre_filterd_blog: Blog[] = [];
+  let genreFilteredBlog: Blog[] = [];
   blog.contents.map((blogc: Blog) => {
-    if (blogc.genre.id === genre_id) {
-      genre_filterd_blog.push(blogc);
+    if (blogc.genre.id === genreId) {
+      genreFilteredBlog.push(blogc);
     }
   });
 
   return {
     props: {
-      blogs: genre_filterd_blog,
+      blogs: genreFilteredBlog,
       genres: genres.contents,
       tags: tags.contents
     },
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps<any> = async (context) => {
 const BlogGenrePage: NextPage<BlogGenreContentProps> = ({ blogs, genres, tags }) => {
   return (
     <>
-      <Head title={`ジャンル:${blogs[0].genre.genre}のブログ記事`} origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title={`ジャンル:${blogs[0].genre.genre}のブログ記事`} originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>
@@ -62,7 +62,7 @@ const BlogGenrePage: NextPage<BlogGenreContentProps> = ({ blogs, genres, tags })
                 <hr />
                 <ArticleCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                   updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
-                  thumbnail_img={blog.thumbnail_img} />
+                  thumbnailImg={blog.thumbnail_img} />
               </>
             ))}
           </div>

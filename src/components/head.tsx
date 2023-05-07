@@ -7,11 +7,11 @@ import type {Thumbnail} from "@/types/blog";
 interface CustomHeadProps {
   title?: string;
   description?: string;
-  og_image?: Thumbnail;
-  origin_url: string;
+  ogImage?: Thumbnail;
+  originUrl: string;
 }
 
-const CustomHead: NextPage<CustomHeadProps> = ({ title, description, og_image, origin_url }) => {
+const CustomHead: NextPage<CustomHeadProps> = ({ title, description, ogImage, originUrl }) => {
   const siteName: string = "himazin331's page";
   if (title === undefined) {
     title = siteName;
@@ -22,10 +22,10 @@ const CustomHead: NextPage<CustomHeadProps> = ({ title, description, og_image, o
     description = "ゆるゆるITエンジニアhimazin331の普通のホームページ";
   }
   let ogImageUrl: string;
-  if (og_image === undefined) {
+  if (ogImage === undefined) {
     ogImageUrl = "https://himazin331.com/images/favicon.ico";
   } else {
-    ogImageUrl = og_image.url;
+    ogImageUrl = ogImage.url;
   }
 
   return (
@@ -36,7 +36,7 @@ const CustomHead: NextPage<CustomHeadProps> = ({ title, description, og_image, o
       <meta property="og:type" content="website" /> 
       <meta property="og:locale" content="ja_JP" />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:url" content={origin_url} />
+      <meta property="og:url" content={originUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImageUrl} />

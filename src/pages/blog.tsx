@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags }) => {
   return (
     <>
-      <Head title="Blog" origin_url={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Blog" originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>
@@ -41,7 +41,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags }) => {
                 <hr />
                 <ArticleCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                   updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
-                  thumbnail_img={blog.thumbnail_img} />
+                  thumbnailImg={blog.thumbnail_img} />
               </>
             ))}
           </div>
