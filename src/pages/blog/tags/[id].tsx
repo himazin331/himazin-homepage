@@ -11,7 +11,7 @@ import Head from "@/components/head";
 import { ArticleCard } from "@/components/parts/article_card";
 import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
-import type { Blog, BlogTagContentProps, Genre } from "@/types/blog";
+import type { Blog, BlogTagContentProps, Genre, Tags } from "@/types/blog";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const genres = await microcms.get({ endpoint: "blog_tags" });
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<any> = async (context) => {
       tagFilteredBlog.push(blogc);
     }
   });
-  const tag = tags.contents.find(tag => tag.id === tagId);
+  const tag = tags.contents.find((tag: Tags) => tag.id === tagId);
 
   return {
     props: {

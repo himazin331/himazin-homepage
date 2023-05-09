@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
-  const blog = blogs.contents.find(blog => blog.id === blogId);
+  const blog = blogs.contents.find((blog: Blog) => blog.id === blogId);
 
   return {
     props: {
@@ -124,10 +124,9 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
                 />
               ) : body.fieldId === "code_block" ? (
                 <div
-                  className={style.article_body}
+                  className={style.article_body + `code-toolbar`}
                   key={index}
-                  code-toolbar
-                  dangerouslySetInnerHTML={{__html: highlight_contents(body.pg_language[0], body.code_block, body.file_name)}}
+                  dangerouslySetInnerHTML={{__html: highlight_contents(body.pg_language[0], body.code_block, body.file_name) || ""}}
                 />
               ) : null;
             })}
