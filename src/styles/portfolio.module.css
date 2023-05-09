@@ -5,19 +5,29 @@
     min-width: 20rem;
 }
 
+.portfolio_card_img {
+    cursor: pointer;
+}
+.portfolio_card_img:hover {
+    filter: brightness(50%);
+}
+
 .portfolio_card_body {
     min-height: 201px;
 }
+
 .portfolio_card_title {
     display: inline;
     font-weight: bold;
     margin-bottom: 0px;
 }
+
 .portfolio_card_badge {
     margin-left: 5px;
     font-size: 14px;
     font-weight: normal;
 }
+
 .portfolio_card_badge_info {
     font-weight: bold;
     color:var(--content-bg-color)!important;
@@ -25,41 +35,56 @@
 }
 
 .btn {
-    background-color: rgba(24, 26, 27, 0.75);
+    background-color: rgba(24, 26, 27, 0.5);
 }
 @media (hover: hover) {  /* PC */
     .btn:hover{
         color: var(--primary-text-color);
-        background-color: rgba(24, 26, 27, 0.5);
+        background-color: rgba(24, 26, 27, 0.75);
     }
 }
 @media (hover: none) {  /* モバイル */
     .btn:active{
         color: var(--primary-text-color);
-        background-color: rgba(24, 26, 27, 0.5);
+        background-color: rgba(24, 26, 27, 0.75);
     }
+}
+
+.modal_dialog {
+    margin: 0;
+}
+
+.modal_content {
+    background-color: var(--content-bg-color);
+}
+
+.modal_body {
+    max-height: calc(80vh - 20px);
+    overflow-y: auto;
+}
+
+.modal_keyword {
+    display: block;
+    font-size: 15.43px;
 }
 
 .carousel {
     width: 80%;
+    margin: 0 auto;
 }
 
-.modal-content {
-    background-color: var(--content-bg-color);
-}
-
-.portfolio-field {
+.portfolio_field {
     margin-top: 20px;
     margin-left: 10px;
 }
-.portfolio-item {
+.portfolio_item {
     display: flex;
 }
-.portfolio-subject {
+.portfolio_subject {
     flex: 1;
     font-weight: bold;
 }
-.portfolio-sentence {
+.portfolio_sentence {
     width: 80%;
     text-align: left;
 }
@@ -74,15 +99,15 @@
 
 @media (max-width: 425px)
 {
-    .portfolio-item {
+    .portfolio_item {
         padding-left: 5px;
         margin: 0px 0px;
         display: block;
     }
-    .portfolio-subject {
+    .portfolio_subject {
         flex: none;
     }
-    .portfolio-sentence{
+    .portfolio_sentence{
         width: 100%;
     }
 }

@@ -34,8 +34,19 @@ header {
     background-color: var(--secondary-bg-color);
 }
 
-.header_navbar {
+.header-navbar {
     padding: 8px 20px;
+}
+
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
 }
 
 /* main */
@@ -116,6 +127,49 @@ header {
 .btn:focus {
     box-shadow: none;
     color: var(--primary-text-color);
+}
+
+.modal-content {
+    border: none;
+}
+
+.modal-header .btn-close:focus {
+    box-shadow: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--primary-text-color);
+}
+
+.carousel-indicators button {
+    background-color: var(--border-color);
+    border-right-color: initial;
+    border-left-color: initial;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 5%;
 }
 
 /* Footer */
