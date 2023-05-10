@@ -178,7 +178,6 @@ const IndexPage: NextPage = () => {
               <div className="d-block d-sm-none">
                 <a className="twitter-timeline" id="twitter-timeline" href="https://twitter.com/himazin_shotaML?ref_src=twsrc%5Etfw" data-width="300" data-height="600" data-theme="dark" data-chrome="nofooter noscrollbar" data-lang="en">Tweets by himazin_shotaML</a>
               </div>
-              <script src="https://platform.twitter.com/widgets.js" defer></script>
             </div>
           </Col>
         </Container>
