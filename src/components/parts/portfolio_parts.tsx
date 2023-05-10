@@ -76,7 +76,8 @@ const PortfolioParts: NextPage<PortfolioPartsProps> = ({imagePaths, imageAlts, b
                 <Carousel className={style.carousel} variant="dark" interval={null} fade>
                   {imagePaths && imagePaths.map((imagePath: string, idx: number) => (
                     <Carousel.Item key={idx}>
-                      <img className="d-block w-100" src={`/images/portfolio/` + imagePath} alt={imageAlts? imageAlts[idx] : ""} />
+                      <Image className="next-image" src={`/images/portfolio/` + imagePath} alt={imageAlts? imageAlts[idx] : ""}
+                        width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     </Carousel.Item>
                   ))}
                 </Carousel>

@@ -154,7 +154,8 @@ const IndexPage: NextPage = () => {
               {/* <!-- Contributors --> */}
               <Card className={style.card}>
                 <div className={style.github_contributors} id="github_contributors">
-                  <Image className={style.grass_graph} src="/images/grass_graph.png" alt="github contributes" width={717} height={112} style={{width: "98%", height: "auto"}} />
+                  <Image className={style.grass_graph + ` next-image`} src="/images/grass_graph.png" alt="github contributes"
+                    width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
