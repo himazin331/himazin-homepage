@@ -13,7 +13,7 @@ interface HeaderProps {
 const Header: NextPage<HeaderProps> = ({ pathName }) => {
   return (
     <header className="sticky-top">
-      <Navbar className="header-navbar" variant="dark" expand="lg">
+      <Navbar className="header-navbar" variant="dark" expand="lg" collapseOnSelect>
         <Navbar.Brand href="/" as={Link}>
           <Image src="/images/header_picture.png" alt="himazin331" 
             width={500} height={43} style={{objectFit: "contain"}} />
