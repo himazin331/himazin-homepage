@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
-  const blog = blogs.contents.find((blog: Blog) => blog.id === blogId);
+  const blog: Blog = blogs.contents.find((blog: Blog) => blog.id === blogId);
 
   return {
     props: {
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
 
 // シンタックスハイライト処理
 const highlight_contents = (language: string, sourceCode: string, fileName?: string) => {
-  let content = "";
+  let content: string = "";
   if (!LANGUAGES.includes(language)) {
     return;
   }

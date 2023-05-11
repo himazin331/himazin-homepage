@@ -16,7 +16,7 @@ const SkillsPage: NextPage = () => {
         <Container>
           <h1 className="page-top-sentence">Skills</h1>
 
-          {/* <!-- 勉強したプログラミング言語 --> */}
+          {/* 勉強したプログラミング言語 */}
           <div className="content-field">
             <h2 className="content-head-text">Programming Languages</h2>
     
@@ -31,7 +31,7 @@ const SkillsPage: NextPage = () => {
             </div>
           </div>
 
-          {/* <!-- 勉強したフレームワーク --> */}
+          {/* 勉強したフレームワーク */}
           <div className="content-field">
             <h2 className="content-head-text">Framework</h2>
     
@@ -48,7 +48,7 @@ const SkillsPage: NextPage = () => {
             </div>
           </div>
       
-          {/* <!-- 勉強したミドルウェア等 --> */}
+          {/* 勉強したミドルウェア等 */}
           <div className="content-field">
             <h2 className="content-head-text">Other</h2>
     
@@ -67,7 +67,7 @@ const SkillsPage: NextPage = () => {
             </div>
           </div>
 
-          {/* <!-- 保有資格/合格試験 --> */}
+          {/* 保有資格/合格試験 */}
           <div className="content-field">
             <h2 className="content-head-text">Certifications</h2>
     
@@ -81,7 +81,7 @@ const SkillsPage: NextPage = () => {
           
           <br />
       
-          {/* <!-- 経歴/経験 --> */}
+          {/* 経歴/経験 */}
           <div className="content-field">
             <h2 className="content-head-text">Experiences</h2>
     

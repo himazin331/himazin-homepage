@@ -14,7 +14,7 @@ const Portfolio: NextPage = () => {
         <div className="container">
           <h1 className="page-top-sentence">Portfolio</h1>
 
-          {/* <!-- プロダクト一覧 --> */}
+          {/* プロダクト一覧 */}
           <div className="content-field">
             <div className="row justify-content-center">
               <PortfolioParts imagePaths={["8-1.png", "8-2.png", "8-3.png"]} 

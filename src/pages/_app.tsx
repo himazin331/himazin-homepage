@@ -15,6 +15,7 @@ declare global {
 
 const Homepage: NextPage<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
+  // Twitter埋め込みロードをレンダリング後に実行
   useEffect(
     () => {
       try {
@@ -35,7 +36,7 @@ const Homepage: NextPage<AppProps> = ({ Component, pageProps }) => {
       {/* Bootstrap JavaScript */}
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous" />
       {/* Twitter JavaScript */}
-      <Script src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
+      <Script src="https://platform.twitter.com/widgets.js" />
       <Header pathName={router.pathname} />
       <Component {...pageProps} />
     </>

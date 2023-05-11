@@ -22,10 +22,10 @@ const CustomHead: NextPage<CustomHeadProps> = ({ title, description, ogImage, or
     description = "ゆるゆるITエンジニアhimazin331の普通のホームページ";
   }
   let ogImageUrl: string;
-  if (ogImage === undefined) {
-    ogImageUrl = "https://himazin331.com/images/favicon.ico";
-  } else {
+  if (ogImage !== undefined) {
     ogImageUrl = ogImage.url;
+  } else {
+    ogImageUrl = "https://himazin331.com/images/favicon.ico";
   }
 
   return (

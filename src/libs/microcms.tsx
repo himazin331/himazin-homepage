@@ -1,3 +1,5 @@
+/* microCMS認証 */
+
 import { createClient } from "microcms-js-sdk";
 
 export const microcms = createClient({

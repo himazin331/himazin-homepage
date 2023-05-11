@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<any> = async (context) => {
       tagFilteredBlog.push(blogc);
     }
   });
-  const tag = tags.contents.find((tag: Tags) => tag.id === tagId);
+  const tag: Tags = tags.contents.find((tag: Tags) => tag.id === tagId);
 
   return {
     props: {

@@ -25,10 +25,6 @@
 .portfolio_card_badge {
     margin-left: 5px;
     font-size: 14px;
-    font-weight: normal;
-}
-
-.portfolio_card_badge_info {
     font-weight: bold;
     color:var(--content-bg-color)!important;
     background-color: var(--accent-color) !important;
@@ -92,7 +88,7 @@
 /* レスポンシブ */
 @media (max-width: 750px)
 {
-    .portfolio_card{
+    .portfolio_card {
         max-width: none;
     }
 }

@@ -1,4 +1,4 @@
-/* ポートフォリオモーダル */
+/* ポートフォリオカード&モーダル */
 
 import type { NextPage } from "next";
 import Image from "next/image";
@@ -64,7 +64,7 @@ const PortfolioParts: NextPage<PortfolioPartsProps> = ({imagePaths, imageAlts, b
                 <Modal.Title as="h5">
                   {title}
                   {badge ?
-                    (<Badge className={`${style.portfolio_card_badge} ${style.portfolio_card_badge_info}`}>{badge}</Badge>)
+                    (<Badge className={style.portfolio_card_badge}>{badge}</Badge>)
                     :
                     (<></>)
                   }
