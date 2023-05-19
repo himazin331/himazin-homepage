@@ -5,7 +5,8 @@ import type { NextPage } from "next";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { highlight, languages } from "prismjs";
+import Prism from "prismjs";
+import { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import { FaChevronLeft, FaFolder, FaPen, FaSyncAlt, FaTags } from "react-icons/fa";
 import Footer from "@/components/footer";
@@ -59,13 +60,13 @@ const highlight_contents = (language: string, sourceCode: string, fileName?: str
   }
 
   if (fileName === undefined) {
-    content += `<pre class="lang-${language} line-numbers">`;
+    content += `<pre class="prism lang-${language} line-numbers">`;
   } else {
-    content += `<pre class="lang-${language} line-numbers" data-label=${fileName}>`;
+    content += `<pre class="prism lang-${language} line-numbers" data-label=${fileName}>`;
   }
   content += `<code class="lang-${language}">`;
   sourceCode.split("<br><br>").forEach((lineOfsourceCode) => {
-    content += highlight(lineOfsourceCode, languages[language], language);
+    content += lineOfsourceCode;
   });
   content += "</code></pre>";
 
@@ -73,6 +74,10 @@ const highlight_contents = (language: string, sourceCode: string, fileName?: str
 };
 
 const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  });
+
   let date: Date;
   date = new Date(blog.createdAt);
   blog.createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
