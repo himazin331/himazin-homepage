@@ -10,7 +10,7 @@
 }
 
 .blog_page_field, .article_top {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .blog_page_title, .article_page_title {
@@ -41,6 +41,8 @@
     filter: brightness(75%);
 }
 
+/* 記事ページ */
+
 .article_title {
     font-size: 20px;
     margin: 0px;
@@ -66,6 +68,27 @@
 }
 .article_info_link:hover {
     color: rgba(254, 231, 175, 0.75);
+}
+
+.article_outline {
+    width: 45%;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    background-color: var(--content-bg-color);
+    border: solid 2px var(--border-color);
+    border-radius: 5px;
+}
+.article_outline ul {
+    margin: 0;
+}
+
+.article_body_field h3, 
+.article_body_field h4,
+.article_body_field h5, 
+.article_body_field h6 {
+    padding-top: 70px;
+    margin-top: -70px;
 }
 
 .article_body h2 {
@@ -125,18 +148,7 @@
     margin: 0px;
 }
 
-@media (max-width: 992px)
-{
-    .main_field, .main_article_field { 
-        width: 60%;
-        min-width: 0px;
-    }
-    .sidebar {
-        width: 30%;
-        min-width: 0px;
-    }
-}
-@media (max-width: 768px)
+@media (max-width: 991px)
 {
     .main_field, .main_article_field { 
         width: 100%;
@@ -161,5 +173,12 @@
         margin-top: 15px;
         margin-left: 0;
         padding: 0;
+    }
+}
+
+@media (max-width: 650px)
+{
+    .article_outline {
+        width: auto;
     }
 }

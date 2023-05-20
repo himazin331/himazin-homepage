@@ -12,6 +12,7 @@ import { FaChevronLeft, FaFolder, FaPen, FaSyncAlt, FaTags } from "react-icons/f
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import { ArticleMiniCard } from "@/components/parts/article_card";
+import  ArticleOutline from "@/components/parts/article_outline";
 import { microcms } from "@/libs/microcms";
 import { LANGUAGES } from "@/libs/prismjs_lang";
 import style from "@/styles/blog.module.css";
@@ -53,7 +54,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
 };
 
 // シンタックスハイライト処理
-const highlight_contents = (language: string, sourceCode: string, fileName?: string) => {
+const highlightContents = (language: string, sourceCode: string, fileName?: string) => {
   let content: string = "";
   if (!LANGUAGES.includes(language)) {
     return;
@@ -88,7 +89,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
     <>
       <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().pathname} />
       <div className="wrapper">
-        <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
+        <Container className="d-flex flex-column flex-lg-row justify-content-center" fluid>
           <div className={style.main_article_field}>
             <div className={style.previous_field}>
               <FaChevronLeft style={{marginBottom: "3.5px"}} /><Link href={"/blog"}>記事一覧</Link>
@@ -96,10 +97,10 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
 
             <div className={style.article_top} style={{marginTop: "10px"}}>
               <FaFolder size="20" />
-              <Link className={style.article_info_link} href={`/blog/genre/${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
+              <Link className={style.article_info_link} href={`/blog/genres/${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
               <FaTags size="20" />
-              {blog.tags.map((tag: Tags) => (
-                <Link key={tag.id} className={style.article_info_link} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
+              {blog.tags.map((tag: Tags, idx: number) => (
+                <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
               ))}
               <h1 className={style.article_page_title} style={{marginTop: "10px", marginBottom: "20px"}}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>
@@ -108,41 +109,45 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
               </div>
             </div>
 
-            {blog.body.map((body: any, index: number) => {
-              return body.fieldId === "rich_editor" ? (
-                <div
-                  className={style.article_body}
-                  key={index}
-                  dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor)}`}}
-                />
-              ) : body.fieldId === "rich_editor_beta" ? (
-                <div
-                  className={style.article_body}
-                  key={index}
-                  dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor_beta)}`}}
-                />
-              ) : body.fieldId === "embedded_contents" ? (
-                <div
-                  className={style.article_body}
-                  key={index}
-                  dangerouslySetInnerHTML={{__html: body.embedded_contents}}
-                />
-              ) : body.fieldId === "code_block" ? (
-                <div
-                  className={style.article_body + `code-toolbar`}
-                  key={index}
-                  dangerouslySetInnerHTML={{__html: highlight_contents(body.pg_language[0], body.code_block, body.file_name) || ""}}
-                />
-              ) : null;
-            })}
+            <ArticleOutline />
+
+            <div className={style.article_body_field} id="article_body_field">
+              {blog.body.map((body: any, idx: number) => {
+                return body.fieldId === "rich_editor" ? (
+                  <div
+                    className={style.article_body}
+                    key={idx}
+                    dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor)}`}}
+                  />
+                ) : body.fieldId === "rich_editor_beta" ? (
+                  <div
+                    className={style.article_body}
+                    key={idx}
+                    dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor_beta)}`}}
+                  />
+                ) : body.fieldId === "embedded_contents" ? (
+                  <div
+                    className={style.article_body}
+                    key={idx}
+                    dangerouslySetInnerHTML={{__html: body.embedded_contents}}
+                  />
+                ) : body.fieldId === "code_block" ? (
+                  <div
+                    className={style.article_body + `code-toolbar`}
+                    key={idx}
+                    dangerouslySetInnerHTML={{__html: highlightContents(body.pg_language[0], body.code_block, body.file_name) || ""}}
+                  />
+                ) : null;
+              })}
+            </div>
           </div>
 
           <div className={style.sidebar}>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>記事一覧</p>
-              {blogs.slice(0, 3).map((blog: Blog) => (
+              {blogs.slice(0, 3).map((blog: Blog, idx: number) => (
                 <>
-                  <ArticleMiniCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                  <ArticleMiniCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                     thumbnailImg={blog.thumbnail_img} />
                   <hr />
@@ -151,17 +156,17 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
             </div>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>ジャンル</p>
-              {genres.map((genre: Genre) => (
+              {genres.map((genre: Genre, idx: number) => (
                 <>
-                  <div><Link key={genre.id} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
+                  <div><Link key={idx} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
                 </>
               ))}
             </div>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>タグ</p>
-              {tags.map((tag: Tags) => (
+              {tags.map((tag: Tags, idx: number) => (
                 <>
-                  <div><Link key={tag.id} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
+                  <div><Link key={idx} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
                 </>
               ))}
             </div>
