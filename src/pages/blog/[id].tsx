@@ -66,9 +66,7 @@ const highlightContents = (language: string, sourceCode: string, fileName?: stri
     content += `<pre class="prism lang-${language} line-numbers" data-label=${fileName}>`;
   }
   content += `<code class="lang-${language}">`;
-  sourceCode.split("<br><br>").forEach((lineOfsourceCode) => {
-    content += lineOfsourceCode;
-  });
+  content += sourceCode.replace(/</g, '&lt;').replace(/>/g, '&gt;');
   content += "</code></pre>";
 
   return content;
