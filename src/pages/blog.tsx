@@ -12,13 +12,13 @@ import style from "@/styles/blog.module.css";
 import type { Blog, BlogContentProps, Genre, Tags } from "@/types/blog";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blog = await microcms.get({ endpoint: "blog" });
+  const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
   return {
     props: {
-      blogs: blog.contents,
+      blogs: blogs.contents,
       genres: genres.contents,
       tags: tags.contents
     },

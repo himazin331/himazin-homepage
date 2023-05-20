@@ -21,15 +21,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<any> = async (context) => {
-  const tagId = context.params?.id as string;
-  const blog = await microcms.get({ endpoint: "blog" });
+  const tagId: string = context.params?.id as string;
+  const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
   let tagFilteredBlog: Blog[] = [];
-  blog.contents.map((blogc: Blog) => {
-    if (blogc.tags.some(tag => tag.id === tagId)) {
-      tagFilteredBlog.push(blogc);
+  blogs.contents.map((blog: Blog) => {
+    if (blog.tags.some(tag => tag.id === tagId)) {
+      tagFilteredBlog.push(blog);
     }
   });
   const tag: Tags = tags.contents.find((tag: Tags) => tag.id === tagId);

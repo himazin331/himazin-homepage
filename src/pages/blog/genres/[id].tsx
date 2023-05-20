@@ -22,14 +22,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<any> = async (context) => {
   const genreId = context.params?.id as string;
-  const blog = await microcms.get({ endpoint: "blog" });
+  const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
   let genreFilteredBlog: Blog[] = [];
-  blog.contents.map((blogc: Blog) => {
-    if (blogc.genre.id === genreId) {
-      genreFilteredBlog.push(blogc);
+  blogs.contents.map((blog: Blog) => {
+    if (blog.genre.id === genreId) {
+      genreFilteredBlog.push(blog);
     }
   });
 

@@ -29,9 +29,9 @@ interface BlogProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const blog = await microcms.get({ endpoint: "blog" });
+  const blogs = await microcms.get({ endpoint: "blog" });
 
-  const paths = blog.contents.map((blog: Blog) => `/blog/${blog.id}`);
+  const paths = blogs.contents.map((blog: Blog) => `/blog/${blog.id}`);
   return { paths, fallback: false };
 };
 
