@@ -1,8 +1,7 @@
 /* ポートフォリオカード&モーダル */
 
-import type { NextPage } from "next";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -37,7 +36,7 @@ interface PortfolioCardProps {
   handleShowModal?: any; 
 }
 
-const PortfolioParts: NextPage<PortfolioPartsProps> = ({imagePaths, imageAlts, badge, 
+const PortfolioParts: React.FC<PortfolioPartsProps> = ({imagePaths, imageAlts, badge, 
                                                         title, keywords, overview, devPeriod,
                                                         devEnv, urlList, urlNameList, sentence}) => {
   let createModal: boolean = false;  
@@ -106,7 +105,7 @@ const PortfolioParts: NextPage<PortfolioPartsProps> = ({imagePaths, imageAlts, b
                       <span>U　R　L :</span>
                     </div>
                     <p className={style.portfolio_sentence}>
-                      {urlList && urlList.map((url:string, idx: number) => (
+                      {urlList && urlList.map((url: string, idx: number) => (
                         <a key={idx} href={url} target="_blank" rel="noopener noreferrer">{urlNameList? urlNameList[idx] : ""}<br /></a>
                       ))}
                     </p>
@@ -142,7 +141,7 @@ const PortfolioParts: NextPage<PortfolioPartsProps> = ({imagePaths, imageAlts, b
 };
 export default PortfolioParts;
 
-const PortfolioCard: NextPage<PortfolioCardProps> = ({imagePath, imageAlt, badge, title, keywords, overview, handleShowModal}) => {
+const PortfolioCard: React.FC<PortfolioCardProps> = ({imagePath, imageAlt, badge, title, keywords, overview, handleShowModal}) => {
   if (imagePath === undefined) {
     imagePath = "/images/noimage.jpg";
   } else {

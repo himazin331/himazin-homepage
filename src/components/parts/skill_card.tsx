@@ -1,7 +1,7 @@
 /* スキルカード */
 
-import type { NextPage } from "next";
 import Image from "next/image";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import style from "@/styles/skills.module.css";
 
@@ -11,7 +11,7 @@ interface SkillCardProps {
   skillName: string;
 }
 
-const SkillCard: NextPage<SkillCardProps> = ({imagePath, imageAlt, skillName}) => {
+const SkillCard: React.FC<SkillCardProps> = ({imagePath, imageAlt, skillName}) => {
   return (
     <Card className={style.card}>
       {imagePath ? 

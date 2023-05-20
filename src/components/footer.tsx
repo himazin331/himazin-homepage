@@ -1,10 +1,10 @@
 /** フッター */
 
-import type { NextPage } from "next";
 import Link from "next/link";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 
-const Footer: NextPage = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <Nav className="justify-content-center footer-nav">

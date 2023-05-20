@@ -1,7 +1,7 @@
 /** ページ毎カスタムHead */
 
-import type { NextPage } from "next";
 import Head from "next/head";
+import React from "react";
 import type {Thumbnail} from "@/types/blog";
 
 interface CustomHeadProps {
@@ -11,7 +11,7 @@ interface CustomHeadProps {
   originUrl: string;
 }
 
-const CustomHead: NextPage<CustomHeadProps> = ({ title, description, ogImage, originUrl }) => {
+const CustomHead: React.FC<CustomHeadProps> = ({ title, description, ogImage, originUrl }) => {
   const siteName: string = "himazin331's page";
   if (title === undefined) {
     title = siteName;

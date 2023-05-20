@@ -1,13 +1,14 @@
 /* ブログ一覧アイテム */
 
-import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { FaFolder, FaPen, FaSyncAlt, FaTags } from "react-icons/fa";
 import style from "@/styles/blog.module.css";
 import type { Genre, Tags, Thumbnail } from "@/types/blog";
+
 
 interface ArticleCardProps {
   id: string;
@@ -20,7 +21,7 @@ interface ArticleCardProps {
   thumbnailImg: Thumbnail;
 }
 
-export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
+export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
                                                   genre, tags, thumbnail, thumbnailImg}) => {
   let date: Date;
   date = new Date(createdAt);
@@ -52,8 +53,8 @@ export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, u
             <FaFolder />
             <Link className={style.article_info_link} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
             <FaTags />
-            {tags.map((tag) => (
-              <Link key={tag.id} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
+            {tags.map((tag: Tags, idx: number) => (
+              <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
             ))}
           </span>
         </p>
@@ -65,7 +66,7 @@ export const ArticleCard: NextPage<ArticleCardProps> = ({id, title, createdAt, u
   );
 };
 
-export const ArticleMiniCard: NextPage<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
+export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
                                                       genre, tags, thumbnail, thumbnailImg}) => {
   let date: Date;
   date = new Date(createdAt);
@@ -95,8 +96,8 @@ export const ArticleMiniCard: NextPage<ArticleCardProps> = ({id, title, createdA
             <FaFolder />
             <Link className={style.article_info_link} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
             <FaTags />
-            {tags.map((tag) => (
-              <Link key={tag.id} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
+            {tags.map((tag: Tags, idx: number) => (
+              <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
             ))}
           </span>
         </p>

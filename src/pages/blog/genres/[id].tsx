@@ -11,7 +11,7 @@ import Head from "@/components/head";
 import { ArticleCard } from "@/components/parts/article_card";
 import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
-import type { Blog, BlogGenreContentProps, Genre } from "@/types/blog";
+import type { Blog, BlogGenreContentProps, Genre, Tags } from "@/types/blog";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const genres = await microcms.get({ endpoint: "blog_genres" });
@@ -55,12 +55,11 @@ const BlogGenrePage: NextPage<BlogGenreContentProps> = ({ blogs, genres, tags })
 
             <div className={style.blog_page_field}>
               <h1 className={style.blog_page_title} style={{marginBottom: "20px"}}>{`ジャンル: ${blogs[0].genre.genre}のブログ記事`}</h1>
-              <p className="p-h5replace">よわよわ園児ニアによる備忘録/メモ書きみたいなブログです。</p>
             </div>
-            {blogs.map((blog) => (
+            {blogs.map((blog: Blog, idx: number) => (
               <>
                 <hr />
-                <ArticleCard key={blog.id} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                <ArticleCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                   updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                   thumbnailImg={blog.thumbnail_img} />
               </>
@@ -70,17 +69,17 @@ const BlogGenrePage: NextPage<BlogGenreContentProps> = ({ blogs, genres, tags })
           <div className={style.sidebar}>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>ジャンル</p>
-              {genres.map((genre) => (
+              {genres.map((genre: Genre, idx: number) => (
                 <>
-                  <div><Link key={genre.id} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
+                  <div><Link key={idx} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
                 </>
               ))}
             </div>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>タグ</p>
-              {tags.map((tag) => (
+              {tags.map((tag: Tags, idx: number) => (
                 <>
-                  <div><Link key={tag.id} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
+                  <div><Link key={idx} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
                 </>
               ))}
             </div>

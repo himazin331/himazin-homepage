@@ -1,8 +1,8 @@
 /** ヘッダー */
 
-import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -10,7 +10,7 @@ interface HeaderProps {
   pathName: string;
 }
 
-const Header: NextPage<HeaderProps> = ({ pathName }) => {
+const Header: React.FC<HeaderProps> = ({ pathName }) => {
   return (
     <header className="sticky-top">
       <Navbar className="header-navbar" variant="dark" expand="lg" collapseOnSelect>
