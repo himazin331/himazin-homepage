@@ -56,7 +56,7 @@ const BlogTagPage: NextPage<BlogTagContentProps> = ({ blogs, genres, tags, tag }
             </div>
 
             <div className={style.blog_page_field}>
-              <h1 className={style.blog_page_title} style={{marginBottom: "20px"}}>{`タグ: ${tag.tag}のブログ記事`}</h1>
+              <h1 className={style.blog_page_title}>{`タグ: ${tag.tag}のブログ記事`}</h1>
             </div>
             {blogs.map((blog: Blog, idx: number) => (
               <>

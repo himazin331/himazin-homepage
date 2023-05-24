@@ -54,7 +54,7 @@ const BlogGenrePage: NextPage<BlogGenreContentProps> = ({ blogs, genres, tags })
             </div>
 
             <div className={style.blog_page_field}>
-              <h1 className={style.blog_page_title} style={{marginBottom: "20px"}}>{`ジャンル: ${blogs[0].genre.genre}のブログ記事`}</h1>
+              <h1 className={style.blog_page_title}>{`ジャンル: ${blogs[0].genre.genre}のブログ記事`}</h1>
             </div>
             {blogs.map((blog: Blog, idx: number) => (
               <>

@@ -60,7 +60,7 @@ const PortfolioParts: React.FC<PortfolioPartsProps> = ({imagePaths, imageAlts, b
           <Modal.Dialog className={style.modal_dialog} centered size="xl">
             <div className={style.modal_content}>
               <Modal.Header closeButton closeVariant="white">
-                <Modal.Title as="h5">
+                <Modal.Title style={{fontSize: "1.25rem"}}>
                   {title}
                   {badge ?
                     (<Badge className={style.portfolio_card_badge}>{badge}</Badge>)
@@ -172,7 +172,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({imagePath, imageAlt, badge
             :
             (<></>)
           }
-          <h6 className="keyword">{keywords.join(", ")}</h6>
+          <p className="keyword" style={{fontSize: "16px"}}>{keywords.join(", ")}</p>
           <Card.Text>{overview}</Card.Text>
           <Button className={style.btn} variant="dark" disabled={handleShowModal === undefined} onClick={handleShowModal}>{buttonText}</Button>
         </Card.Body>

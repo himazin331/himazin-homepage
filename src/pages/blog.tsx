@@ -33,7 +33,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags }) => {
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>
             <div className={style.blog_page_field}>
-              <h1 className={style.blog_page_title} style={{marginBottom: "20px"}}>himazin331の技術ブログ</h1>
+              <h1 className={style.blog_page_title}>himazin331の技術ブログ</h1>
               <p className="p-h5replace">よわよわ園児ニアによる備忘録/メモ書きみたいなブログです。</p>
             </div>
             {blogs.map((blog: Blog, idx: number) => (

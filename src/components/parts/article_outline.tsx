@@ -13,8 +13,8 @@ const ArticleOutline: React.FC = () => {
   const [headings, setHeadings] = useState<headingData[]>([]);
 
   useEffect(() => {
-    const article_body: HTMLElement  = document.getElementById("article_body_field") || document.body;
-    const headingTags: HTMLHeadingElement[] = Array.from(article_body.querySelectorAll("h2, h3, h4, h5, h6")) as HTMLHeadingElement[];
+    const articleBody: HTMLElement  = document.getElementById("article_body_field") || document.body;
+    const headingTags: HTMLHeadingElement[] = Array.from(articleBody.querySelectorAll("h2, h3, h4, h5")) as HTMLHeadingElement[];
     const headingData: headingData[] = headingTags.map((htag: HTMLHeadingElement) => {
       return {
         id: htag.id,

@@ -35,7 +35,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, u
         <Link href={`/blog/${id}`} passHref>
           {thumbnailImg === undefined?
             <Image className={style.thumbnail_img + ` img-fluid`} src="/images/noimage.jpg" alt="サムネイル画像" 
-              width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+              width="356" height="200"/>
             :
             <Image className={style.thumbnail_img + ` img-fluid`} src={thumbnailImg.url} alt="サムネイル画像" height={thumbnailImg.height} width={thumbnailImg.width} />
           }
@@ -80,7 +80,7 @@ export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdA
         <Link href={`/blog/${id}`} passHref>
           {thumbnailImg === undefined?
             <Image className={style.thumbnail_img_mini + ` img-fluid`} src="/images/noimage.jpg" alt="サムネイル画像"
-              width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              width="356" height="200" />
           :
             <Image className={style.thumbnail_img_mini + ` img-fluid`} src={thumbnailImg.url} alt="サムネイル画像" height={thumbnailImg.height} width={thumbnailImg.width} />
           }

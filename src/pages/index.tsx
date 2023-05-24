@@ -3,6 +3,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -12,15 +13,26 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
 
+const gitHubStatsImageLoader = () => {
+  return "https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true";
+};
+
+const gitHublangsImageLoader = () => {
+  return "https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331";
+};
+
 const IndexPage: NextPage = () => {
   return (
     <>
       <Head originUrl={"https://himazin331.com" + useRouter().pathname} />
+      {/* Twitter JavaScript */}
+      <Script src="https://platform.twitter.com/widgets.js" />
       <div className="wrapper">
         <Container className={style.content_field + ` justify-content-center row`} fluid>
           {/* メイン */}
           <Col className="main-pain" xs="auto">
-            <Image className="img-fluid mx-auto d-block top-img" src="/images/profile_picture.png" alt="プロフィール画像" width={256} height={256} />
+            <Image className="img-fluid mx-auto d-block top-img" src="/images/profile_picture.png" 
+              alt="プロフィール画像" width={256} height={256} loading="eager" />
             
             {/* プロフィール */}
             <div className={style.content_field}>
@@ -147,10 +159,14 @@ const IndexPage: NextPage = () => {
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
-                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true" alt="GitHub Stats" />
+                    {/* <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true"
+                      alt="GitHub Stats" width="auto" height="auto" /> */}
+                    <Image className="col-lg col-sm img-fluid" src="github_stats.png" loader={gitHubStatsImageLoader}
+                      alt="GitHub Stats" width="465" height="195" />
                   </div>
                   <div className={style.langs}>
-                    <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331" alt="GitHub langs" />
+                    <Image className="col-lg col-sm img-fluid" src="github_langs.png" loader={gitHublangsImageLoader}
+                      alt="GitHub langs" width="285" height="300" />
                   </div>
                 </Col>
               </Card>

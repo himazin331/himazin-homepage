@@ -69,7 +69,7 @@
 }
 
 .stats img {
-    margin-bottom: 90px;
+    margin-bottom: 75px;
 }
 
 .langs {
@@ -94,19 +94,7 @@
     }
 }
 
-@media (max-width: 1140px) {
-    .github_widgets {
-        text-align: left;
-    }
-    
-    .stats img {
-        margin-bottom: 5px;
-    }
-}
-
-@media (min-width: 992px) {}
-
-@media (max-width: 991px) {
+@media (max-width: 1119px) {
     .github_widgets {
         text-align: left;
     }

@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import Prism from "prismjs";
 import { useEffect } from "react";
 import Container from "react-bootstrap/Container";
@@ -86,21 +87,23 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
   return (
     <>
       <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().pathname} />
-      <div className="wrapper">
+      {/* Twitter JavaScript */}
+      <Script src="https://platform.twitter.com/widgets.js" />
+      <div className="wrapper" style={{marginLeft: "20px"}}>
         <Container className="d-flex flex-column flex-lg-row justify-content-center" fluid>
           <div className={style.main_article_field}>
             <div className={style.previous_field}>
               <FaChevronLeft style={{marginBottom: "3.5px"}} /><Link href={"/blog"}>記事一覧</Link>
             </div>
 
-            <div className={style.article_top} style={{marginTop: "10px"}}>
+            <div className={style.article_top}>
               <FaFolder size="20" />
               <Link className={style.article_info_link} href={`/blog/genres/${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
               <FaTags size="20" />
               {blog.tags.map((tag: Tags, idx: number) => (
                 <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
               ))}
-              <h1 className={style.article_page_title} style={{marginTop: "10px", marginBottom: "20px"}}>{blog.title}</h1>
+              <h1 className={style.article_page_title}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>
                 <FaPen /><span className={style.article_info_data}>投稿日: {blog.createdAt}</span>
                 <FaSyncAlt /><span className={style.article_info_data}>更新日: {blog.updatedAt}</span>
@@ -140,7 +143,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
             </div>
           </div>
 
-          <div className={style.sidebar}>
+          <div className={style.sidebar_article}>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>記事一覧</p>
               {blogs.slice(0, 3).map((blog: Blog, idx: number) => (
