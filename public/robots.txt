@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /blog/preview
+
+Host: https://himazin331.com
+
+Sitemap: https://himazin331.com/sitemap.xml
