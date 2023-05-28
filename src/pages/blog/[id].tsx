@@ -13,11 +13,12 @@ import { FaChevronLeft, FaFolder, FaPen, FaSyncAlt, FaTags } from "react-icons/f
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import { ArticleMiniCard } from "@/components/parts/article_card";
-import  ArticleOutline from "@/components/parts/article_outline";
+import ArticleOutline from "@/components/parts/article_outline";
+import { BlogGenreTagList } from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import { LANGUAGES } from "@/libs/prismjs_lang";
 import style from "@/styles/blog.module.css";
-import type { Blog, Genre, Tags, BlogContentProps } from "@/types/blog";
+import type { Blog, Tags, BlogContentProps } from "@/types/blog";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import "prismjs/plugins/toolbar/prism-toolbar.min.js";
@@ -98,10 +99,10 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
 
             <div className={style.article_top}>
               <FaFolder size="20" />
-              <Link className={style.article_info_link} href={`/blog/genres/${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
+              <Link className={style.article_info_link} href={`/blog/genres?id=${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
               <FaTags size="20" />
               {blog.tags.map((tag: Tags, idx: number) => (
-                <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
+                <Link key={idx} className={style.article_info_link} href={`/blog/tags?id=${tag.id}`}>{tag.tag}</Link>
               ))}
               <h1 className={style.article_page_title}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>
@@ -155,22 +156,8 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
                 </>
               ))}
             </div>
-            <div className={style.sidebar_item_field}>
-              <p className={style.sidebar_header}>ジャンル</p>
-              {genres.map((genre: Genre, idx: number) => (
-                <>
-                  <div><Link key={idx} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
-                </>
-              ))}
-            </div>
-            <div className={style.sidebar_item_field}>
-              <p className={style.sidebar_header}>タグ</p>
-              {tags.map((tag: Tags, idx: number) => (
-                <>
-                  <div><Link key={idx} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
-                </>
-              ))}
-            </div>
+
+            <BlogGenreTagList genres={genres} tags={tags} />
           </div>
         </Container>
 

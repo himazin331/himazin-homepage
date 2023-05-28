@@ -36,22 +36,15 @@ export type Thumbnail = {
   width: number;
 }
 
+export type BlogGeneralPageProps = {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+}
+
 export type BlogContentProps = {
   blogs: Blog[];
   genres: Genre[];
   tags: Tags[];
   blog: Blog;
-}
-
-export type BlogGenreContentProps = {
-  blogs: Blog[];
-  genres: Genre[];
-  tags: Tags[];
-}
-
-export type BlogTagContentProps = {
-  blogs: Blog[];
-  genres: Genre[];
-  tags: Tags[];
-  tag: Tags;
 }
