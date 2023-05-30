@@ -17,7 +17,7 @@ interface ArticleCardProps {
   genre: Genre;
   tags: Tags[];
   thumbnail: string;
-  thumbnailImg: Thumbnail;
+  thumbnailImg?: Thumbnail;
 }
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 

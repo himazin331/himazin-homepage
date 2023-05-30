@@ -1,3 +1,5 @@
+/* ジャンル&タグリスト */
+
 import Link from "next/link";
 import style from "@/styles/blog.module.css";
 import type { Genre, Tags } from "@/types/blog";
