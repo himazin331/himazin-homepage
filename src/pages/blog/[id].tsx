@@ -1,8 +1,8 @@
 /* ブログ記事ページ */
 
+import type { ParsedUrlQuery } from "node:querystring";
 import DOMPurify from "isomorphic-dompurify";
-import type { NextPage } from "next";
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -18,7 +18,7 @@ import { BlogGenreTagList } from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import { LANGUAGES } from "@/libs/prismjs_lang";
 import style from "@/styles/blog.module.css";
-import type { Blog, Tags, BlogContentProps } from "@/types/blog";
+import type { Blog, Tags, ArticleProps } from "@/types/blog";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import "prismjs/plugins/toolbar/prism-toolbar.min.js";
@@ -26,37 +26,32 @@ import "prismjs/plugins/toolbar/prism-toolbar.min.css";
 import "prismjs/plugins/show-language/prism-show-language.min.js";
 import "prismjs/themes/prism-tomorrow.min.css";
 
-interface BlogProps {
-  blog: Blog;
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
 
   const paths = blogs.contents.map((blog: Blog) => `/blog/${blog.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<BlogProps> = async (context) => {
+export const getStaticProps: GetStaticProps<ArticleProps, ParsedUrlQuery> = async (context) => {
   const blogId = context.params?.id as string;
-  const blogs = await microcms.get({ endpoint: "blog" });
+  const blogs = await microcms.get({ endpoint: "blog", queries: {limit: 3, orders: "-publishedAt"} });
+  const blog = await microcms.get({ endpoint: "blog", queries: {filters: `id[equals]${blogId}`} });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
-
-  const blog: Blog = blogs.contents.find((blog: Blog) => blog.id === blogId);
 
   return {
     props: {
       blogs: blogs.contents,
       genres: genres.contents,
       tags: tags.contents,
-      blog: blog
+      blog: blog.contents[0]
     },
   };
 };
 
 // シンタックスハイライト処理
-const highlightContents = (language: string, sourceCode: string, fileName?: string) => {
+const highlightContents = (language: string, sourceCode: string, fileName?: string): string | undefined => {
   let content: string = "";
   if (!LANGUAGES.includes(language)) {
     return;
@@ -74,7 +69,7 @@ const highlightContents = (language: string, sourceCode: string, fileName?: stri
   return content;
 };
 
-const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => {
+const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags, blog }) => {
   useEffect(() => {
     Prism.highlightAll();
   });
@@ -147,7 +142,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
           <div className={style.sidebar_article}>
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>記事一覧</p>
-              {blogs.slice(0, 3).map((blog: Blog, idx: number) => (
+              {blogs.map((blog: Blog, idx: number) => (
                 <>
                   <ArticleMiniCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
@@ -155,6 +150,7 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
                   <hr />
                 </>
               ))}
+              <Link href="/blog">もっとみる...</Link>
             </div>
 
             <BlogGenreTagList genres={genres} tags={tags} />
@@ -166,4 +162,4 @@ const BlogPage: NextPage<BlogContentProps> = ({ blogs, genres, tags, blog }) => 
     </>
   );
 };
-export default BlogPage;
+export default ArticlePage;

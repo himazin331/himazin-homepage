@@ -8,7 +8,7 @@ import Head from "@/components/head";
 import SkillCard from "@/components/parts/skill_card";
 import style from "@/styles/skills.module.css";
 
-const SkillsPage: NextPage = () => {
+const SkillsPage: NextPage<JSX.Element> = () => {
   return (
     <>
       <Head title="Skills" originUrl={"https://himazin331.com" + useRouter().pathname} />

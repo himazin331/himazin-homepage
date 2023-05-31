@@ -1,4 +1,4 @@
-export type Blog = {
+export interface Blog {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -9,40 +9,40 @@ export type Blog = {
   tags: Tags[];
   thumbnail: string;
   body: string[];
-  thumbnail_img: Thumbnail;
-  };
+  thumbnail_img?: Thumbnail;
+}
   
-export type Genre = {
+export interface Genre {
   id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
   genre: string
-};
+}
 
-export type Tags = {
+export interface Tags {
   id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
   tag: string
-};
+}
 
-export type Thumbnail = {
+export interface Thumbnail {
   url: string;
   height: number;
   width: number;
 }
 
-export type BlogGeneralPageProps = {
+export interface BlogGeneralPageProps {
   blogs: Blog[];
   genres: Genre[];
   tags: Tags[];
 }
 
-export type BlogContentProps = {
+export interface ArticleProps {
   blogs: Blog[];
   genres: Genre[];
   tags: Tags[];

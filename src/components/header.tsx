@@ -10,7 +10,7 @@ interface HeaderProps {
   pathName: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ pathName }) => {
+const Header: React.FC<HeaderProps> = ({ pathName }): React.ReactElement => {
   return (
     <header className="sticky-top">
       <Navbar className="header-navbar" variant="dark" expand="lg" collapseOnSelect>

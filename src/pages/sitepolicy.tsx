@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 
-const SitepolicyPage: NextPage = () => {
+const SitepolicyPage: NextPage<JSX.Element> = () => {
   return (
     <>
       <Head title="Sitepolicy" originUrl={"https://himazin331.com" + useRouter().pathname} />

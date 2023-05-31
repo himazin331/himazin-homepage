@@ -38,7 +38,8 @@ interface PortfolioCardProps {
 
 const PortfolioParts: React.FC<PortfolioPartsProps> = ({imagePaths, imageAlts, badge, 
                                                         title, keywords, overview, devPeriod,
-                                                        devEnv, urlList, urlNameList, sentence}) => {
+                                                        devEnv, urlList, urlNameList, sentence})
+                                                      : React.ReactElement => {
   let createModal: boolean = false;  
   if (keywords !== undefined && devPeriod !== undefined && devEnv !== undefined 
     && urlList !== undefined && urlNameList !== undefined && sentence !== undefined)
@@ -46,7 +47,7 @@ const PortfolioParts: React.FC<PortfolioPartsProps> = ({imagePaths, imageAlts, b
     createModal = true;
   }
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
   

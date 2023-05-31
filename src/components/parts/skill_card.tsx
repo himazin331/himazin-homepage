@@ -11,7 +11,8 @@ interface SkillCardProps {
   skillName: string;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({imagePath, imageAlt, skillName}) => {
+const SkillCard: React.FC<SkillCardProps> = ({imagePath, imageAlt, skillName})
+                                            : React.ReactElement => {
   return (
     <Card className={style.card}>
       {imagePath ? 

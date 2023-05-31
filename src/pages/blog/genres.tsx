@@ -1,5 +1,6 @@
 /* ブログ記事一覧(ジャンル)ページ */
 
+import type { ParsedUrlQuery } from "node:querystring";
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import type { NextRouter } from "next/router";
@@ -14,7 +15,7 @@ import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
 import type { Blog, Genre, BlogGeneralPageProps } from "@/types/blog";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogGeneralPageProps> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
@@ -28,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const BlogGenresPage: NextPage<BlogGeneralPageProps> = ({ blogs, genres, tags }) => {
+const BlogGenresPage: NextPage<BlogGeneralPageProps, JSX.Element> = ({ blogs, genres, tags }) => {
   const router: NextRouter = useRouter();
   const { id } = router.query;
   const genre: Genre | undefined = id !== undefined ? genres.find((genre: Genre) => genre.id === id) : undefined;

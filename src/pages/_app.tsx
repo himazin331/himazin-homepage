@@ -3,7 +3,8 @@
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { NextRouter, useRouter } from "next/router";
+import type { NextRouter } from "next/router";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import Header from "@/components/header";
@@ -13,7 +14,7 @@ declare global {
   var twttr: any;
 }
 
-const Homepage: NextPage<AppProps> = ({ Component, pageProps }) => {
+const Homepage: NextPage<AppProps, JSX.Element> = ({ Component, pageProps }) => {
   const router: NextRouter = useRouter();
   // Twitter埋め込みロードをレンダリング後に実行
   useEffect(

@@ -13,15 +13,15 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
 
-const gitHubStatsImageLoader = () => {
+const gitHubStatsImageLoader = (): string => {
   return "https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true";
 };
 
-const gitHublangsImageLoader = () => {
+const gitHublangsImageLoader = (): string => {
   return "https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331";
 };
 
-const IndexPage: NextPage = () => {
+const IndexPage: NextPage<JSX.Element> = () => {
   return (
     <>
       <Head originUrl={"https://himazin331.com" + useRouter().pathname} />

@@ -9,7 +9,7 @@ interface GenreTagListProps {
   tags: Tags[];
 }
 
-export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}) => {
+export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.ReactElement => {
   return (
     <>
       <div className={style.sidebar_item_field}>

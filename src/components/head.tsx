@@ -11,7 +11,8 @@ interface CustomHeadProps {
   originUrl: string;
 }
 
-const CustomHead: React.FC<CustomHeadProps> = ({ title, description, ogImage, originUrl }) => {
+const CustomHead: React.FC<CustomHeadProps> = ({ title, description, ogImage, originUrl })
+                                              : React.ReactElement => {
   const siteName: string = "himazin331's page";
   if (title === undefined) {
     title = siteName;

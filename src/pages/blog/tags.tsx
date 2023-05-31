@@ -14,7 +14,7 @@ import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
 import type { Blog, Tags, BlogGeneralPageProps } from "@/types/blog";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogGeneralPageProps> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const BlogTagsPage: NextPage<BlogGeneralPageProps> = ({ blogs, genres, tags }) => {
+const BlogTagsPage: NextPage<BlogGeneralPageProps, JSX.Element> = ({ blogs, genres, tags }) => {
   const router: NextRouter = useRouter();
   const { id } = router.query;
   const tag: Tags | undefined = id !== undefined ? tags.find((tag: Tags) => tag.id === id) : undefined;

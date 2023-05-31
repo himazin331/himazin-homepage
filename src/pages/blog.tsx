@@ -1,7 +1,7 @@
 /* ブログ一覧ページ */
 
-import type { NextPage } from "next";
-import { GetStaticProps } from "next";
+import type { ParsedUrlQuery } from "node:querystring";
+import type { GetStaticProps, NextPage } from "next";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
@@ -11,7 +11,7 @@ import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
 import type { Blog, BlogGeneralPageProps } from "@/types/blog";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogGeneralPageProps> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const BlogPage: NextPage<BlogGeneralPageProps> = ({ blogs, genres, tags }) => {
+const BlogPage: NextPage<BlogGeneralPageProps, JSX.Element> = ({ blogs, genres, tags }) => {
   return (
     <>
       <Head title="Blog" originUrl="https://himazin331.com/blog" />

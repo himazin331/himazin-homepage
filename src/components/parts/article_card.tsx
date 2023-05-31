@@ -21,7 +21,8 @@ interface ArticleCardProps {
 }
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
-                                                  genre, tags, thumbnail, thumbnailImg}) => {
+                                                  genre, tags, thumbnail, thumbnailImg})
+                                                  : React.ReactElement => {
   let date: Date;
   date = new Date(createdAt);
   createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
@@ -66,7 +67,8 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, u
 };
 
 export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
-                                                      genre, tags, thumbnail, thumbnailImg}) => {
+                                                      genre, tags, thumbnail, thumbnailImg})
+                                                      : React.ReactElement => {
   let date: Date;
   date = new Date(createdAt);
   createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");

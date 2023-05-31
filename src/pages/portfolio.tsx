@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import PortfolioParts from "@/components/parts/portfolio_parts";
 
-const Portfolio: NextPage = () => {
+const Portfolio: NextPage<JSX.Element> = () => {
   return (
     <>
       <Head title="Portfolio" originUrl={"https://himazin331.com" + useRouter().pathname} />

@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 
-const Footer: React.FC = () => {
+const Footer: React.FC = (): React.ReactElement => {
   return (
     <footer>
       <Nav className="justify-content-center footer-nav">

@@ -9,7 +9,7 @@ interface headingData {
   text: string;
 }
 
-const ArticleOutline: React.FC = () => {
+const ArticleOutline: React.FC = (): React.ReactElement => {
   const [headings, setHeadings] = useState<headingData[]>([]);
 
   useEffect(() => {
