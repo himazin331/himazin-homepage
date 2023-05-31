@@ -1,7 +1,6 @@
 /* サイトポリシーページ */
 
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
@@ -9,7 +8,7 @@ import Head from "@/components/head";
 const SitepolicyPage: NextPage<JSX.Element> = () => {
   return (
     <>
-      <Head title="Sitepolicy" originUrl={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Sitepolicy" originUrl={"https://himazin331.com/sitepolicy"} />
       <div className="wrapper">
         <Container>
           <div className="content-field" style={{paddingTop: "30px"}}>

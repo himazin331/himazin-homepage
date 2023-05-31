@@ -7,10 +7,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 interface HeaderProps {
-  pathName: string;
+  asPath: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ pathName }): React.ReactElement => {
+const Header: React.FC<HeaderProps> = ({ asPath }): React.ReactElement => {
   return (
     <header className="sticky-top">
       <Navbar className="header-navbar" variant="dark" expand="lg" collapseOnSelect>
@@ -22,10 +22,10 @@ const Header: React.FC<HeaderProps> = ({ pathName }): React.ReactElement => {
         <Navbar.Toggle aria-controls="navbar" label="Toggle navigation" />
         <Navbar.Collapse className="justify-content-end" id="navbar">
           <Nav className="text-center">
-            <Nav.Link active={pathName === "/"} href="/" as={Link}>Home</Nav.Link>
-            <Nav.Link active={pathName.indexOf("blog") !== -1} href="/blog" as={Link}>Blog</Nav.Link>
-            <Nav.Link active={pathName === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
-            <Nav.Link active={pathName === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
+            <Nav.Link active={asPath === "/"} href="/" as={Link}>Home</Nav.Link>
+            <Nav.Link active={asPath.indexOf("blog") !== -1} href="/blog" as={Link}>Blog</Nav.Link>
+            <Nav.Link active={asPath === "/skills"} href="/skills" as={Link}>Skills</Nav.Link>
+            <Nav.Link active={asPath === "/portfolio"} href="/portfolio" as={Link}>Portfolio</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

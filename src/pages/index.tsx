@@ -2,7 +2,6 @@
 
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import Script from "next/script";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -24,7 +23,7 @@ const gitHublangsImageLoader = (): string => {
 const IndexPage: NextPage<JSX.Element> = () => {
   return (
     <>
-      <Head originUrl={"https://himazin331.com" + useRouter().pathname} />
+      <Head originUrl={"https://himazin331.com"} />
       {/* Twitter JavaScript */}
       <Script src="https://platform.twitter.com/widgets.js" />
       <div className="wrapper">

@@ -1,7 +1,6 @@
 /* ポートフォリオページ */
 
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import PortfolioParts from "@/components/parts/portfolio_parts";
@@ -9,7 +8,7 @@ import PortfolioParts from "@/components/parts/portfolio_parts";
 const Portfolio: NextPage<JSX.Element> = () => {
   return (
     <>
-      <Head title="Portfolio" originUrl={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Portfolio" originUrl={"https://himazin331.com/portfolio"} />
       <div className="wrapper">
         <div className="container">
           <h1 className="page-top-sentence">Portfolio</h1>

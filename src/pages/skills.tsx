@@ -1,7 +1,6 @@
 /* スキルページ */
 
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
@@ -11,7 +10,7 @@ import style from "@/styles/skills.module.css";
 const SkillsPage: NextPage<JSX.Element> = () => {
   return (
     <>
-      <Head title="Skills" originUrl={"https://himazin331.com" + useRouter().pathname} />
+      <Head title="Skills" originUrl={"https://himazin331.com/skills"} />
       <div className="wrapper">
         <Container>
           <h1 className="page-top-sentence">Skills</h1>

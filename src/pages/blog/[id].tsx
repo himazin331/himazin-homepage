@@ -82,7 +82,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
 
   return (
     <>
-      <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().pathname} />
+      <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().asPath} />
       {/* Twitter JavaScript */}
       <Script src="https://platform.twitter.com/widgets.js" />
       <div className="wrapper" style={{marginLeft: "20px"}}>
