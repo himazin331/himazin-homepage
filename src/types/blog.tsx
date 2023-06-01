@@ -48,3 +48,22 @@ export interface ArticleProps {
   tags: Tags[];
   blog: Blog;
 }
+
+export interface GenreTagListProps {
+  genres: Genre[];
+  tags: Tags[];
+}
+
+export interface BlogGenreContentProps {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+  genre: Genre;
+}
+
+export interface BlogTagContentProps {
+  blogs: Blog[];
+  genres: Genre[];
+  tags: Tags[];
+  tag: Tags;
+}

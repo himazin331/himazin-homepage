@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 import style from "@/styles/blog.module.css";
-import type { Genre, Tags } from "@/types/blog";
-
-interface GenreTagListProps {
-  genres: Genre[];
-  tags: Tags[];
-}
+import type { Genre, Tags, GenreTagListProps } from "@/types/blog";
 
 export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.ReactElement => {
   return (
@@ -16,7 +11,7 @@ export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): R
         <p className={style.sidebar_header}>ジャンル</p>
         {genres.map((genre: Genre, idx: number) => (
           <>
-            <div><Link key={idx} href={`/blog/genres?id=${genre.id}`}>{genre.genre}</Link></div>
+            <div><Link key={idx} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
           </>
         ))}
       </div>
@@ -24,7 +19,7 @@ export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): R
         <p className={style.sidebar_header}>タグ</p>
         {tags.map((tag: Tags, idx: number) => (
           <>
-            <div><Link key={idx} href={`/blog/tags?id=${tag.id}`}>{tag.tag}</Link></div>
+            <div><Link key={idx} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
           </>
         ))}
       </div>

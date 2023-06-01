@@ -10,7 +10,6 @@ import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
 import style from "@/styles/portfolio.module.css";
 
-
 interface PortfolioPartsProps {
   imagePaths?: string[];
   imageAlts?: string[];

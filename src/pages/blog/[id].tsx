@@ -28,7 +28,6 @@ import "prismjs/themes/prism-tomorrow.min.css";
 
 export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
-
   const paths = blogs.contents.map((blog: Blog) => `/blog/${blog.id}`);
   return { paths, fallback: false };
 };
@@ -36,9 +35,9 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
 export const getStaticProps: GetStaticProps<ArticleProps, ParsedUrlQuery> = async (context) => {
   const blogId = context.params?.id as string;
   const blogs = await microcms.get({ endpoint: "blog", queries: {limit: 3, orders: "-publishedAt"} });
-  const blog = await microcms.get({ endpoint: "blog", queries: {filters: `id[equals]${blogId}`} });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
+  const blog = await microcms.get({ endpoint: "blog", queries: {filters: `id[equals]${blogId}`} });
 
   return {
     props: {
@@ -94,10 +93,10 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
 
             <div className={style.article_top}>
               <FaFolder size="20" />
-              <Link className={style.article_info_link} href={`/blog/genres?id=${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
+              <Link className={style.article_info_link} href={`/blog/genres/${blog.genre.id}`} style={{marginRight: "20px"}}>{blog.genre.genre}</Link>
               <FaTags size="20" />
               {blog.tags.map((tag: Tags, idx: number) => (
-                <Link key={idx} className={style.article_info_link} href={`/blog/tags?id=${tag.id}`}>{tag.tag}</Link>
+                <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
               ))}
               <h1 className={style.article_page_title}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>

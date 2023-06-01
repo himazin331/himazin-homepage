@@ -1,6 +1,5 @@
 /* ブログ一覧ページ */
 
-import type { ParsedUrlQuery } from "node:querystring";
 import type { GetStaticProps, NextPage } from "next";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";

@@ -51,10 +51,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, u
           <FaSyncAlt /><span className={style.article_info_data}>更新日: {updatedAt}</span>
           <span className="d-block d-md-inline">
             <FaFolder />
-            <Link className={style.article_info_link} href={`/blog/genres?id=${genre.id}`}>{genre.genre}</Link>
+            <Link className={style.article_info_link} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
             <FaTags />
             {tags.map((tag: Tags, idx: number) => (
-              <Link key={idx} className={style.article_info_link} href={`/blog/tags?id=${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
+              <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
             ))}
           </span>
         </p>
@@ -95,10 +95,10 @@ export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdA
           <FaSyncAlt /><span className={style.article_info_data}>更新日: {updatedAt}</span>
           <span className="d-block">
             <FaFolder />
-            <Link className={style.article_info_link} href={`/blog/genres?id=${genre.id}`}>{genre.genre}</Link>
+            <Link className={style.article_info_link} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
             <FaTags />
             {tags.map((tag: Tags, idx: number) => (
-              <Link key={idx} className={style.article_info_link} href={`/blog/tags?id=${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
+              <Link key={idx} className={style.article_info_link} href={`/blog/tags/${tag.id}`} style={{marginRight: "2px"}}>{tag.tag}</Link>
             ))}
           </span>
         </p>
