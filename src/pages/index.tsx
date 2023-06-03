@@ -158,8 +158,6 @@ const IndexPage: NextPage<JSX.Element> = () => {
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
-                    {/* <img className="col-lg col-sm img-fluid" src="https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true"
-                      alt="GitHub Stats" width="auto" height="auto" /> */}
                     <Image className="col-lg col-sm img-fluid" src="github_stats.png" loader={gitHubStatsImageLoader}
                       alt="GitHub Stats" width="465" height="195" />
                   </div>
@@ -168,6 +166,11 @@ const IndexPage: NextPage<JSX.Element> = () => {
                       alt="GitHub langs" width="285" height="300" />
                   </div>
                 </Col>
+              </Card>
+              <Card className={style.card}>
+                <div style={{marginLeft: "10px"}}>
+                  <a href="https://hetrixtools.com/r/9dac97d1f3f5e4859b739374a0d04621/" target="_blank" rel="noopener noreferrer">サーバ稼働状況 by HetrixTools</a>
+                </div>
               </Card>
             </div>
           </Col>
