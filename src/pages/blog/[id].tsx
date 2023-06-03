@@ -14,7 +14,7 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import { ArticleMiniCard } from "@/components/parts/article_card";
 import ArticleOutline from "@/components/parts/article_outline";
-import { BlogGenreTagList } from "@/components/parts/blog_genre_tag_list";
+import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import { LANGUAGES } from "@/libs/prismjs_lang";
 import style from "@/styles/blog.module.css";
@@ -34,10 +34,10 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
 
 export const getStaticProps: GetStaticProps<ArticleProps, ParsedUrlQuery> = async (context) => {
   const blogId = context.params?.id as string;
-  const blogs = await microcms.get({ endpoint: "blog", queries: {limit: 3, orders: "-publishedAt"} });
+  const blogs = await microcms.get({ endpoint: "blog", queries: { limit: 3, orders: "-publishedAt" } });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
-  const blog = await microcms.get({ endpoint: "blog", queries: {filters: `id[equals]${blogId}`} });
+  const blog = await microcms.get({ endpoint: "blog", queries: { filters: `id[equals]${blogId}` } });
 
   return {
     props: {

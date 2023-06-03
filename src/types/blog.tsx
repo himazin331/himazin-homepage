@@ -40,6 +40,8 @@ export interface BlogGeneralPageProps {
   blogs: Blog[];
   genres: Genre[];
   tags: Tags[];
+  totalCount: number;
+  pagesIdx: number;
 }
 
 export interface ArticleProps {

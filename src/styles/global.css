@@ -171,6 +171,24 @@ header {
     width: 5%;
 }
 
+.page-item.active .page-link {
+    color: var(--primary-text-color);
+    background-color: var(--content-bg-color);
+    border-color: var(--border-color);
+}
+
+.page-link {
+    color: var(--accent-color);
+    background-color: var(--primary-bg-color);
+    border-color: var(--border-color);
+}
+
+.page-link:hover, .page-link:focus {
+    color: var(--accent-color);
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+}
+
 /* Footer */
 footer {
     width: 100%;
