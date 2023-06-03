@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import Header from "@/components/header";
+import { usePageView, GoogleAnalytics } from "@/libs/gtag";
 import "@/styles/global.css";
 
 declare global {
@@ -26,9 +27,11 @@ const Homepage: NextPage<AppProps, JSX.Element> = ({ Component, pageProps }) => 
     },
     [asPath]
   );
+  usePageView();
 
   return (
     <>
+      <GoogleAnalytics />
       {/* Bootstrap JavaScript */}
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous" />
       <Header asPath={asPath} />

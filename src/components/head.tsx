@@ -46,14 +46,6 @@ const CustomHead: React.FC<CustomHeadProps> = ({ title, description, ogImage, or
       {/* <!-- twitter OGP --> */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={process.env.NEXT_PUBLIC_TW_ID || "tw_id_undefined"} />
-      {/* Global site tag (gtag.js) - Google Analytics */}
-      {/* <script async src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.G_TAGID}></script>
-      {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', process.env.NEXT_PUBLIC_GA_ID);
-      } */}
     </Head>
   );
 };
