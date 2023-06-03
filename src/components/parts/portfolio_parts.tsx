@@ -114,14 +114,14 @@ const PortfolioParts: React.FC<PortfolioPartsProps> = ({imagePaths, imageAlts, b
                     <div className={style.portfolio_subject}>
                       <span>詳　　細 :</span>
                     </div>
-                    <p className={style.portfolio_sentence}>
-                      {sentence && sentence.split("\\n").map((line: string) => (
-                        <>
+                    <div className={style.portfolio_sentence}>
+                      {sentence && sentence.split("\\n").map((line: string, idx: number) => (
+                        <span key={idx}>
                           {line}
                           <br />
-                        </>
+                        </span>
                       ))}
-                    </p>
+                    </div>
                   </div>
                 </div>
               </Modal.Body>

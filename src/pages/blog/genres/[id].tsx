@@ -54,12 +54,12 @@ const BlogGenrePage: NextPage<BlogGenreContentProps, JSX.Element> = ({ blogs, ge
             <div className={style.blog_page_field}>
               <h1 className={style.blog_page_title}>{`ジャンル: ${genre.genre}のブログ記事`}</h1>
               {blogs.map((blog: Blog, idx: number) => (
-                <>
+                <div key={idx}>
                   <hr />
-                  <ArticleCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                  <ArticleCard id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                     thumbnailImg={blog.thumbnail_img} />
-                </>
+                </div>
               ))}
             </div>
           </div>

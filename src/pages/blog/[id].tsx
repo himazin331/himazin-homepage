@@ -142,12 +142,12 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
             <div className={style.sidebar_item_field}>
               <p className={style.sidebar_header}>記事一覧</p>
               {blogs.map((blog: Blog, idx: number) => (
-                <>
-                  <ArticleMiniCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                <div key={idx}>
+                  <ArticleMiniCard id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                     thumbnailImg={blog.thumbnail_img} />
                   <hr />
-                </>
+                </div>
               ))}
               <Link href="/blog">もっとみる...</Link>
             </div>

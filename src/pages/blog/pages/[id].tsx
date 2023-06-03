@@ -51,12 +51,12 @@ const BlogPage: NextPage<BlogGeneralPageProps, JSX.Element> = ({ blogs, genres, 
               <h1 className={style.blog_page_title}>himazin331の技術ブログ</h1>
               <p className="p-h5replace">よわよわ園児ニアによる備忘録/メモ書きみたいなブログです。</p>
               {blogs.map((blog: Blog, idx: number) => (
-                <>
+                <div key={idx}>
                   <hr />
-                  <ArticleCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                  <ArticleCard id={blog.id} title={blog.title} createdAt={blog.createdAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                     thumbnailImg={blog.thumbnail_img} />
-                </>
+                </div>
               ))}
             </div>
 

@@ -10,17 +10,17 @@ const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.Re
       <div className={style.sidebar_item_field}>
         <p className={style.sidebar_header}>ジャンル</p>
         {genres.map((genre: Genre, idx: number) => (
-          <>
-            <div><Link key={idx} href={`/blog/genres/${genre.id}`}>{genre.genre}</Link></div>
-          </>
+          <div key={idx}>
+            <Link href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
+          </div>
         ))}
       </div>
       <div className={style.sidebar_item_field}>
         <p className={style.sidebar_header}>タグ</p>
         {tags.map((tag: Tags, idx: number) => (
-          <>
-            <div><Link key={idx} href={`/blog/tags/${tag.id}`}>{tag.tag}</Link></div>
-          </>
+          <div key={idx}>
+            <Link href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
+          </div>
         ))}
       </div>
     </>
