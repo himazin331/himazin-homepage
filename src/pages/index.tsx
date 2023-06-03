@@ -12,6 +12,10 @@ import Footer from "@/components/footer";
 import Head from "@/components/head";
 import style from "@/styles/index.module.css";
 
+const gitHubGraphImageLoader = (): string => {
+  return "https://himazin331.com/images/grass_graph.png";
+};
+
 const gitHubStatsImageLoader = (): string => {
   return "https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true";
 };
@@ -153,7 +157,7 @@ const IndexPage: NextPage<JSX.Element> = () => {
 
               <Card className={style.card}>
                 <div className={style.github_contributors} id="github_contributors">
-                  <Image className={style.grass_graph + ` next-image`} src="/images/grass_graph.png" alt="github contributes"
+                  <Image className={style.grass_graph + ` next-image`} src="grass_graph.png" loader={gitHubGraphImageLoader} alt="github contributes"
                     width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <Col className={style.github_widgets}>
