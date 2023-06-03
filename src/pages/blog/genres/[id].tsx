@@ -1,15 +1,14 @@
 /* ブログ ジャンル別記事一覧ページ */
 
 import type { ParsedUrlQuery } from "node:querystring";
-import type { NextPage } from "next";
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
 import { ArticleCard } from "@/components/parts/article_card";
-import { BlogGenreTagList } from "@/components/parts/blog_genre_tag_list";
+import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
 import type { Blog, BlogGenreContentProps, Genre } from "@/types/blog";
@@ -22,7 +21,7 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
 
 export const getStaticProps: GetStaticProps<BlogGenreContentProps, ParsedUrlQuery> = async (context) => {
   const genreId: string = context.params?.id as string;
-  const blogs = await microcms.get({ endpoint: "blog", queries: {filters: `genre[equals]${genreId}`} });
+  const blogs = await microcms.get({ endpoint: "blog", queries: { filters: `genre[equals]${genreId}` } });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
   const genre: Genre = genres.contents.find((genre: Genre) => genre.id === genreId);
@@ -54,15 +53,15 @@ const BlogGenrePage: NextPage<BlogGenreContentProps, JSX.Element> = ({ blogs, ge
 
             <div className={style.blog_page_field}>
               <h1 className={style.blog_page_title}>{`ジャンル: ${genre.genre}のブログ記事`}</h1>
+              {blogs.map((blog: Blog, idx: number) => (
+                <>
+                  <hr />
+                  <ArticleCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                    updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
+                    thumbnailImg={blog.thumbnail_img} />
+                </>
+              ))}
             </div>
-            {blogs.map((blog: Blog, idx: number) => (
-              <>
-                <hr />
-                <ArticleCard key={idx} id={blog.id} title={blog.title} createdAt={blog.createdAt}
-                  updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
-                  thumbnailImg={blog.thumbnail_img} />
-              </>
-            ))}
           </div>
 
           <div className={style.sidebar}>

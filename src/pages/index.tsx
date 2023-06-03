@@ -3,9 +3,9 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Script from "next/script";
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import { MdPerson, MdCake, MdOutlineLaptopWindows, MdArticle, 
         MdAssignmentInd, MdLocationPin, MdEmail, MdWork, MdFavorite } from "react-icons/md";
 import Footer from "@/components/footer";

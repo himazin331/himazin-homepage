@@ -6,7 +6,7 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/Container";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
-import { BlogGenreTagList } from "@/components/parts/blog_genre_tag_list";
+import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import style from "@/styles/blog.module.css";
 import type { Genre, GenreTagListProps } from "@/types/blog";

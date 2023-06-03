@@ -36,6 +36,7 @@ const ArticleOutline: React.FC = (): React.ReactElement => {
     headings.length > 0? 
     <>
       <div className={style.article_outline}>
+        <span style={{fontSize: "18px"}}>目次</span>
         <ul>
           {headings.map((heading: headingData, idx: number) => (
             <li key={idx}>

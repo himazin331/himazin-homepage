@@ -4,7 +4,7 @@ import Link from "next/link";
 import style from "@/styles/blog.module.css";
 import type { Genre, Tags, GenreTagListProps } from "@/types/blog";
 
-export const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.ReactElement => {
+const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.ReactElement => {
   return (
     <>
       <div className={style.sidebar_item_field}>
