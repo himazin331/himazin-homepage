@@ -6,7 +6,7 @@ import BlogPage from "@/pages/blog/pages/[id]";
 import type { BlogGeneralPageProps } from "@/types/blog";
 
 export const getStaticProps: GetStaticProps<BlogGeneralPageProps> = async () => {
-  const blogs = await microcms.get({ endpoint: "blog", queries: { offset: 0, limit: 7 }});
+  const blogs = await microcms.get({ endpoint: "blog", queries: { offset: 0, limit: 7 } });
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 

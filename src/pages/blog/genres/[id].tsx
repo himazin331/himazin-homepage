@@ -10,13 +10,14 @@ import Head from "@/components/head";
 import { ArticleCard } from "@/components/parts/article_card";
 import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
+import Custom404 from "@/pages/404";
 import style from "@/styles/blog.module.css";
 import type { Blog, BlogGenreContentProps, Genre } from "@/types/blog";
 
 export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const paths = genres.contents.map((genre: Genre) => `/blog/genres/${genre.id}`);
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps<BlogGenreContentProps, ParsedUrlQuery> = async (context) => {
@@ -37,9 +38,15 @@ export const getStaticProps: GetStaticProps<BlogGenreContentProps, ParsedUrlQuer
 };
 
 const BlogGenrePage: NextPage<BlogGenreContentProps, JSX.Element> = ({ blogs, genres, tags, genre }) => {
+  const asPath: string = useRouter().asPath;
+
+  if (!genre) {
+    return <Custom404 />;
+  }
+  
   return (
     <>
-      <Head title={`ジャンル:${genre.genre}のブログ記事`} originUrl={"https://himazin331.com" + useRouter().asPath} />
+      <Head title={`ジャンル:${genre.genre}のブログ記事`} originUrl={"https://himazin331.com" + asPath} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>

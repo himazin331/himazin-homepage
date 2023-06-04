@@ -14,6 +14,7 @@ const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.Re
             <Link href={`/blog/genres/${genre.id}`}>{genre.genre}</Link>
           </div>
         ))}
+        <Link href="/blog/genres">もっとみる...</Link>
       </div>
       <div className={style.sidebar_item_field}>
         <p className={style.sidebar_header}>タグ</p>
@@ -22,6 +23,7 @@ const BlogGenreTagList: React.FC<GenreTagListProps> = ({genres, tags}): React.Re
             <Link href={`/blog/tags/${tag.id}`}>{tag.tag}</Link>
           </div>
         ))}
+        <Link href="/blog/tags">もっとみる...</Link>
       </div>
     </>
   );

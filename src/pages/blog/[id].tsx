@@ -17,6 +17,7 @@ import ArticleOutline from "@/components/parts/article_outline";
 import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
 import { LANGUAGES } from "@/libs/prismjs_lang";
+import Custom404 from "@/pages/404";
 import style from "@/styles/blog.module.css";
 import type { Blog, Tags, ArticleProps } from "@/types/blog";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
@@ -29,7 +30,7 @@ import "prismjs/themes/prism-tomorrow.min.css";
 export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
   const paths = blogs.contents.map((blog: Blog) => `/blog/${blog.id}`);
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps<ArticleProps, ParsedUrlQuery> = async (context) => {
@@ -70,8 +71,15 @@ const highlightContents = (language: string, sourceCode: string, fileName?: stri
 
 const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags, blog }) => {
   useEffect(() => {
-    Prism.highlightAll();
+    if (blog) {
+      Prism.highlightAll();
+    }
   });
+  const asPath: string = useRouter().asPath;
+
+  if (!blog) {
+    return <Custom404 />;
+  }
 
   let date: Date;
   date = new Date(blog.createdAt);
@@ -81,7 +89,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
 
   return (
     <>
-      <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + useRouter().asPath} />
+      <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + asPath} />
       {/* Twitter JavaScript */}
       <Script src="https://platform.twitter.com/widgets.js" />
       <div className="wrapper" style={{marginLeft: "20px"}}>
