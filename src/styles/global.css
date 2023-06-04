@@ -189,6 +189,10 @@ header {
     border-color: var(--border-color);
 }
 
+.breadcrumb-item+.breadcrumb-item::before, .breadcrumb-item.active {
+    color: #aba499;
+}
+
 /* Footer */
 footer {
     width: 100%;
