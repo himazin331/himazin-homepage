@@ -92,7 +92,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
       <Head title={blog.title} ogImage={blog.thumbnail_img} originUrl={"https://himazin331.com" + asPath} />
       {/* Twitter JavaScript */}
       <Script src="https://platform.twitter.com/widgets.js" />
-      <div className="wrapper" style={{marginLeft: "20px"}}>
+      <div className="wrapper">
         <Container className="d-flex flex-column flex-lg-row justify-content-center" fluid>
           <div className={style.main_article_field}>
             <div className={style.previous_field}>
@@ -108,8 +108,8 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
               ))}
               <h1 className={style.article_page_title}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>
-                <FaPen /><span className={style.article_info_data}>投稿日: {blog.createdAt}</span>
-                <FaSyncAlt /><span className={style.article_info_data}>更新日: {blog.updatedAt}</span>
+                <div><FaPen /><span className={style.article_info_data}>投稿日: {blog.createdAt}</span></div>
+                <div><FaSyncAlt /><span className={style.article_info_data}>更新日: {blog.updatedAt}</span></div>
               </div>
             </div>
 

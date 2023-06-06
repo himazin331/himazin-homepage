@@ -179,6 +179,7 @@
     .main_field, .main_article_field { 
         width: 90%;
         margin: 0 auto;
+        margin-top: 40px;
     }
     .main_article_field {
         margin-bottom: 100px;
