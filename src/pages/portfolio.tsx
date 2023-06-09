@@ -59,14 +59,14 @@ const Portfolio: NextPage<JSX.Element> = () => {
                 そこで、私は深層学習によるポーズ推定モデルを用いて関節体モデルを作成することでコストを削減できるのではないかと考え、\n
                 その考えを具現化することを目的に取り組みました。" />
 
-              <PortfolioParts imagePaths={["5-1.jpg", "5-2.jpg", "5-3.jpg"]} 
-                imageAlts={["メインページ", "スキルページ", "ポートフォリオページ"]} badge="制作中" title="ホームページ/ブログ"
+              <PortfolioParts imagePaths={["5-1.png", "5-2.png", "5-3.png", "5-4.png"]} 
+                imageAlts={["メインページ", "ブログトップページ", "ブログ記事ページ", "ポートフォリオページ"]} title="ホームページ/ブログ"
                 keywords={["WebSite"]} overview="いまあなたがアクセスして閲覧しているこのページ。"
-                devPeriod="現行 (個人開発)" devEnv={["HTML5/CSS", "TypeScript", "React", "Next.js", "Nginx"]}
+                devPeriod="約２ヶ月 (個人開発)" devEnv={["HTML5/CSS", "TypeScript", "React", "Next.js", "Nginx", "microCMS", "prism.js"]}
                 urlList={["https://github.com/himazin331/himazin-homepage"]} urlNameList={["GitHub"]}
-                sentence="自宅サーバ(VMware)上の仮想マシンをWebサーバとして運用しています。\n
-                レスポンシブデザインはBootstrapを用いて実現しています。\n\n
-                脆弱性テストや負荷テストも実施して、セキュリティと可用性を確保しています。" />
+                sentence="自宅にあるサーバをWebサーバとして運用しています。\n\n
+                Next.jsのSSGにより高速なコンテンツ提供を実現しました。\n
+                ブログについては国産ヘッドレスCMSであるmicroCMSを採用して、SSGをベースに更新はOn-demand ISRにより配信しています。" />
 
               <PortfolioParts imagePaths={["4-1.jpg", "4-2.png", "4-3.jpg"]} 
                 imageAlts={["スマートロック本体", "電子回路", "システム構成図"]} title="セキュアなスマートロック"

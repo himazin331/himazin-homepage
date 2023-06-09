@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<BlogGeneralPageProps, ParsedUrlQuery
 const BlogPage: NextPage<BlogGeneralPageProps, JSX.Element> = ({ blogs, genres, tags, totalCount, pagesIdx }) => {
   return (
     <>
-      <Head title="Blog" originUrl={"https://himazin331.com" + useRouter().asPath} />
+      <Head title="Blog" description="ゆるゆるITエンジニアhimazin331による備忘録/メモ書きみたいなブログ" originUrl={"https://himazin331.com" + useRouter().asPath} />
       <div className="wrapper">
         <Container className="d-flex flex-column flex-md-row justify-content-center" fluid>
           <div className={style.main_field}>
