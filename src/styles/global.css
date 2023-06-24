@@ -245,7 +245,7 @@ footer span {
 
 @media (max-width: 650px) {
     .navbar-brand img {
-        width: 400px;
+        width: 420px;
     }
 }
 
@@ -257,11 +257,14 @@ footer span {
 
 @media (max-width: 480px) {
     .navbar-brand img {
-        width: 260px;
+        width: 300px;
     }
 }
 
 @media (max-width: 425px) {
+    .navbar-brand img {
+        width: 280px;
+    }
     .top-img {
         width: 128px;
     }
@@ -277,13 +280,17 @@ footer span {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
     .navbar-brand img {
-        width: 200px;
+        width: 250px;
     }
 }
 
 @media (max-width: 365px) {
+    .navbar-brand img {
+        width: 200px;
+    }
+
     .wrapper {
         padding-bottom: 330px;
     }

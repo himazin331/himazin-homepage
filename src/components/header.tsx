@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ asPath }): React.ReactElement => {
       <Navbar className="header-navbar" variant="dark" expand="lg" collapseOnSelect>
         <Navbar.Brand href="/" as={Link}>
           <Image src="/images/header_picture.png" alt="himazin331" 
-            width={500} height={43} style={{objectFit: "contain"}} />
+            width={500} height={60} style={{objectFit: "contain"}} />
         </Navbar.Brand>
     
         <Navbar.Toggle aria-controls="navbar" label="Toggle navigation" />
