@@ -28,6 +28,7 @@ body {
 }
 
 a {
+    word-wrap: break-word;
     text-decoration: none;
     color: var(--accent-color);
 }
