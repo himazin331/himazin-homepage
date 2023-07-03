@@ -10,9 +10,18 @@ interface headingData {
   text: string;
 }
 
+interface indentLevel {
+  [key: string]: string;
+}
+
 const ArticleOutline: React.FC = (): React.ReactElement => {
   const asPath: string = useRouter().asPath;
   const [headings, setHeadings] = useState<headingData[]>([]);
+  const indentLevel: indentLevel = {
+    "h3": style.h3_outline_indent,
+    "h4": style.h4_outline_indent,
+    "h5": style.h5_outline_indent
+  };
 
   useEffect(() => {
     const articleBody: HTMLElement  = document.getElementById("article_body_field") || document.body;
@@ -39,7 +48,7 @@ const ArticleOutline: React.FC = (): React.ReactElement => {
         <span style={{fontSize: "18px"}}>目次</span>
         <ul>
           {headings.map((heading: headingData, idx: number) => (
-            <li key={idx}>
+            <li key={idx} className={indentLevel[heading.tag]}>
               <a href={`#${heading.id}`}>{heading.text}</a>
             </li>
           ))}

@@ -95,13 +95,23 @@
 .article_outline li {
     margin: 5px 0;
 }
+.article_outline .h3_outline_indent {
+    margin-left: 1em;
+}
+.article_outline .h4_outline_indent {
+    margin-left: 2em;
+}
+.article_outline .h5_outline_indent {
+    margin-left: 3em;
+}
 
+.article_body_field h2,
 .article_body_field h3, 
 .article_body_field h4,
-.article_body_field h5, 
-.article_body_field h6 {
-    padding-top: 70px;
-    margin-top: -70px;
+.article_body_field h5
+{
+    padding-top: 75px;
+    margin-top: -75px;
 }
 
 .article_body h2 {
