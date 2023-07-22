@@ -52,10 +52,50 @@
 
 .github_contributors {
     text-align: center;
+    margin: 0 2%;
 }
 
-.grass_graph {
-    width: 95%;
+.ContributionCalendar_label {
+    padding: 0.125em 0.5em 0.125em 0;
+    font-size: 12px;
+    /* font-weight: var(--base-text-weight-normal, 400); */
+    /* color: var(--color-fg-default); */
+    text-align: left;
+    /* fill: var(--color-fg-default); */
+}
+.ContributionCalendar_day, .ContributionCalendar_day[data-level="0"] {
+    fill: var(--color-calendar-graph-day-bg);
+    shape-rendering: geometricPrecision;
+    background-color: var(--color-calendar-graph-day-bg);
+    border-radius: 2px;
+    outline: 1px solid var(--color-calendar-graph-day-border);
+    outline-offset: -1px;
+}
+.ContributionCalendar_day[data-level="1"] {
+    fill: var(--color-calendar-graph-day-L1-bg);
+    background-color: var(--color-calendar-graph-day-L1-bg);
+    outline: 1px solid var(--color-calendar-graph-day-L1-border);
+}
+.ContributionCalendar_day[data-level="2"] {
+    fill: var(--color-calendar-graph-day-L2-bg);
+    background-color: var(--color-calendar-graph-day-L2-bg);
+    outline: 1px solid var(--color-calendar-graph-day-L2-border);
+}
+.ContributionCalendar_day[data-level="3"] {
+    fill: var(--color-calendar-graph-day-L3-bg);
+    background-color: var(--color-calendar-graph-day-L3-bg);
+    outline: 1px solid var(--color-calendar-graph-day-L3-border);
+}
+.ContributionCalendar_day[data-level="4"] {
+    fill: var(--color-calendar-graph-day-L4-bg);
+    background-color: var(--color-calendar-graph-day-L4-bg);
+    outline: 1px solid var(--color-calendar-graph-day-L4-border);
+}
+
+.github_contributors_weekly {
+    background-color: rgb(63, 67, 69);
+    padding: 0 10px;
+    border-radius: 0.25rem;
 }
 
 .github_widgets {

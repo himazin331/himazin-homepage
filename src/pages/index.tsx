@@ -3,6 +3,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -10,10 +11,13 @@ import { MdPerson, MdCake, MdOutlineLaptopWindows, MdArticle,
         MdAssignmentInd, MdLocationPin, MdEmail, MdWork, MdFavorite } from "react-icons/md";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
+import ContributeGraph from "@/components/parts/contribute_graph";
 import style from "@/styles/index.module.css";
 
-const gitHubGraphImageLoader = (): string => {
-  return "https://himazin331.com/images/grass_graph.png";
+const handleGetContributions = async () => {
+  const response = await fetch('/api/get_github_contributions');
+  const responseData = await response.json();
+  return responseData;
 };
 
 const gitHubStatsImageLoader = (): string => {
@@ -25,6 +29,19 @@ const gitHublangsImageLoader = (): string => {
 };
 
 const IndexPage: NextPage<JSX.Element> = () => {
+  const [contributeData, setContributeData] = useState<any>(null);
+  const [contributeLoading, setContributeLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const res = handleGetContributions();
+    res.then((r) => {
+      setContributeData(r["data"]["user"]["contributionsCollection"]["contributionCalendar"]);
+      setContributeLoading(false);
+    }).catch((error) => {
+      console.error(error);
+    });
+  }, []);
+
   return (
     <>
       <Head originUrl={"https://himazin331.com"} />
@@ -157,8 +174,10 @@ const IndexPage: NextPage<JSX.Element> = () => {
 
               <Card className={style.card}>
                 <div className={style.github_contributors} id="github_contributors">
-                  <Image className={style.grass_graph + ` next-image`} src="grass_graph.png" loader={gitHubGraphImageLoader} alt="github contributes"
-                    width="0" height="0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  {contributeLoading && <p>Loading...</p>}
+                  <div className={style.github_contributors_weekly}>
+                    {contributeData && <ContributeGraph contributeData={contributeData}/>}
+                  </div>
                 </div>
                 <Col className={style.github_widgets}>
                   <div className={style.stats}>
