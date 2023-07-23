@@ -55,15 +55,25 @@
     margin: 0 2%;
 }
 
+.ContributionCalendar_grid {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-collapse: separate;
+    border-spacing: 3px;
+}
 .ContributionCalendar_label {
+    position: relative;
     padding: 0.125em 0.5em 0.125em 0;
     font-size: 12px;
-    /* font-weight: var(--base-text-weight-normal, 400); */
-    /* color: var(--color-fg-default); */
+    font-weight: 500;
+    color: var(--primary-text-color);
     text-align: left;
-    /* fill: var(--color-fg-default); */
 }
 .ContributionCalendar_day, .ContributionCalendar_day[data-level="0"] {
+    width: 11px;
     fill: var(--color-calendar-graph-day-bg);
     shape-rendering: geometricPrecision;
     background-color: var(--color-calendar-graph-day-bg);
@@ -98,24 +108,6 @@
     border-radius: 0.25rem;
 }
 
-.github_widgets {
-    padding: 10px;
-    text-align: center;
-}
-
-.stats {
-    display: inline-block;
-    text-align: center;
-}
-
-.stats img {
-    margin-bottom: 75px;
-}
-
-.langs {
-    display: inline-block;
-}
-
 /* サイドペイン */
 .side_pain {
     margin: 0 2%;
@@ -135,13 +127,6 @@
 }
 
 @media (max-width: 1119px) {
-    .github_widgets {
-        text-align: left;
-    }
-
-    .stats img {
-        margin-bottom: 5px;
-    }
 }
 
 @media (max-width: 768px) {

@@ -20,14 +20,6 @@ const handleGetContributions = async () => {
   return responseData;
 };
 
-const gitHubStatsImageLoader = (): string => {
-  return "https://github-readme-stats.vercel.app/api?username=himazin331&count_private=true&show_icons=true";
-};
-
-const gitHublangsImageLoader = (): string => {
-  return "https://github-readme-stats.vercel.app/api/top-langs/?username=himazin331";
-};
-
 const IndexPage: NextPage<JSX.Element> = () => {
   const [contributeData, setContributeData] = useState<any>(null);
   const [contributeLoading, setContributeLoading] = useState<boolean>(true);
@@ -174,21 +166,9 @@ const IndexPage: NextPage<JSX.Element> = () => {
 
               <Card className={style.card}>
                 <div className={style.github_contributors} id="github_contributors">
-                  {contributeLoading && <p>Loading...</p>}
-                  <div className={style.github_contributors_weekly}>
-                    {contributeData && <ContributeGraph contributeData={contributeData}/>}
-                  </div>
+                  {contributeLoading && <span>Loading...</span>}
+                  {contributeData && <ContributeGraph contributeData={contributeData}/>}
                 </div>
-                <Col className={style.github_widgets}>
-                  <div className={style.stats}>
-                    <Image className="col-lg col-sm img-fluid" src="github_stats.png" loader={gitHubStatsImageLoader}
-                      alt="GitHub Stats" width="465" height="195" />
-                  </div>
-                  <div className={style.langs}>
-                    <Image className="col-lg col-sm img-fluid" src="github_langs.png" loader={gitHublangsImageLoader}
-                      alt="GitHub langs" width="285" height="300" />
-                  </div>
-                </Col>
               </Card>
               <Card className={style.card}>
                 <div style={{marginLeft: "10px"}}>

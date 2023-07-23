@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /blog/preview
+Disallow: /api/
 
 Host: https://himazin331.com
 
