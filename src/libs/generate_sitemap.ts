@@ -14,7 +14,7 @@ const generateSitemapXml = async (): Promise<string> => {
   const articleFields: Array<FieldObject> = blogs.contents.map((blog: Blog) => {
     return {
       path: `/blog/${blog.id}`,
-      lastmod: blog.createdAt || defaultLastmod
+      lastmod: blog.publishedAt || defaultLastmod
     };
   });
 

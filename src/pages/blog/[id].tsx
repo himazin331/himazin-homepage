@@ -82,8 +82,8 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
   }
 
   let date: Date;
-  date = new Date(blog.createdAt);
-  blog.createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
+  date = new Date(blog.publishedAt);
+  blog.publishedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
   date = new Date(blog.updatedAt);
   blog.updatedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
 
@@ -108,7 +108,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
               ))}
               <h1 className={style.article_page_title}>{blog.title}</h1>
               <div style={{textAlign: "right"}}>
-                <div><FaPen /><span className={style.article_info_data}>投稿日: {blog.createdAt}</span></div>
+                <div><FaPen /><span className={style.article_info_data}>投稿日: {blog.publishedAt}</span></div>
                 <div><FaSyncAlt /><span className={style.article_info_data}>更新日: {blog.updatedAt}</span></div>
               </div>
             </div>
@@ -151,7 +151,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
               <p className={style.sidebar_header}>記事一覧</p>
               {blogs.map((blog: Blog, idx: number) => (
                 <div key={idx}>
-                  <ArticleMiniCard id={blog.id} title={blog.title} createdAt={blog.createdAt}
+                  <ArticleMiniCard id={blog.id} title={blog.title} publishedAt={blog.publishedAt}
                     updatedAt={blog.updatedAt} genre={blog.genre} tags={blog.tags} thumbnail={blog.thumbnail}
                     thumbnailImg={blog.thumbnail_img} />
                   <hr />

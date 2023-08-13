@@ -12,7 +12,7 @@ import type { Genre, Tags, Thumbnail } from "@/types/blog";
 interface ArticleCardProps {
   id: string;
   title: string;
-  createdAt: string;
+  publishedAt: string;
   updatedAt: string;
   genre: Genre;
   tags: Tags[];
@@ -20,12 +20,12 @@ interface ArticleCardProps {
   thumbnailImg?: Thumbnail;
 }
 
-export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
+export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, publishedAt, updatedAt, 
                                                   genre, tags, thumbnail, thumbnailImg})
                                                   : React.ReactElement => {
   let date: Date;
-  date = new Date(createdAt);
-  createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
+  date = new Date(publishedAt);
+  publishedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
   date = new Date(updatedAt);
   updatedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
 
@@ -47,7 +47,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, u
           <Link className={style.article_title_link} href={`/blog/${id}`}>{title}</Link>
         </p>
         <p className={style.article_info}>
-          <FaPen /><span className={style.article_info_data}>投稿日: {createdAt}</span>
+          <FaPen /><span className={style.article_info_data}>投稿日: {publishedAt}</span>
           <FaSyncAlt /><span className={style.article_info_data}>更新日: {updatedAt}</span>
           <span className="d-block d-md-inline">
             <FaFolder />
@@ -66,12 +66,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({id, title, createdAt, u
   );
 };
 
-export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdAt, updatedAt, 
+export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, publishedAt, updatedAt, 
                                                       genre, tags, thumbnail, thumbnailImg})
                                                       : React.ReactElement => {
   let date: Date;
-  date = new Date(createdAt);
-  createdAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
+  date = new Date(publishedAt);
+  publishedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
   date = new Date(updatedAt);
   updatedAt = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }).slice(0, -3).replace("T", " ");
 
@@ -91,7 +91,7 @@ export const ArticleMiniCard: React.FC<ArticleCardProps> = ({id, title, createdA
           <Link className={style.article_title_link} href={`/blog/${id}`}>{title}</Link>
         </p>
         <p className={style.article_info} style={{marginBottom: "0", paddingBottom: "0"}}>
-          <FaPen /><span className={style.article_info_data}>投稿日: {createdAt}</span>
+          <FaPen /><span className={style.article_info_data}>投稿日: {publishedAt}</span>
           <FaSyncAlt /><span className={style.article_info_data}>更新日: {updatedAt}</span>
           <span className="d-block">
             <FaFolder />
