@@ -136,7 +136,7 @@ const IndexPage: NextPage<JSX.Element> = () => {
             
               <div className={style.content_item}>
                 <div className={`${style.community_caption_field} d-sm-flex align-items-center`}>
-                  <span className={style.community_caption_text}>Twitter</span>
+                  <span className={style.community_caption_text}>Twitter (X)</span>
                 </div>
                 <span className={style.community_text}><a href="https://twitter.com/himazin_shotaML" target="_blank" rel="noopener noreferrer">@himazin_shotaML</a></span>
               </div>
