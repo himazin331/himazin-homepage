@@ -76,7 +76,12 @@ const ContributeGraph: React.FC<ContributeProps> = ({contributeData}): React.Rea
 
     let weeklyContLabel: string | Array<string> = `${firstDay.getMonth()+1}/${firstDay.getDate()}~${lastDay.getMonth()+1}/${lastDay.getDate()}`;
     // idx=0か前年と異なる年であれば年を追加
-    if (i === 0 || prevYear !== firstDayYear) weeklyContLabel = [String(firstDayYear), weeklyContLabel];
+    if (weeklyContLabels.length === 0 || prevYear !== firstDayYear) {
+      if (weeklyContLabels.length % 3 === 0) {
+        weeklyContLabel = [String(firstDayYear), weeklyContLabel];
+        prevYear = lastDay.getFullYear();
+      }
+    }
     weeklyContLabels.push(weeklyContLabel);
     
     // 背景色セット
@@ -89,8 +94,6 @@ const ContributeGraph: React.FC<ContributeProps> = ({contributeData}): React.Rea
     } else {
       backgroundColors.push("#0e4429");
     }
-
-    prevYear = lastDay.getFullYear();
   }
 
   // 月ラベル作成
