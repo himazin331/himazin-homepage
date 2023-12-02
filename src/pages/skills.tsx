@@ -27,6 +27,7 @@ const SkillsPage: NextPage<JSX.Element> = () => {
               <SkillCard imagePath="/images/skills/5js.png" imageAlt="JSロゴ" skillName="JavaScript" />
               <SkillCard imagePath="/images/skills/6php.png" imageAlt="PHPロゴ" skillName="PHP" />
               <SkillCard skillName="TypeScript" />
+              <SkillCard skillName="C++" />
             </div>
           </div>
 
