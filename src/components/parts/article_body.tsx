@@ -3,6 +3,7 @@
 import * as prod from "react/jsx-runtime";
 import rehypeRaw from "rehype-raw"; 
 import rehypeReact from "rehype-react";
+import rehypeSlug from "rehype-slug";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -18,6 +19,7 @@ const ArticleBody = ({ markdown }) => {
     .use(remarkRehype, {
       allowDangerousHtml: true
     })
+    .use(rehypeSlug)
     .use(rehypeRaw)
     .use(rehypeReact, {
       //@ts-ignore
