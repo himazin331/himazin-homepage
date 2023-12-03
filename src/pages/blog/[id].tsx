@@ -1,31 +1,22 @@
 /* ブログ記事ページ */
 
 import type { ParsedUrlQuery } from "node:querystring";
-import DOMPurify from "isomorphic-dompurify";
 import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import Prism from "prismjs";
-import { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import { FaChevronLeft, FaFolder, FaPen, FaSyncAlt, FaTags } from "react-icons/fa";
 import Footer from "@/components/footer";
 import Head from "@/components/head";
+import ArticleBody from "@/components/parts/article_body";
 import { ArticleMiniCard } from "@/components/parts/article_card";
 import ArticleOutline from "@/components/parts/article_outline";
 import BlogGenreTagList from "@/components/parts/blog_genre_tag_list";
 import { microcms } from "@/libs/microcms";
-import { LANGUAGES } from "@/libs/prismjs_lang";
 import Custom404 from "@/pages/404";
 import style from "@/styles/blog.module.css";
 import type { Blog, Tags, ArticleProps } from "@/types/blog";
-import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
-import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
-import "prismjs/plugins/toolbar/prism-toolbar.min.js";
-import "prismjs/plugins/toolbar/prism-toolbar.min.css";
-import "prismjs/plugins/show-language/prism-show-language.min.js";
-import "prismjs/themes/prism-tomorrow.min.css";
 
 export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const blogs = await microcms.get({ endpoint: "blog" });
@@ -50,31 +41,7 @@ export const getStaticProps: GetStaticProps<ArticleProps, ParsedUrlQuery> = asyn
   };
 };
 
-// シンタックスハイライト処理
-const highlightContents = (language: string, sourceCode: string, fileName?: string): string | undefined => {
-  let content: string = "";
-  if (!LANGUAGES.includes(language)) {
-    return;
-  }
-
-  if (fileName === undefined) {
-    content += `<pre class="prism lang-${language} line-numbers">`;
-  } else {
-    content += `<pre class="prism lang-${language} line-numbers" data-label=${fileName}>`;
-  }
-  content += `<code class="lang-${language}">`;
-  content += sourceCode.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  content += "</code></pre>";
-
-  return content;
-};
-
 const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags, blog }) => {
-  useEffect(() => {
-    if (blog) {
-      Prism.highlightAll();
-    }
-  });
   const asPath: string = useRouter().asPath;
 
   if (!blog) {
@@ -116,33 +83,7 @@ const ArticlePage: NextPage<ArticleProps, JSX.Element> = ({ blogs, genres, tags,
             <ArticleOutline />
 
             <div className={style.article_body_field} id="article_body_field">
-              {blog.body.map((body: any, idx: number) => {
-                return body.fieldId === "rich_editor" ? (
-                  <div
-                    className={style.article_body}
-                    key={idx}
-                    dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor)}`}}
-                  />
-                ) : body.fieldId === "rich_editor_beta" ? (
-                  <div
-                    className={style.article_body}
-                    key={idx}
-                    dangerouslySetInnerHTML={{__html: `${DOMPurify.sanitize(body.rich_editor_beta)}`}}
-                  />
-                ) : body.fieldId === "embedded_contents" ? (
-                  <div
-                    className={style.article_body}
-                    key={idx}
-                    dangerouslySetInnerHTML={{__html: body.embedded_contents}}
-                  />
-                ) : body.fieldId === "code_block" ? (
-                  <div
-                    className={style.article_body + `code-toolbar`}
-                    key={idx}
-                    dangerouslySetInnerHTML={{__html: highlightContents(body.pg_language[0], body.code_block, body.file_name) || ""}}
-                  />
-                ) : null;
-              })}
+              <ArticleBody markdown={blog.body} />
             </div>
           </div>
 

@@ -8,7 +8,7 @@ export interface Blog {
   genre: Genre;
   tags: Tags[];
   thumbnail: string;
-  body: string[];
+  body: string;
   thumbnail_img?: Thumbnail;
 }
   
