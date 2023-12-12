@@ -205,6 +205,10 @@ header {
     color: #aba499;
 }
 
+.mantine-Prism-lineNumber {
+    color: #6A6A6A;
+}
+
 /* Footer */
 footer {
     width: 100%;

@@ -2,8 +2,19 @@
 
 import { DefaultMantineColor } from "@mantine/core";
 import { Prism } from "@mantine/prism";
-import vsDark from "prism-react-renderer/themes/vsDark";
+import PrismRenderer from "prism-react-renderer/prism";
+import oceanicNext from "prism-react-renderer/themes/oceanicNext";
 import style from "@/styles/blog.module.css";
+
+global.Prism = PrismRenderer;
+require("prismjs/components/prism-bash");
+require("prismjs/components/prism-cmake");
+require("prismjs/components/prism-docker");
+require("prismjs/components/prism-php");
+require("prismjs/components/prism-plant-uml");
+require("prismjs/components/prism-powershell");
+require("prismjs/components/prism-regex");
+require("prismjs/components/prism-typescript");
 
 interface colorScheme {
   color: DefaultMantineColor;
@@ -69,7 +80,7 @@ const CodeBlock = ({ className, children }) => {
       <Prism
         className={style.relative_div}
         colorScheme="dark"
-        getPrismTheme={(_theme) => vsDark}
+        getPrismTheme={(_theme) => oceanicNext}
         withLineNumbers={sl === undefined || sl === "" ? false : true}
         highlightLines={createHighlightLines(hlNum, diff)}
         language={(language?.replace(/language-/, "") ?? "bash")}
