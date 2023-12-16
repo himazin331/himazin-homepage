@@ -118,7 +118,7 @@
 
 .article_body_field img
 {
-    margin: 5px 0;
+    margin: 15px 0;
 }
 
 .article_body_field h2,
@@ -144,7 +144,12 @@
     list-style-type: square;
 }
 
+.article_body_field table {
+    margin: 15px 0;
+}
+
 .article_body_field th {
+    border: 1px solid var(--primary-text-color);
     border-bottom: 2px solid var(--primary-text-color);
     text-align: center;
     padding: 0 10px;
@@ -156,13 +161,17 @@
 }
 
 .article_body_field td {
-    border-top: 1px solid var(--primary-text-color);
+    border: 1px solid var(--primary-text-color);
     padding: 5px 10px;
 }
 
 .article_body_field img {
     max-width: 100%;
     height: auto;
+}
+
+.article_body_field pre {
+    margin: 24px 0;
 }
 
 .article_body_field code:not(pre code) {
