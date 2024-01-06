@@ -54,7 +54,7 @@ const createHighlightLines = (hlNum: string, diff: string): Record<number, color
     const diffAdd: colorScheme = {color: "green", label: "+"};
     const diffDelete: colorScheme = {color: "red", label: "-"};
 
-    const [diffAddSegments, diffDeleteSegments] = diff.split(/,|\s+/);
+    const [diffAddSegments, diffDeleteSegments] = diff.split("|");
     if (diffAddSegments !== undefined) {
       highlightlines = setHighlightLines(highlightlines, diffAddSegments.replace(/[{}]/g, "").split(/,|\s+/), diffAdd);
     }
