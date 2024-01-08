@@ -136,7 +136,13 @@ const IndexPage: NextPage<JSX.Element> = () => {
             
               <div className={style.content_item}>
                 <div className={`${style.community_caption_field} d-sm-flex align-items-center`}>
-                  <span className={style.community_caption_text}>Twitter (X)</span>
+                  <span className={style.community_caption_text}>Twitter (X): 技術系Only</span>
+                </div>
+                <span className={style.community_text}><a href="https://twitter.com/himazin331tech" target="_blank" rel="noopener noreferrer">@himazin331tech</a></span>
+              </div>
+              <div className={style.content_item}>
+                <div className={`${style.community_caption_field} d-sm-flex align-items-center`}>
+                  <span className={style.community_caption_text}>Twitter (X): メイン</span>
                 </div>
                 <span className={style.community_text}><a href="https://twitter.com/himazin_shotaML" target="_blank" rel="noopener noreferrer">@himazin_shotaML</a></span>
               </div>

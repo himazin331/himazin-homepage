@@ -145,7 +145,10 @@
 }
 
 .article_body_field table {
+    display: block;
     margin: 15px 0;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .article_body_field th {
