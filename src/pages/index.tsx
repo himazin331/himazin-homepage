@@ -68,7 +68,7 @@ const IndexPage: NextPage<JSX.Element> = () => {
                   <MdOutlineLaptopWindows className={style.material_icons_md_36_light} />
                   <span className={style.profile_caption_text}>Favorite</span>
                 </div>
-                <p className={style.profile_text}>プログラミング,　電子工作,　技術的ななにか,　筋トレ</p>
+                <p className={style.profile_text}>技術的ななにか(趣味開発とか),　筋トレ,　汚絵描き</p>
               </div>
               <div className={style.content_item}>
                 <div className={`${style.profile_caption_field} d-flex align-items-center`}>
@@ -163,6 +163,12 @@ const IndexPage: NextPage<JSX.Element> = () => {
                   <span className={style.community_caption_text}>Qiita</span>
                 </div>
                 <span className={style.community_text}><a href="https://qiita.com/hima_zin331" target="_blank" rel="noopener noreferrer">@hima_zin331</a></span>
+              </div>
+              <div className={style.content_item}>
+                <div className={`${style.community_caption_field} d-sm-flex align-items-center`}>
+                  <span className={style.community_caption_text}>Pixiv</span>
+                </div>
+                <span className={style.community_text}><a href="https://www.pixiv.net/users/104241217" target="_blank" rel="noopener noreferrer">@hogefuga3231</a></span>
               </div>
             </div>
 
