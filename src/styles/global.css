@@ -51,6 +51,11 @@ ul {
     list-style-type: none;
 }
 
+iframe {
+    width: auto;
+    height: auto;
+}
+
 /* header */
 header {
     border-bottom: 2px solid var(--border-color);
