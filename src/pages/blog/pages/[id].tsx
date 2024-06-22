@@ -25,7 +25,8 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
 
 export const getStaticProps: GetStaticProps<BlogGeneralPageProps, ParsedUrlQuery> = async (context) => {
   const pagesIdx: number = Number(context.params?.id as string ?? 1);
-  const blogs = await microcms.get({ endpoint: "blog", queries: { offset: (pagesIdx - 1) * 1, limit: 7 }});
+  const limit: number = 7;
+  const blogs = await microcms.get({ endpoint: "blog", queries: { offset: (pagesIdx - 1) * limit, limit: limit }});
   const genres = await microcms.get({ endpoint: "blog_genres" });
   const tags = await microcms.get({ endpoint: "blog_tags" });
 
